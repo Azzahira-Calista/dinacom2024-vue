@@ -3,6 +3,9 @@ module.exports = {
   content: ['./public/**/*.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      backgroundImage: {
+        'leaf1-pattern': "url('@/assets/image/leaf_bg1.svg')"
+      },
       fontFamily: {
         mont: ['Montserrat', 'sans-serif'],
       },

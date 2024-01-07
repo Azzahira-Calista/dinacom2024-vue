@@ -10,7 +10,7 @@ module.exports = {
         mont: ['Montserrat', 'sans-serif'],
       },
       colors: {
-        primary: '#FF8551',
+        primary: '#E88A1B',
         secondary: '#669940',
         bgColor: '#FAFCFA'
 

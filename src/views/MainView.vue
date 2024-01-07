@@ -1,19 +1,19 @@
-<template>
-  main view
-  <!-- <router-link class="text-gray-500" :to="{ name: 'login page' }">Login</router-link> -->
-  <div class="w-screen h-screen bg-bgColor">
-
+<template >
+  <div class="w-full h-full bg-bgColor">
     <chart-comp-vue />
+    <location-comp/>
   </div>
 
 </template>
 
 <script>
 import ChartCompVue from "@/components/main component/chart component/ChartComp.vue";
+import locationComp from "@/components/main component/location component/LocationComp.vue";
 
 export default {
   components: {
     ChartCompVue,
+    locationComp,
 
   },
 };

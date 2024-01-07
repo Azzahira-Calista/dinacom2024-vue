@@ -6,20 +6,31 @@
           <img :src="logo" alt="logo" style="width: 70px; height: auto" />
           <div
             class="text-transparent bg-clip-text font-semibold text-2xl font-mont"
-            style="background-image: linear-gradient(to bottom, #669940, #02353c)"
+            style="
+              background-image: linear-gradient(to bottom, #669940, #02353c);
+            "
           >
             re:cycle
           </div>
         </div>
         <!-- Navigation Links -->
         <div class="flex font-mont text-base text-black items-center">
-          <div class="mr-7 cursor-pointer">Tentang kami</div>
+          <div class="mr-7 cursor-pointer">{{ isi }}</div>
           <div class="mr-7 cursor-pointer">Layanan</div>
           <div class="mr-7 cursor-pointer">Lokasi</div>
           <div class="mr-7 cursor-pointer">FAQ</div>
-          
-          <div v-if="isLoggedIn" class="w-[2.5rem] h-[2.5rem] bg-secondary rounded-full"></div>
-          <div v-else class="text-primary cursor-pointer">Daftar / Masuk</div>
+
+          <router-link
+            v-if="!isLoggedIn"
+            to="/login"
+            class="mr-7 cursor-pointer text-primary"
+            >Daftar / Masuk</router-link
+          >
+
+          <div
+            v-else
+            class="w-[2.5rem] h-[2.5rem] bg-secondary rounded-full"
+          ></div>
         </div>
       </div>
     </div>
@@ -30,8 +41,9 @@
 export default {
   data() {
     return {
+      isi: "Tentang kami",
       logo: require("@/assets/logo/logo.png"),
-      isLoggedIn: false, 
+      isLoggedIn: false,
     };
   },
 };

@@ -1,6 +1,9 @@
 <template>
-  <nav-bar-comp/>
-  <router-view/>
+  <div class="bg-bgColor">
+    <nav-bar-comp/>
+    <router-view/>
+
+  </div>
 
 </template>
 

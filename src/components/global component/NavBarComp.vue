@@ -15,7 +15,11 @@
         </div>
         <!-- Navigation Links -->
         <div class="flex font-mont text-base text-black items-center">
-          <div class="mr-7 cursor-pointer">{{ isi }}</div>
+          <router-link
+            to="/about-us"
+            class="mr-7 cursor-pointer"
+            >{{isi}}</router-link
+          >
           <div class="mr-7 cursor-pointer">Layanan</div>
           <div class="mr-7 cursor-pointer">Lokasi</div>
           <div class="mr-7 cursor-pointer">FAQ</div>

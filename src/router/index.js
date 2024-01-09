@@ -28,6 +28,11 @@ const routes = [
     name: 'pick up form page',
     component: () => import('../views/PickupFormView.vue')  
   },
+  {
+    path: '/about-us',
+    name: 'About Us',
+    component: () => import('../views/AboutUsView.vue')
+  }
 ]
 const router = createRouter({
   history: createWebHashHistory(),

@@ -64,16 +64,32 @@ export default defineComponent({
   data() {
     return {
       items: [
-      {
+        {
         videoId: "ogE3n_KdYfg",
         title: "Title 1",
         description: "Description 1",
-      },
-      {
+        },
+        {
         videoId: "li-ylRo7VEc",
         title: "Title 2",
         description: "Description 2",
-      },
+        },
+        {
+          videoId: "MJd3bo_XRaU",
+          title: "Title 2",
+          description: "Description 2",
+        },
+        {
+          videoId: "QNPZ2-4PcBc",
+          title: "Title 2",
+          description: "Description 2",
+        },
+        {
+          videoId: "T2Hu0fjuX5k",
+          title: "Title 2",
+          description: "Description 2",
+        },
+
       ],
     };
   },
@@ -111,6 +127,6 @@ export default defineComponent({
 
 .item:hover {
   cursor: pointer;
-  transform: scale(1.5);
+  transform: scale(1.2);
   z-index: 1;}
 </style>

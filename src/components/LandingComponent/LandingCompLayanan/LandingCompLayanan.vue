@@ -1,0 +1,81 @@
+<template>
+    <div class="bg-[#96C67F] bg-opacity-20 px-[16rem] py-10">
+      <div class="font-montserrat font-bold text-[32px] text-green-600 flex justify-center">
+        Layanan
+      </div>
+
+      <div class="grid-cols-3 flex justify-between mt-10">
+        <div class="font-montserrat h-[30rem] flex-row flex-wrap items-center justify-center text-center text-neutral-800">
+          <div class="flex w-[18rem] h-[22.5rem] flex-col items-center gap-y-7 rounded-[15px] bg-white px-7 pb-14 pt-8 box-shadow-md">
+            <div class="flex justify-center text-xl font-bold">
+              Pick up
+            </div>
+            <div class="h-24 w-20">
+              <img
+                :src="img[0]"
+                alt="Image Clippathgroup"
+                class="object-cover w-full h-full"
+              />
+            </div>
+            <div class="flex justify-center self-stretch text-base font-normal leading-normal">
+              Kami akan menjemput sampah anda, anda hanya perlu mengisi data dari kami
+            </div>
+          </div>
+        </div>
+        <div class="font-montserrat h-[30rem] flex-row flex-wrap items-center justify-center text-center text-neutral-800">
+          <div class="flex w-[18rem] h-[22.5rem] flex-col items-center gap-y-7 rounded-[15px] bg-white px-7 pb-14 pt-8 box-shadow-md">
+            <div class="flex justify-center text-xl font-bold">
+              Drop off
+            </div>
+            <div class="h-24 w-20">
+              <img
+                :src="img[1]"
+                alt="Image Clippathgroup"
+                class="object-cover w-full h-full"
+              />
+            </div>
+            <div class="flex justify-center self-stretch text-base font-normal leading-normal">
+              Antar langsung sampah ke tempat re:cycle terdeat, anda dapat mendaur ulang sampah yang ukurannya tidak terlalu besar
+            </div>
+          </div>
+        </div>
+        <div class="font-montserrat h-[30rem] flex-row flex-wrap items-center justify-center text-center text-neutral-800">
+          <div class="flex w-[18rem] h-[22.5rem] flex-col items-center gap-y-7 rounded-[15px] bg-white px-7 pb-14 pt-8 box-shadow-md">
+            <div class="flex justify-center text-xl font-bold">
+              Point
+            </div>
+            <div class="h-24 w-20">
+              <img
+                :src="img[2]"
+                alt="Image Clippathgroup"
+                class="object-cover w-full h-full"
+              />
+            </div>
+            <div class="flex justify-center self-stretch text-base font-normal leading-normal">
+              Kami akan mengkonversi berat sampah anda menjadi matta uang digital
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    data() {
+      return {
+        img: [
+          require('@/assets/icons/LandingPage/LandingPageLayanan/PickupLandingPageLayanan.svg'),
+          require('@/assets/icons/LandingPage/LandingPageLayanan/DropoffLandingPageLayanan.svg'),
+          require('@/assets/icons/LandingPage/LandingPageLayanan/PointsLandingPageLayanan.svg'),
+          require('@/assets/images/DefaultImage/leaf.png'),
+        ],
+      };
+    },
+  };
+  </script>
+  
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+  </style>
+  

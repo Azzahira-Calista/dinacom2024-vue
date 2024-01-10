@@ -10,7 +10,8 @@ module.exports = {
       colors: {
         primary: '#E88A1B',
         secondary: '#669940',
-        bgColor: '#FAFCFA'
+        bgColor: '#FAFCFA',
+        secondaryBgColor: 'rgba(150, 198, 127, 0.2)'
 
       },
      

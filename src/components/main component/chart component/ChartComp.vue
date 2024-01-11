@@ -41,7 +41,8 @@ export default {
       img: [
         require("@/assets/image/leaf_bg1.svg"),
         require("@/assets/image/leaf_bg2.svg"),
-      ],      title: "Penghasilan sampah di indonesia pada tahun 2023",
+      ],
+      title: "Penghasilan sampah di indonesia pada tahun 2023",
     }
   },
   mounted() {

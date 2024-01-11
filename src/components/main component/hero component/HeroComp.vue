@@ -43,8 +43,10 @@
 export default {
 data(){
   return{
-     img: [require('@/assets/images/LandingPage/LandingPageHero/bg_hero.jpg'),
-     require('@/assets/images/LandingPage/LandingPageHero/TrashTruck.png'),]
+     img: [
+      require('@/assets/images/MainPage/MainPageHero/bg_hero.jpg'),
+      require('@/assets/images/MainPage/MainPageHero/TrashTruck.png'),
+    ]
     }
   }
 };

@@ -7,6 +7,7 @@
     <kerajinan-comp/>
     <quote-comp/>
     <faq-comp/> <!-- Include FAQComp in the template -->
+    <footer-comp/>
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import locationComp from "@/components/main component/location component/Locatio
 import kerajinanComp from "@/components/main component/kerjinan component/KerajinanComp.vue";
 import QuoteComp from "@/components/main component/quote component/QuoteComp.vue";
 import FaqComp from "@/components/main component/faq component/FAQComp.vue";
+import footerComp from "@/components/global component/FooterComp.vue";
 
 export default {
   components: {
@@ -28,6 +30,8 @@ export default {
     kerajinanComp,
     QuoteComp,
     FaqComp,
+    footerComp
+
   },
 };
 </script>

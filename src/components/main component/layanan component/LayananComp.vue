@@ -1,12 +1,19 @@
 <template>
-    <div class="bg-[#96C67F] bg-opacity-20 px-[16rem] py-10">
+    <div class="bg-[#96C67F] bg-opacity-20 px-[16rem] py-10 flex-col flex relative">
+
+      <img
+        class="absolute -bottom-28 -right-16 w-1/4 object-cover transform rotate-[173deg] object-cover overflow-hidden"
+        :src="img[3]"
+        alt="Background Image"
+    />
+
       <div class="font-montserrat font-bold text-[32px] text-green-600 flex justify-center">
         Layanan
       </div>
 
       <div class="grid-cols-3 flex justify-between mt-10">
         <div class="font-montserrat h-[30rem] flex-row flex-wrap items-center justify-center text-center text-neutral-800">
-          <div class="flex w-[18rem] h-[22.5rem] flex-col items-center gap-y-7 rounded-[15px] bg-white px-7 pb-14 pt-8 box-shadow-md">
+          <div class="shadow-xl flex w-[18rem] h-[22.5rem] flex-col items-center gap-y-7 rounded-[15px] bg-white px-7 pb-14 pt-8 box-shadow-md">
             <div class="flex justify-center text-xl font-bold">
               Pick up
             </div>
@@ -23,7 +30,7 @@
           </div>
         </div>
         <div class="font-montserrat h-[30rem] flex-row flex-wrap items-center justify-center text-center text-neutral-800">
-          <div class="flex w-[18rem] h-[22.5rem] flex-col items-center gap-y-7 rounded-[15px] bg-white px-7 pb-14 pt-8 box-shadow-md">
+          <div class="shadow-xl flex w-[18rem] h-[22.5rem] flex-col items-center gap-y-7 rounded-[15px] bg-white px-7 pb-14 pt-8 box-shadow-md">
             <div class="flex justify-center text-xl font-bold">
               Drop off
             </div>
@@ -40,7 +47,7 @@
           </div>
         </div>
         <div class="font-montserrat h-[30rem] flex-row flex-wrap items-center justify-center text-center text-neutral-800">
-          <div class="flex w-[18rem] h-[22.5rem] flex-col items-center gap-y-7 rounded-[15px] bg-white px-7 pb-14 pt-8 box-shadow-md">
+          <div class="shadow-xl flex w-[18rem] h-[22.5rem] flex-col items-center gap-y-7 rounded-[15px] bg-white px-7 pb-14 pt-8 box-shadow-md">
             <div class="flex justify-center text-xl font-bold">
               Point
             </div>
@@ -65,10 +72,10 @@
     data() {
       return {
         img: [
-          require('@/assets/icons/LandingPage/LandingPageLayanan/PickupLandingPageLayanan.svg'),
-          require('@/assets/icons/LandingPage/LandingPageLayanan/DropoffLandingPageLayanan.svg'),
-          require('@/assets/icons/LandingPage/LandingPageLayanan/PointsLandingPageLayanan.svg'),
-          require('@/assets/images/DefaultImage/leaf.png'),
+          require('@/assets/icons/MainPage/MainPageLayanan/PickupMainPageLayanan.svg'),
+          require('@/assets/icons/MainPage/MainPageLayanan/DropoffMainPageLayanan.svg'),
+          require('@/assets/icons/MainPage/MainPageLayanan/PointsMainPageLayanan.svg'),
+          require('@/assets/images/DefaultImage/leaf2031.png'),
         ],
       };
     },

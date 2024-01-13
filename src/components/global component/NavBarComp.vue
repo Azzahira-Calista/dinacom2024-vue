@@ -45,7 +45,7 @@ export default {
     return {
       isi: "Tentang kami",
       logo: require("@/assets/logo/logo.png"),
-      isLoggedIn: true,
+      isLoggedIn: false,
     };
   },
 };

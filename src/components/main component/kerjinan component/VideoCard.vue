@@ -18,7 +18,7 @@
   <div>
     <Splide :options="options" :extensions="extensions">
       <SplideSlide v-for="(item, index) in items" :key="index">
-        <div class="item bg-white rounded-md shadow-lg p-4 shadow-black/20 transition duration-300 ease-in-out hover:shadow-lg hover:shadow-secondary"  style="margin-right: 50px;">
+        <div class="item bg-white rounded-md shadow-lg p-4  transition duration-300 ease-in-out hover:shadow-xl hover:shadow-secondary"  style="margin-right: 50px;">
           <div class="flex flex-col">
             <div class="mb-5">
               <iframe

@@ -1,12 +1,16 @@
-<template>
+
+<template >
+
   <div class="w-full h-full bg-bgColor">
-    <hero-comp/>
+    <nav-bar-comp/>
+    <landing-comp-hero/>
     <chart-comp-vue />
-    <layanan-comp/>
+    <landing-comp-layanan/>
     <location-comp/>
     <kerajinan-comp/>
-    <quote-comp/>
-    <faq-comp/> <!-- Include FAQComp in the template -->
+    <landing-page-quote/>
+    <landing-comp-f-a-q/>
+
     <footer-comp/>
   </div>
 </template>
@@ -20,17 +24,24 @@ import kerajinanComp from "@/components/main component/kerjinan component/Keraji
 import QuoteComp from "@/components/main component/quote component/QuoteComp.vue";
 import FaqComp from "@/components/main component/faq component/FAQComp.vue";
 import footerComp from "@/components/global component/FooterComp.vue";
+import navBarComp from "@/components/global component/NavBarComp.vue";
+import landingCompHero from "@/components/LandingComponent/LandingCompHero/LandingCompHero.vue";
+import landingCompLayanan from "@/components/LandingComponent/LandingCompLayanan/LandingCompLayanan.vue";
+import LandingPageQuote from "@/components/LandingComponent/LandingPageQuote/LandingPageQuote.vue";
+import LandingCompFAQ from "@/components/LandingComponent/LandingCompFAQ/LandingCompFAQ.vue";
 
 export default {
   components: {
-    HeroComp,
+    LandingCompFAQ,
+    LandingPageQuote,
+    landingCompHero,
+    landingCompLayanan,
     ChartCompVue,
     LayananComp,
     locationComp,
     kerajinanComp,
-    QuoteComp,
-    FaqComp,
-    footerComp
+    footerComp,
+    navBarComp
 
   },
 };

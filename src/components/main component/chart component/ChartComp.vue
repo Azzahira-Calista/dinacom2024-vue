@@ -35,7 +35,7 @@
 import Chart from "chart.js/auto";
 
 export default {
-
+  nama: "ChartComp",
   data(){
     return{
       img: [

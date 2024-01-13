@@ -159,10 +159,15 @@ export default {
   },
   methods: {
     registerUserPost(){
+      if (!this.name || !this.email || !this.phone_number || !this.password || !this.confirm_password) {
+        alert("Form belum lengkap. Mohon isi semua field.");
+        return;
+      }
+
       if (this.password !== this.confirm_password) {
-      alert("Password and Confirm Password must match");
-      return;
-    }
+        alert("Password and Confirm Password must match");
+        return;
+      }
       axios.post(
           `https://0350-182-2-70-56.ngrok-free.app/api/register`,
           {

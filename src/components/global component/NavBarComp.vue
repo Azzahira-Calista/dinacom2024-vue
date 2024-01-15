@@ -1,15 +1,13 @@
 <template>
   <nav class="fixed top-0 left-0 right-0 z-10">
-    <div class="bg-bgColor w-screen h-[3.75rem] px-[15.62rem] shadow-md">
+    <div class="bg-bgColor w-screen h-[3.75rem] px-[1rem] shadow-md">
       <div class="flex justify-between items-center">
         <div class="flex items-center">
           <img :src="logo" alt="logo" style="width: 70px; height: auto" />
           <div
               class="text-transparent bg-clip-text font-semibold text-2xl font-mont"
               style="
-              background-image: linear-gradient(to bottom, #669940, #02353c);
-            "
-          >
+              background-image: linear-gradient(to bottom, #669940, #02353c);">
             re:cycle
           </div>
         </div>

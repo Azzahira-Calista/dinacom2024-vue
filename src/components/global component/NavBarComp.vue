@@ -20,17 +20,25 @@
           <div class="mr-7 cursor-pointer">Lokasi</div>
           <div class="mr-7 cursor-pointer">FAQ</div>
 
-          <router-link
-              v-if="!isLoggedIn"
-              to="/login"
-              class="mr-7 cursor-pointer text-primary"
-          >Daftar / Masuk</router-link>
+        </div >
+        <div class="flex align-middle items-center justify-center font-mont">
+          <div class="rounded-2xl font-semibold text-base mr-[1.25rem] text-white px-[20px] py-[8px] bg-primary cursor-pointer">
+            Pick Up
+          </div>
+          <div>
 
-          <router-link
-              v-else
-              to="/profile"
-              class="w-[2.5rem] h-[2.5rem] bg-secondary rounded-full mr-7 cursor-pointer"
-          ></router-link>
+            <router-link
+                v-if="!isLoggedIn"
+                to="/login"
+                class="mr-7 cursor-pointer text-primary"
+            >Masuk</router-link>
+
+            <router-link
+                v-else
+                to="/profile"
+                class="w-[2.5rem] h-[2.5rem] bg-secondary rounded-full mr-7 cursor-pointer"
+            ></router-link>
+          </div>
         </div>
       </div>
     </div>

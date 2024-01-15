@@ -46,6 +46,8 @@
 </template>
 
 <script>
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
 export default {
   data() {
     return {
@@ -53,6 +55,40 @@ export default {
       logo: require("@/assets/logo/logo.png"),
       isLoggedIn: false,
     };
+  },
+  setup() {
+    const isLoggedIn = ref(false);
+    const isRegistered = ref(false);
+
+    const checkLoggedIn = async () => {
+      try {
+        const response = await axios.get('https://f542-103-28-113-244.ngrok-free.app/login');
+        isLoggedIn.value = response.data.loggedIn;
+      } catch (error) {
+        console.error('Error checking login status:', error);
+      }
+    };
+
+    const checkRegistrationStatus = async () => {
+      try {
+        const response = await axios.get('https://f542-103-28-113-244.ngrok-free.app/register');
+        isRegistered.value = response.data.registered;
+      } catch (error) {
+        console.error('Error checking registration status:', error);
+      }
+    };
+
+    onMounted(() => {
+      checkLoggedIn();
+      checkRegistrationStatus();
+    });
+
+    // return {
+    //   isi,
+    //   logo,
+    //   isLoggedIn,
+    //   isRegistered,
+    // };
   },
 };
 </script>

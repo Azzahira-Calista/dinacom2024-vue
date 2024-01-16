@@ -6,7 +6,10 @@
     <location-comp/>
     <kerajinan-comp/>
     <quote-comp/>
-    <faq-comp/> <!-- Include FAQComp in the template -->
+    <faq-comp/>
+    <syarat-comp/>
+    <kebijakan-comp/>
+    <footer-comp/>
   </div>
 </template>
 
@@ -17,7 +20,10 @@ import LayananComp from "@/components/main component/layanan component/LayananCo
 import locationComp from "@/components/main component/location component/LocationComp.vue";
 import kerajinanComp from "@/components/main component/kerjinan component/KerajinanComp.vue";
 import QuoteComp from "@/components/main component/quote component/QuoteComp.vue";
-import FaqComp from "@/components/main component/faq component/FAQComp.vue";
+import footerComp from "@/components/global component/FooterComp.vue";
+import FaqComp from '@/components/main component/faq component/FaqComp.vue';
+import SyaratComp from '@/components/main component/syarat component/SyaratComp.vue';
+import KebijakanComp from '@/components/main component/kebijakan component/KebijakanComp.vue';
 
 export default {
   components: {
@@ -28,6 +34,9 @@ export default {
     kerajinanComp,
     QuoteComp,
     FaqComp,
+    SyaratComp,
+    KebijakanComp,
+    footerComp
   },
 };
 </script>

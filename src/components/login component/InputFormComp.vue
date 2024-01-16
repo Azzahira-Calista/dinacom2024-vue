@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="flex flex-col w-[50.5rem] h-screen items-center justify-center font-mont">
+    <div class="justify-center">
+        <div class="flex flex-col w-[45.5rem] h-screen p-5 items-center justify-center font-mont">
             <h1 class="font-bold text-3xl text-secondary text-center mb-[3.125rem]">
                 {{ heading }}
             </h1>

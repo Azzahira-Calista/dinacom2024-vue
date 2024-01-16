@@ -1,14 +1,14 @@
 <template>
 
-  <div class="py-[3.12rem] bg-primary flex flex-col font-mont text-white relative">
-    <div class="relative object-cover">
+  <div class="py-[3.12rem] bg-primary flex flex-col font-mont text-white relative overflow-hidden">
+    <div class="relative ">
       <img
-          class="absolute bottom-0 -right-10 w-1/4 object-cover -mb-96 transform rotate-[-8deg] overflow-hidden"
+          class="absolute bottom-0 -right-10 w-1/4 h-auto object-cover -mb-96 transform rotate-[-8deg]"
           :src="img"
           alt="Background Image"
       />
     </div>
-    <div class=" px-[15.62rem]">
+    <div class="px-[15.62rem]">
       <div class="flex justify-between ">
         <div class="flex flex-col ">
           <h2 class="text-2xl font-bold mb-[1.87rem]">re:cycle</h2>

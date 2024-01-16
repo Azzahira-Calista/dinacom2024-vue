@@ -169,7 +169,7 @@ export default {
         return;
       }
       axios.post(
-          `https://0350-182-2-70-56.ngrok-free.app/api/register`,
+          `https://f542-103-28-113-244.ngrok-free.app//register`,
           {
             name: this.name,
             email: this.email,

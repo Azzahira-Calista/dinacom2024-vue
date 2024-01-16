@@ -73,48 +73,69 @@
 <!--</script>-->
 
 <template>
-  <div>
-    <div class="flex flex-col w-[50.5rem] h-screen items-center justify-center">
-      <h1 class="font-mont font-bold text-3xl text-secondary text-center mb-[3.125rem]">
+  <div class="justify-center">
+    <div class="flex flex-col w-[45.5rem] p-5 items-center justify-center">
+      <h1 class="font-mont font-bold text-3xl text-secondary text-center my-[2rem]">
         {{ heading }}
       </h1>
-      <form @submit.prevent="registerUserPost" action="" method="post" class="flex flex-col">
-        <input
-            type="text"
-            v-model="name"
-            placeholder="Nama Lengkap"
-            class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
-        />
-        <input
-            type="email"
-            v-model="email"
-            placeholder="Email"
-            class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
-        />
-        <input
-            type="number"
-            v-model="phone_number"
-            placeholder="Nomor Ponsel"
-            class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
-        />
-        <input
-            type="password"
-            v-model="password"
-            placeholder="Sandi"
-            class="bg-[#F1F0F0]  h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
-        />
-        <p class="text-sm  mt-[1rem] font-mont text-gray-500">* Sandi minimal 8 karakter</p>
+      <Splide :options="options">
+        <SplideSlide class="flex flex-col w-[43.5rem] items-center justify-center">
+          <form @submit.prevent="registerUserPost" action="" method="post" class="flex flex-col">
+            <input
+                type="text"
+                v-model="name"
+                placeholder="Nama Lengkap"
+                class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
+            />
+            <input
+                type="email"
+                v-model="email"
+                placeholder="Email"
+                class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
+            />
+            <input
+                type="number"
+                v-model="phone_number"
+                placeholder="Nomor Ponsel"
+                class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
+            />
+            <input
+                type="password"
+                v-model="password"
+                placeholder="Sandi"
+                class="bg-[#F1F0F0]  h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
+            />
+            <p class="text-sm  mb-[1rem] font-mont text-gray-500">* Sandi minimal 8 karakter</p>
 
-        <input
-            type="password"
-            v-model="confirm_password"
-            placeholder="Konfirmasi Sandi"
-            class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
-        />
-        <button type="submit" class="font-mont font-semibold h-[3.125rem] w-[21.5625rem] my-[3.125rem] text-center py-[0.625rem] bg-primary text-white rounded-2xl">
-          Daftar
-        </button>
-      </form>
+            <input
+                type="password"
+                v-model="confirm_password"
+                placeholder="Konfirmasi Sandi"
+                class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
+            />
+            <button type="button" class="font-mont font-semibold h-[3.125rem] w-[21.5625rem] mb-[3.125rem] text-center py-[0.625rem] bg-primary text-white rounded-2xl">
+              {{ next }}
+            </button>
+          </form>
+
+          <div class="flex">
+            <p class="mr-1">{{ subheading }}</p>
+            <router-link to="/login" class="mr-7 cursor-pointer text-primary">
+              {{ button_text }}
+            </router-link>
+          </div>
+        </SplideSlide>
+        <SplideSlide class="flex flex-col w-[43.5rem] items-center justify-center">
+          <form @submit.prevent="registerUserPost" action="" method="post" class="flex flex-col">
+            <input type="file" accept="image/*" ref="file" placeholder="Input Image" class="h-10 w-10">
+<!--            <img :src="src" alt="Avatar" class="h-28 w-28 rounded-full object-cover">-->
+<!--            <button @click="browse()">Browse</button>-->
+            <button type="submit" class="font-mont font-semibold h-[3.125rem] w-[21.5625rem] mt-[3.125rem] text-center py-[0.625rem] bg-primary text-white rounded-2xl">
+              {{ register }}
+            </button>
+          </form>
+        </SplideSlide>
+      </Splide>
 <!--      <router-link v-if="isRegistered" to="/" class="text-primary">-->
 <!--        Go to Main Page-->
 <!--      </router-link>-->
@@ -125,13 +146,7 @@
 <!--      >-->
 <!--        {{ register }}-->
 <!--      </router-link>-->
-      <div class="flex">
-        <p class="mr-1">{{ subheading }}</p>
-        <router-link to="/login" class="mr-7 cursor-pointer text-primary">
-          {{ button_text }}
-        </router-link>
-
-      </div>
+      <div></div>
       <p class="mt-[1.5625rem] max-w-[21.5625rem] text-center">{{ description }}</p>
     </div>
   </div>
@@ -139,16 +154,20 @@
 
 <script>
 import axios from "axios";
+import {Splide, SplideSlide} from "@splidejs/vue-splide";
+import "@splidejs/splide/dist/css/splide.min.css";
 
 export default {
-  components: {},
+  components: {Splide, SplideSlide},
   data() {
     return {
       heading: "Registrasi",
       subheading: "Sudah memiliki akun?",
+      next: "Lanjut",
       register: "Daftar",
       button_text: "Masuk",
       description: "Dengan mendaftar, Anda setuju dengan syarat & ketentuan re:cycle dan kebijakan privasi",
+      src: null,
 
       // isRegistered: false,
       name: "",
@@ -157,6 +176,9 @@ export default {
       password: "",
     };
   },
+  // props: {
+  //   value: File
+  // },
   methods: {
     registerUserPost(){
       if (!this.name || !this.email || !this.phone_number || !this.password || !this.confirm_password) {
@@ -200,7 +222,31 @@ export default {
           }
         }
       });
-    }
-  }
+    },
+    // browse(){
+    //   this.$refs.file.click();
+    // },
+    // change(e){
+    //   this.$emit('input', e.target.file[0]);
+    //
+    //   let reader = new FileReader();
+    //   reader.readAsDataURL(e.target.file[0]);
+    //   reader.onload = (e) => {
+    //     this.src = e.target.result;
+    //   }
+    // }
+  },
+  setup() {
+    const options = {
+      type: 'slide',
+      pagination: true,
+      arrows: false,
+      drag: true
+    };
+
+    return {
+      options: options,
+    };
+  },
 };
 </script>

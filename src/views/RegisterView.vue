@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-screen h-screen bg-white"
+      class="h-screen bg-white"
   >
     <div class="flex">
       <InputFormComp/>

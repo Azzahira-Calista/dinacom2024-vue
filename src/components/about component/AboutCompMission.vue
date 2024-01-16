@@ -1,5 +1,5 @@
 <template>
-    <div class="flex relative justify-center items-center mt-[5rem]">
+    <div class="font-mont flex relative justify-center items-center mt-[5rem]">
         <div class="absolute max-w-[38rem] text-center text-[1.25rem]">
             <p class="text-white">{{ text }}</p>
         </div>

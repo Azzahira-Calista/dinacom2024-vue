@@ -32,13 +32,12 @@
             </div>
             <div class="">
               <h3 class="text-xl font-semibold text-[#303030]">{{ item.title }}</h3>
-              <p class="text-[#303030]">{{ item.description }}</p>
             </div>
             <div>
               <a :href="'https://www.youtube.com/watch?v=' + item.videoId" target="_blank" rel="noopener noreferrer">
                 <img
                     :src="icon"
-                    class="mt-5 transform hover:rotate-[35deg] transition-transform duration-300 ease-in-out cursor-pointer"
+                    class="mt-5 bottom-0 transform hover:rotate-[35deg] transition-transform duration-300 ease-in-out cursor-pointer"
                     alt="Clickable Rotating Image"
                 />
               </a>
@@ -70,28 +69,23 @@ export default defineComponent({
       items: [
         {
           videoId: "ogE3n_KdYfg",
-          title: "Bunga",
-          description: "Description 1",
+          title: "Membuat bunga dari botol dan gelas plastik bekas",
         },
         {
-          videoId: "li-ylRo7VEc",
-          title: "Title 2",
-          description: "Description 2",
+          videoId: "li-ylRo7VEc", // tolong gantiin videonya
+          title: "Title 2", // deskripsiny jgn sampe lebih dari 2 lineS
         },
         {
           videoId: "MJd3bo_XRaU",
           title: "Title 3",
-          description: "Description 2",
         },
         {
           videoId: "QNPZ2-4PcBc",
           title: "Title 4",
-          description: "Description 2",
         },
         {
           videoId: "T2Hu0fjuX5k",
           title: "Title 5",
-          description: "Description 2",
         },
 
       ],

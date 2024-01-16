@@ -51,9 +51,9 @@ export default {
 </script>
 
 <template>
-  <div class="relative w-full h-[44.75rem]">
-    <div class="absolute inset-0 bg-black bg-opacity-50 h-[44.75rem]"></div>
-    <img :src="img[0]" class="w-full h-70 object-cover"/>
+  <div class="relative w-full h-[44.75rem] overflow-hidden">
+    <div class="absolute inset-0 bg-black bg-opacity-50 h-full"></div>
+    <img :src="img[0]" class="w-full h-full object-cover"/>
 
     <div class="flex justify-between absolute inset-0 w-[26.87rem]">
       <div class="flex-1 flex items-center justify-center px-[15.62rem]">
@@ -62,12 +62,12 @@ export default {
           <p class="font-mont font-normal text-[20px] text-wrap w-[26.87rem]">
             Mengolah sampah kembali atau mendaur ulang sampah menjadi sesuatu yang dapat digunakan kembali
           </p>
-          <button
-              @click="navigateToAboutUs"
-              class="w-32 h-12 mt-5 bg-[#E88A1B] rounded-[15px] text-xl font-mont text-white font-semibold"
-          >
-            About Us
-          </button>
+          <router-link to="/about-us">
+            <button class="w-32 h-12 mt-5 bg-primary rounded-[15px] text-xl font-mont text-white font-semibold">
+              About Us
+            </button>
+          </router-link>
+
         </div>
       </div>
     </div>

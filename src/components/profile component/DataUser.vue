@@ -1,14 +1,41 @@
 <script>
 import PointUser from "@/components/profile component/PointUser.vue";
+import axios from "axios";
 
 export default {
   name: "DataUser",
   components: {PointUser},
   data(){
     return{
+      name: "",
+      email: "",
       icon: require ('@/assets/logo/logout_icon.svg')
     }
-  }
+  },
+
+  async mounted()
+{
+  const token = localStorage.getItem("token");
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await axios.get("http://localhost:8000/api/user", config);
+  console.log(response.data);
+
+  this.name = response.data.name;
+  this.email = response.data.email;
+}
+
+  //
+  // async created(){
+  //   const response = await axios.get("user", {
+  //     headers: {
+  //       Authorization: `Bearer` + {localStorage.getItem("token")},
+  //     },
+  //
+  //   });
 }
 </script>
 
@@ -18,10 +45,10 @@ export default {
 
     </div>
     <div class="mb-[0.62rem] text-2xl ">
-      Username
+      {{ name }}
     </div>
     <div class="mb-[1.87rem] text-base">
-      Gmail
+      {{ email }}
     </div>
     <point-user/>
     <div class=" mt-[1.87rem] flex align-middle justify-center content-center items-center mr-auto cursor-pointer">

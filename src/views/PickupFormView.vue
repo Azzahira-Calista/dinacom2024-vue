@@ -1,10 +1,19 @@
 <template>
-  pick up form
+  <div class="flex space-x-9">
+    <PickUpImageComp/>
+    <PickUpFormComp/>
+  </div>
 </template>
 
 <script>
-export default {
+import PickUpFormComp from '@/components/global component/PickUpComp/PickUpFormComp.vue';
+import PickUpImageComp from '@/components/global component/PickUpComp/PickUpImageComp.vue';
 
+export default {
+  components: {
+    PickUpFormComp,
+    PickUpImageComp
+  }
 }
 </script>
 

@@ -1,57 +1,83 @@
-<template>
-  <div class="relative">
-    <div class="aspect-w-7 aspect-h-2">
-      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-      <img
-        :src="img[0]"
-        alt="Background Image"
-        class="object-cover w-full h-full"
-      />
-    </div>
+<!--<template>-->
+<!--  <div class="relative">-->
+<!--    <div class="aspect-w-7 aspect-h-2">-->
+<!--      <div class="absolute inset-0 bg-black bg-opacity-50"></div>-->
+<!--      <img-->
+<!--          :src="img[0]"-->
+<!--          alt="Background Image"-->
+<!--          class="object-cover w-full h-full"-->
+<!--      />-->
+<!--    </div>-->
 
-    <div class="flex justify-between absolute inset-0">
-      <div class="flex-1 flex items-center justify-center pl-[16rem]">
+<!--    <div class="flex justify-between absolute inset-0">-->
+<!--      <div class="flex-1 flex items-center justify-center pl-[16rem]">-->
+<!--        <div class="text-start text-white">-->
+<!--          <h1 class="font-mont font-bold text-[48px]">Re:cycle</h1>-->
+<!--          <p class="font-mont font-normal text-[20px] text-wrap">-->
+<!--            Mengolah sampah kembali atau mendaur ulang sampah menjadi sesuatu yang dapat digunakan kembali-->
+<!--          </p>-->
+<!--          <button-->
+<!--              @click="navigateToAboutUs"-->
+<!--              class="w-32 h-12 mt-5 bg-[#E88A1B] rounded-[15px] text-xl font-mont text-white font-semibold"-->
+<!--          >-->
+<!--            About Us-->
+<!--          </button>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="relative flex items-center">-->
+<!--        <div class="absolute inset-0 bg-white rounded-l-full h-[40rem]"></div>-->
+<!--        <img-->
+<!--            :src="img[1]"-->
+<!--            alt="Image Clippathgroup"-->
+<!--            class="object-cover w-full h-full"-->
+<!--        />-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</template>-->
+
+<script>
+export default {
+  data() {
+    return {
+      img: [
+        require('@/assets/images/MainPage/MainPageHero/bg_hero.jpg'),
+        require('@/assets/images/MainPage/MainPageHero/TrashTruck.png'),
+      ],
+    };
+  },
+};
+</script>
+
+<template>
+  <div class="relative w-full h-[44.75rem]">
+    <div class="absolute inset-0 bg-black bg-opacity-50 h-[44.75rem]"></div>
+    <img :src="img[0]" class="w-full h-70 object-cover"/>
+
+    <div class="flex justify-between absolute inset-0 w-[26.87rem]">
+      <div class="flex-1 flex items-center justify-center px-[15.62rem]">
         <div class="text-start text-white">
-          <h1 class="font-montserrat font-bold text-[48px]">Re:cycle</h1>
-          <p class="font-montserrat font-normal text-[20px] text-wrap">
+          <h1 class="font-mont font-bold text-[48px]">Re:cycle</h1>
+          <p class="font-mont font-normal text-[20px] text-wrap w-[26.87rem]">
             Mengolah sampah kembali atau mendaur ulang sampah menjadi sesuatu yang dapat digunakan kembali
           </p>
           <button
-            @click="navigateToAboutUs"
-            class="w-32 h-12 mt-5 bg-[#E88A1B] rounded-[15px] text-white font-bold"
+              @click="navigateToAboutUs"
+              class="w-32 h-12 mt-5 bg-[#E88A1B] rounded-[15px] text-xl font-mont text-white font-semibold"
           >
             About Us
           </button>
         </div>
       </div>
-
-    <div class="relative flex items-center">
-      <div class="absolute inset-0 bg-white rounded-l-full h-[40rem]"></div>
-
-      <img
-        :src="img[1]"
-        alt="Image Clippathgroup"
-        class="object-cover w-full h-full"
-      />
     </div>
 
+    <div class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white w-1/2 rounded-l-full h-[25rem]">
+      <div class="absolute top-1/2 -right-[10rem] transform -translate-y-1/2 w-[50rem]">
+        <img :src="img[1]" class="w-[40rem] h-full object-cover">
+      </div>
     </div>
+
+
   </div>
 </template>
-
-<script>
-export default {
-data(){
-  return{
-     img: [
-      require('@/assets/images/MainPage/MainPageHero/bg_hero.jpg'),
-      require('@/assets/images/MainPage/MainPageHero/TrashTruck.png'),
-    ]
-    }
-  }
-};
-</script>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-</style>

@@ -16,13 +16,13 @@
         </div>
         <div class="flex flex-col ml-[9.68rem] ">
           <h2 class="text-2xl font-bold mb-[1.87rem]">Layanan</h2>
-          <div  v-for="(item, index) in layanan" :key="index" @click="handleLayananClick(item)">
+          <div class="cursor-pointer"  v-for="(item, index) in layanan" :key="index" @click="handleLayananClick(item)">
             {{ item.text }}
           </div>
         </div>
         <div class="flex flex-col">
           <h2 class="text-2xl font-bold mb-[1.87rem]">Eksplor</h2>
-          <div v-for="(item, index) in eksplor" :key="index" @click="handleEksplorClick(item)">
+          <div class="cursor-pointer"  v-for="(item, index) in eksplor" :key="index" @click="handleEksplorClick(item)">
             {{ item.text }}
           </div>
         </div>

@@ -1,40 +1,44 @@
 <template>
   <nav class="fixed top-0 left-0 right-0 z-10">
-    <div class="bg-bgColor w-screen h-[3.75rem] px-[15.62rem] shadow-md">
+    <div class="bg-bgColor w-screen h-[3.75rem] px-[1rem] shadow-md">
       <div class="flex justify-between items-center">
         <div class="flex items-center">
           <img :src="logo" alt="logo" style="width: 70px; height: auto" />
           <div
-            class="text-transparent bg-clip-text font-semibold text-2xl font-mont"
-            style="
-              background-image: linear-gradient(to bottom, #669940, #02353c);
-            "
-          >
+              class="text-transparent bg-clip-text font-semibold text-2xl font-mont"
+              style="
+              background-image: linear-gradient(to bottom, #669940, #02353c);">
             re:cycle
           </div>
         </div>
-        <!-- Navigation Links -->
         <div class="flex font-mont text-base text-black items-center">
           <router-link
-            to="/about-us"
-            class="mr-7 cursor-pointer"
-            >{{isi}}</router-link
-          >
+              to="/about-us"
+              class="mr-7 cursor-pointer"
+          >{{ isi }}</router-link>
           <div class="mr-7 cursor-pointer">Layanan</div>
           <div class="mr-7 cursor-pointer">Lokasi</div>
           <div class="mr-7 cursor-pointer">FAQ</div>
 
-          <router-link
-            v-if="!isLoggedIn"
-            to="/login"
-            class="mr-7 cursor-pointer text-primary"
-            >Daftar / Masuk</router-link
-          >
+        </div >
+        <div class="flex align-middle items-center justify-center font-mont">
+          <div class="rounded-2xl font-semibold text-base mr-[1.25rem] text-white px-[20px] py-[8px] bg-primary cursor-pointer">
+            Pick Up
+          </div>
+          <div>
 
-          <div
-            v-else
-            class="w-[2.5rem] h-[2.5rem] bg-secondary rounded-full"
-          ></div>
+            <router-link
+                v-if="!isLoggedIn"
+                to="/login"
+                class="mr-7 cursor-pointer text-primary"
+            >Masuk</router-link>
+
+            <router-link
+                v-else
+                to="/profile"
+                class="w-[2.5rem] h-[2.5rem] bg-secondary rounded-full mr-7 cursor-pointer"
+            ></router-link>
+          </div>
         </div>
       </div>
     </div>

@@ -10,6 +10,7 @@ import LMap from "@/components/main component/location component/LMap.vue";
 
 
 export default {
+  name: "LocationComp",
   data(){
     return{
       title: "Lokasi re:cycle"

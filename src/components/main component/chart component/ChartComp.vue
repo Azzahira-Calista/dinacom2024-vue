@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-10 min-w-screen pt-[3.12rem] px-[15.62rem]  flex flex-col justify-center items-center relative ">
+  <div class="mt-10 min-w-screen pt-[3.12rem] px-[15.62rem]  flex flex-col justify-center items-center relative overflow-hidden">
     <img
         class="absolute top-0 -right-20 w-1/3 object-cover -mt-40 transform rotate-[-75deg] overflow-hidden"
         :src="img[0]"
@@ -11,7 +11,7 @@
         alt="Background Image"
     />
     <img
-        class="absolute -bottom-20 -left-16 w-1/4 object-cover transform rotate-[16deg]"
+        class="absolute -bottom-20 -left-16 w-1/4 object-cover transform rotate-[16deg] overflow-hidden"
         :src="img[1]"
         alt="Background Image"
     />

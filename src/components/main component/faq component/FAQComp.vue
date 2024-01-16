@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#FAFCFA] relative flex flex-col items-center">
+  <div class="bg-bgColor py-[3.12rem] px-[15.62rem] relative flex flex-col items-center overflow-hidden">
 
     <img
         class="absolute bottom-0 -left-20 w-1/4 object-cover -mt-40 transform rotate-[2deg] overflow-hidden"
@@ -11,22 +11,22 @@
         :src="img[1]"
         alt="Background Image"
     />
+    <div class=" font-mont font-bold text-[32px] text-primary">
+      FAQ
+    </div>
+    <div class=" text-start font-mont  flex justify-center">
 
-    <div class="text-start mt-[5rem] flex justify-center">
-      <div class="font-montserrat font-bold text-[32px] text-[#FF8551]">
-        FAQ
-      </div>
-      <div>
+      <div class="mt-5">
         <div class="relative w-[59rem] bg-white rounded-[15px] m-[2rem]">
           <input type="checkbox" id="input1" class="absolute peer opacity-0">
           <label for="input1" class="ml-[3rem] text-[20px] tracking mx-[2rem] h-[3.5rem] flex items-center">Bagaimana saya dapat melacak kontribusi saya di Recycle Platform?</label>
-          <div class="absolute top-[1rem] rotate-0 peer-checked:rotate-180 duration-200">
+          <div class="mx-2 absolute top-[1rem] rotate-0 peer-checked:rotate-180 duration-200">
             <img
               :src="img[2]"
               alt="Down"
             />
           </div>
-          <div class="max-h-0 overflow-hidden peer-checked:max-h-full">
+          <div class=" max-h-0 overflow-hidden peer-checked:max-h-full">
             <p class="p-[2rem] text-[16px]">
               Recycle Platform menyediakan fitur pelacakan kontribusi, di mana Anda dapat melihat jumlah sampah yang telah Anda kumpulkan dan kontribusi positif yang telah Anda berikan terhadap lingkungan.
             </p>
@@ -36,7 +36,7 @@
         <div class="relative w-[59rem] bg-white rounded-[15px] m-[2rem]">
           <input type="checkbox" id="input2" class="absolute peer opacity-0">
           <label for="input2" class="ml-[3rem] text-[20px] tracking mx-[2rem] h-[3.5rem] flex items-center">Apa yang terjadi dengan sampah yang saya kumpulkan?</label>
-          <div class="absolute top-[1rem] rotate-0 peer-checked:rotate-180 duration-200">
+          <div class="mx-2 absolute top-[1rem] rotate-0 peer-checked:rotate-180 duration-200">
             <img
               :src="img[2]"
               alt="Down"
@@ -52,7 +52,7 @@
         <div class="relative w-[59rem] bg-white rounded-[15px] m-[2rem]">
           <input type="checkbox" id="input3" class="absolute peer opacity-0">
           <label for="input3" class="ml-[3rem] text-[20px] tracking mx-[2rem] h-[3.5rem] flex items-center">Apakah saya harus membayar untuk menggunakan Recycle Platform?</label>
-          <div class="absolute top-[1rem] rotate-0 peer-checked:rotate-180 duration-200">
+          <div class="mx-2 absolute top-[1rem] rotate-0 peer-checked:rotate-180 duration-200">
             <img
               :src="img[2]"
               alt="Down"
@@ -68,7 +68,7 @@
         <div class="relative w-[59rem] bg-white rounded-[15px] m-[2rem]">
           <input type="checkbox" id="input4" class="absolute peer opacity-0">
           <label for="input4" class="ml-[3rem] text-[20px] tracking mx-[2rem] h-[3.5rem] flex items-center">Apakah Recycle Platform tersedia di seluruh wilayah?</label>
-          <div class="absolute top-[1rem] rotate-0 peer-checked:rotate-180 duration-200">
+          <div class="mx-2 absolute top-[1rem] rotate-0 peer-checked:rotate-180 duration-200">
             <img
               :src="img[2]"
               alt="Down"
@@ -84,7 +84,7 @@
         <div class="relative w-[59rem] bg-white rounded-[15px] m-[2rem]">
           <input type="checkbox" id="input5" class="absolute peer opacity-0">
           <label for="input5" class="ml-[3rem] text-[20px] tracking mx-[2rem] h-[3.5rem] flex items-center">Bisakah saya mengumpulkan berbagai jenis sampah di Recycle Platform?</label>
-          <div class="absolute top-[1rem] rotate-0 peer-checked:rotate-180 duration-200">
+          <div class="mx-2 absolute top-[1rem] rotate-0 peer-checked:rotate-180 duration-200">
             <img
               :src="img[2]"
               alt="Down"

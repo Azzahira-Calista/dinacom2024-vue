@@ -58,6 +58,8 @@ export default {
         this.email = "";
         this.password = "";
 
+        localStorage.setItem("token", response.data.token);
+
         this.$router.push("/");
       }).catch((error) => {
         console.error(error);

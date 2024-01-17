@@ -72,20 +72,20 @@ export default defineComponent({
           title: "Membuat bunga dari botol dan gelas plastik bekas",
         },
         {
-          videoId: "li-ylRo7VEc", // tolong gantiin videonya
-          title: "Title 2", // deskripsiny jgn sampe lebih dari 2 lineS
+          videoId: "oh7cfyw1aXM",
+          title: "Gantungan kunci dari bungkus kopi",
         },
         {
           videoId: "MJd3bo_XRaU",
-          title: "Title 3",
+          title: "Plastik bungkus snack menjadi tempat pensil",
         },
         {
           videoId: "QNPZ2-4PcBc",
-          title: "Title 4",
+          title: "Mobil unik bertenaga air",
         },
         {
           videoId: "T2Hu0fjuX5k",
-          title: "Title 5",
+          title: "3 Ide Kreatif dari Tutup Botol",
         },
 
       ],

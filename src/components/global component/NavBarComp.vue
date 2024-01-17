@@ -86,8 +86,6 @@ export default {
       }
     };
 
-
-
     onMounted(() => {
       checkLoggedIn();
     });

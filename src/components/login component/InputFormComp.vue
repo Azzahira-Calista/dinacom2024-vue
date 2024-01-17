@@ -38,6 +38,7 @@ export default {
       button_text: "Daftar",
       email: "",
       password: "",
+
     };
   },
   methods: {

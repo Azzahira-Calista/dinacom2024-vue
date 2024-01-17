@@ -73,8 +73,6 @@ export default {
           } else {
             alert("Login failed. Please try again later.");
           }
-        } else {
-          alert("Login failed. Please try again later.");
         }
       });
     },

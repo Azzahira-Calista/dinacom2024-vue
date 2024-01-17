@@ -38,7 +38,16 @@
 <!--</template>-->
 
 <script>
+import AOS from "aos";
+
 export default {
+
+  mounted() {
+    AOS.init();
+  },
+//   onMounted(() => {
+//   AOS.init();
+// }),
   data() {
     return {
       img: [
@@ -51,11 +60,11 @@ export default {
 </script>
 
 <template>
-  <div class="relative w-full h-[44.75rem] overflow-hidden">
+  <div  class="relative w-full h-[44.75rem] overflow-hidden">
     <div class="absolute inset-0 bg-black bg-opacity-50 h-full"></div>
     <img :src="img[0]" class="w-full h-full object-cover"/>
 
-    <div class="flex justify-between absolute inset-0 w-[26.87rem]">
+    <div data-aos="fade-up" class="flex justify-between absolute inset-0 w-[26.87rem]">
       <div class="flex-1 flex items-center justify-center px-[15.62rem]">
         <div class="text-start text-white">
           <h1 class="font-mont font-bold text-[48px]">Re:cycle</h1>
@@ -72,7 +81,7 @@ export default {
       </div>
     </div>
 
-    <div class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white w-1/2 rounded-l-full h-[25rem]">
+    <div  class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white w-1/2 rounded-l-full h-[25rem]">
       <div class="absolute top-1/2 -right-[10rem] transform -translate-y-1/2 w-[50rem]">
         <img :src="img[1]" class="w-[40rem] h-full object-cover">
       </div>

@@ -16,6 +16,7 @@
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@splidejs/vue-splide": "^0.6.12",
+    "aos": "^2.3.4",
     "autoprefixer": "^10",
     "axios": "^1.6.5",
     "chart.js": "^3.9.1",

@@ -79,7 +79,7 @@ export default {
     const checkLoggedIn = async () => {
       try {
         const response = await axios.get(
-            "https://f542-103-28-113-244.ngrok-free.app/login"
+            "https://f542-103-28-113-244.ngrok-free.app/api/login"
         );
         isLoggedIn.value = response.data.loggedIn;
       } catch (error) {
@@ -90,7 +90,7 @@ export default {
     const checkRegistrationStatus = async () => {
       try {
         const response = await axios.get(
-            "https://f542-103-28-113-244.ngrok-free.app/register"
+            "https://f542-103-28-113-244.ngrok-free.app/api/register"
         );
         isRegistered.value = response.data.registered;
       } catch (error) {

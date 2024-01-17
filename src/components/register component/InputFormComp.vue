@@ -191,7 +191,7 @@ export default {
         return;
       }
       axios.post(
-          `https://f542-103-28-113-244.ngrok-free.app//register`,
+          `https://f542-103-28-113-244.ngrok-free.app/zzz/register`,
           {
             name: this.name,
             email: this.email,

@@ -15,9 +15,13 @@
 import {onMounted, ref} from 'vue'
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import AOS from "aos";
 // import * as events from "events";
 export default {
   name: "LMap",
+  mounted() {
+    AOS.init();
+  },
   setup() {
 
     const lat = ref(0)

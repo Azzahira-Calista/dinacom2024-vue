@@ -57,14 +57,14 @@ import axios from "axios";
 
 export default {
   inject: ["eventBus"],
-  // methods: {
-  //   scrollToBottom() {
-  //     this.$refs.LayananComp.scrollToBottom({
-  //       top: this.$refs.LayananComp.scrollHeight,
-  //       behavior: "smooth",
-  //     });
-  //   },
-  // },
+  methods: {
+    scrollToBottom() {
+      this.$refs.LayananComp.scrollToBottom({
+        top: this.$refs.LayananComp.scrollHeight,
+        behavior: "smooth",
+      });
+    },
+  },
   data() {
     return {
       isi: "Tentang kami",
@@ -74,12 +74,11 @@ export default {
   },
   setup() {
     const isLoggedIn = ref(false);
-    const isRegistered = ref(false);
 
     const checkLoggedIn = async () => {
       try {
         const response = await axios.get(
-            "https://f542-103-28-113-244.ngrok-free.app/login"
+            "https://f542-103-28-113-244.ngrok-free.app/api/login"
         );
         isLoggedIn.value = response.data.loggedIn;
       } catch (error) {
@@ -87,20 +86,10 @@ export default {
       }
     };
 
-    const checkRegistrationStatus = async () => {
-      try {
-        const response = await axios.get(
-            "https://f542-103-28-113-244.ngrok-free.app/register"
-        );
-        isRegistered.value = response.data.registered;
-      } catch (error) {
-        console.error("Error checking registration status:", error);
-      }
-    };
+
 
     onMounted(() => {
       checkLoggedIn();
-      checkRegistrationStatus();
     });
 
     // return {

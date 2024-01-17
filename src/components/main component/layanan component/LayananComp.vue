@@ -115,14 +115,14 @@ export default {
   //   }
   // }
 
-  // mounted() {
-  //   this.eventBus.on("scrollToBottom", () => {
-  //     this.$refs.LayananComp.scrollTo({
-  //       top: this.$refs.LayananComp.scrollHeight,
-  //       behavior: "smooth",
-  //     });
-  //   });
-  // },
+  mounted() {
+    this.eventBus.on("scrollToBottom", () => {
+      this.$refs.LayananComp.scrollTo({
+        top: this.$refs.LayananComp.scrollHeight,
+        behavior: "smooth",
+      });
+    });
+  },
 };
 </script>
 

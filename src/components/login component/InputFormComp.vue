@@ -48,7 +48,7 @@ export default {
       }
 
       axios.post(
-          `https://f542-103-28-113-244.ngrok-free.app/login`,
+          `https://f542-103-28-113-244.ngrok-free.app/api/login`,
           {
             email: this.email,
             password: this.password,

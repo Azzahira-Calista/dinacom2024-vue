@@ -7,8 +7,7 @@
     <location-comp/>
     <kerajinan-comp/>
     <quote-comp/>
-    <!-- <f-a-q-comp/> -->
-    
+    <f-a-q-comp/>
     <footer-comp/>
   </div>
 </template>
@@ -23,13 +22,13 @@ import LocationComp from "@/components/main component/location component/Locatio
 import QuoteComp from "@/components/main component/quote component/QuoteComp.vue";
 import FooterComp from "@/components/global component/FooterComp.vue";
 import KerajinanComp from "@/components/main component/kerjinan component/KerajinanComp.vue";
-// import FAQComp from '@/components/main component/faq component/FaqComp.vue';
+import FAQComp from "@/components/main component/faq component/FAQComp.vue";
 
 export default {
   components: {
+    FAQComp,
     KerajinanComp,
     FooterComp,
-    // FAQComp,
     QuoteComp,
     LocationComp,
     LayananComp,

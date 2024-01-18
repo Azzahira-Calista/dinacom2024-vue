@@ -38,6 +38,7 @@ export default {
       button_text: "Daftar",
       email: "",
       password: "",
+
     };
   },
   methods: {
@@ -48,7 +49,7 @@ export default {
       }
 
       axios.post(
-          `https://f542-103-28-113-244.ngrok-free.app/login`,
+          `https://f542-103-28-113-244.ngrok-free.app/api/login`,
           {
             email: this.email,
             password: this.password,
@@ -72,8 +73,6 @@ export default {
           } else {
             alert("Login failed. Please try again later.");
           }
-        } else {
-          alert("Login failed. Please try again later.");
         }
       });
     },

@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="" data-aos="zoom-in ">
     <div class="flex">
       <button class="my-5 bg-primary p-3 rounded-xl text-white font-semibold mr-5" @click="getLocation">Lokasi saya</button>
       <button class="my-5 bg-secondary p-3 rounded-xl text-white font-semibold" @click="recycleLocation">Lokasi Re:cycle</button>
       <!--      {{ lat }}, {{ lng }}-->
     </div>
     <div id="container">
-      <div ref="mapContainer" class="h-[600px] w-full" ></div>
+      <div  ref="mapContainer" class="h-[600px] w-full -z-0" ></div>
     </div>
   </div>
 </template>
@@ -15,9 +15,13 @@
 import {onMounted, ref} from 'vue'
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import AOS from "aos";
 // import * as events from "events";
 export default {
   name: "LMap",
+  mounted() {
+    AOS.init();
+  },
   setup() {
 
     const lat = ref(0)

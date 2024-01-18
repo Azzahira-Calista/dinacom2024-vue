@@ -29,40 +29,42 @@
 import axios from "axios";
 
 export default {
-  components: {},
+
   data() {
     return {
       heading: "Masuk",
       subheading: "Belum memiliki akun?",
       register: "Masuk",
       button_text: "Daftar",
-      email: "",
-      password: "",
+      postData: {
+        email: "",
+        password: "",
+      }
 
     };
   },
+
   methods: {
-    loginUserPost() {
-      if (!this.email || !this.password) {
-        alert("Form belum lengkap. Mohon isi semua field.");
-        return;
-      }
+    async loginUserPost() {
+      try {
+        if (!this.postData.email || !this.postData.password) {
+          alert("Form belum lengkap. Mohon isi semua field.");
+          return;
+        }
 
-      axios.post(
-          `https://f542-103-28-113-244.ngrok-free.app/api/login`,
-          {
-            email: this.email,
-            password: this.password,
-          }
-      ).then((response) => {
+        const response = await axios.post('https://f542-103-28-113-244.ngrok-free.app/api/login', this.postData);
+
         console.log(response);
-        this.email = "";
-        this.password = "";
+        this.postData.email = "";
+        this.postData.password = "";
 
+        const token = response.data.data.token;
+        console.log(token);
         localStorage.setItem("token", response.data.token);
 
         this.$router.push("/");
-      }).catch((error) => {
+
+      } catch(error) {
         console.error(error);
 
         if (error.response && error.response.status) {
@@ -74,7 +76,7 @@ export default {
             alert("Login failed. Please try again later.");
           }
         }
-      });
+      }
     },
   },
 };

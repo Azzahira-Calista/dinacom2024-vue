@@ -1,252 +1,115 @@
-<!--<template>-->
-<!--    <div>-->
-<!--        <div class="flex flex-col w-[50.5rem] h-screen items-center justify-center">-->
-<!--        <h1 class="font-mont font-bold text-3xl text-secondary text-center mb-[3.125rem]">-->
-<!--          {{ heading }}-->
-<!--        </h1>-->
-<!--        <form  @submit.prevent="registerUser" action="" method="post" class="flex flex-col">-->
-<!--          &lt;!&ndash; mb-[1.875rem] border border-black&ndash;&gt;-->
-<!--          <input type="text" v-model="name" name="name" id="name" placeholder="Nama Lengkap" class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">-->
-<!--          <input type="email" v-model="email" name="email" id="email" placeholder="Email" class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">-->
-<!--          <input type="text" v-model="phone_number" name="phone_number" id="phone_number" placeholder="Phone Number" class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">-->
-<!--          <input type="text" v-model="password" name="password" id="password" placeholder="Password" class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">-->
-<!--          <input type="text" name="confirm_password" id="confirm_password" placeholder="Confirm Password" class="bg-[#F1F0F0] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">-->
-<!--        </form>-->
-<!--        <router-link to="/" class="h-[3.125rem] w-[21.5625rem] my-[3.125rem] text-center py-[0.625rem] bg-primary font-montserrat font-[w600] text-white text-2xl rounded-[0.9375rem]">-->
-<!--          {{ register }}-->
-<!--        </router-link>-->
-<!--        <div class="flex">-->
-<!--          <p class="mr-1">{{ subheading }}</p>-->
-<!--          <router-link to="/login" class="mr-7 cursor-pointer text-primary">-->
-<!--            {{ button_text }}-->
-<!--          </router-link>-->
-<!--        </div>-->
-<!--        <p class="mt-[1.5625rem] max-w-[21.5625rem] text-center">{{ description }}</p>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--</template>-->
-
-<!--<script>-->
-<!--import axios from "axios";-->
-
-<!--export default {-->
-<!--  components: {},-->
-<!--  data() {-->
-<!--    return {-->
-<!--      heading: "Registrasi",-->
-<!--      subheading: "Sudah memiliki akun?",-->
-<!--      register: "Daftar",-->
-<!--      button_text: "Masuk",-->
-<!--      description:-->
-<!--          "Dengan mendaftar, Anda setuju dengan syarat & ketentuan re:cycle dan kebijakan privasi",-->
-
-<!--      name: "",-->
-<!--      email: "",-->
-<!--      phone_number: "",-->
-<!--      password: "",-->
-<!--    };-->
-<!--  },-->
-
-<!--  setup() {-->
-<!--    const registerUser = async () => {-->
-<!--      try {-->
-<!--        const response = await axios.post(-->
-<!--            "https://0350-182-2-70-56.ngrok-free.app/api/register",-->
-<!--            {-->
-<!--              name: this.name,-->
-<!--              email: this.email,-->
-<!--              phone_number: this.phone_number,-->
-<!--              password: this.password,-->
-<!--            }-->
-<!--        );-->
-<!--        console.log("User registered successfully", response.data);-->
-<!--      } catch (e) {-->
-<!--        console.error("Error registering user", e.response.data);-->
-<!--      }-->
-<!--    };-->
-
-<!--    return {-->
-<!--      registerUser,-->
-<!--    };-->
-<!--  },-->
-<!--};-->
-<!--</script>-->
-
 <template>
   <div class="justify-center">
     <div class="flex flex-col w-[45.5rem] p-5 items-center justify-center">
       <h1 class="font-mont font-bold text-3xl text-secondary text-center my-[2rem]">
         {{ heading }}
       </h1>
-      <Splide :options="options">
-        <SplideSlide class="flex flex-col w-[43.5rem] items-center justify-center">
-          <form @submit.prevent="registerUserPost" action="" method="post" class="flex flex-col">
-            <input
-                type="text"
-                v-model="name"
-                placeholder="Nama Lengkap"
-                class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
-            />
-            <input
-                type="email"
-                v-model="email"
-                placeholder="Email"
-                class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
-            />
-            <input
-                type="number"
-                v-model="phone_number"
-                placeholder="Nomor Ponsel"
-                class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
-            />
-            <input
-                type="password"
-                v-model="password"
-                placeholder="Sandi"
-                class="bg-[#F1F0F0]  h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
-            />
-            <p class="text-sm  mb-[1rem] font-mont text-gray-500">* Sandi minimal 8 karakter</p>
+      <form @submit.prevent="registerUserPost" action="" method="post" class="flex flex-col">
+        <input
+            type="text"
+            v-model="postData.name"
+            placeholder="Nama Lengkap"
+            class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
+        />
+        <input
+            type="email"
+            v-model="postData.email"
+            placeholder="Email"
+            class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
+        />
+        <input
+            type="number"
+            v-model="postData.phone_number"
+            placeholder="Nomor Ponsel"
+            class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
+        />
+        <input
+            type="password"
+            v-model="postData.password"
+            placeholder="Sandi"
+            class="bg-[#F1F0F0]  h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
+        />
+        <p class="text-sm  mb-[1rem] font-mont text-gray-500">* Sandi minimal 8 karakter</p>
+        <input
+            type="password"
+            placeholder="Konfirmasi Sandi"
+            class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
+        />
+        <button type="submit" class="font-mont font-semibold h-[3.125rem] w-[21.5625rem] mb-[3.125rem] text-center py-[0.625rem] bg-primary text-white rounded-2xl">
+          Daftar
+        </button>
+      </form>
+      <div class="flex">
+        <p class="mr-1">{{ subheading }}</p>
+        <router-link to="/login" class="mr-7 cursor-pointer text-primary">
+          {{ button_text }}
+        </router-link>
 
-            <input
-                type="password"
-                v-model="confirm_password"
-                placeholder="Konfirmasi Sandi"
-                class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
-            />
-            <button type="button" class="font-mont font-semibold h-[3.125rem] w-[21.5625rem] mb-[3.125rem] text-center py-[0.625rem] bg-primary text-white rounded-2xl">
-              {{ next }}
-            </button>
-          </form>
-
-          <div class="flex">
-            <p class="mr-1">{{ subheading }}</p>
-            <router-link to="/login" class="mr-7 cursor-pointer text-primary">
-              {{ button_text }}
-            </router-link>
-          </div>
-        </SplideSlide>
-        <SplideSlide class="flex flex-col w-[43.5rem] items-center justify-center">
-          <form @submit.prevent="registerUserPost" action="" method="post" class="flex flex-col">
-            <input type="file" accept="image/*" ref="file" placeholder="Input Image" class="h-10 w-10">
-<!--            <img :src="src" alt="Avatar" class="h-28 w-28 rounded-full object-cover">-->
-<!--            <button @click="browse()">Browse</button>-->
-            <button type="submit" class="font-mont font-semibold h-[3.125rem] w-[21.5625rem] mt-[3.125rem] text-center py-[0.625rem] bg-primary text-white rounded-2xl">
-              {{ register }}
-            </button>
-          </form>
-        </SplideSlide>
-      </Splide>
-<!--      <router-link v-if="isRegistered" to="/" class="text-primary">-->
-<!--        Go to Main Page-->
-<!--      </router-link>-->
-
-<!--      <router-link-->
-<!--          to="/"-->
-<!--          class="h-[3.125rem] w-[21.5625rem] my-[3.125rem] text-center py-[0.625rem] bg-primary font-montserrat font-[w600] text-white text-2xl rounded-[0.9375rem]"-->
-<!--      >-->
-<!--        {{ register }}-->
-<!--      </router-link>-->
-      <div></div>
+      </div>
       <p class="mt-[1.5625rem] max-w-[21.5625rem] text-center">{{ description }}</p>
     </div>
   </div>
 </template>
-
 <script>
 import axios from "axios";
-import {Splide, SplideSlide} from "@splidejs/vue-splide";
-import "@splidejs/splide/dist/css/splide.min.css";
 
 export default {
-  components: {Splide, SplideSlide},
-  data() {
+  data(){
     return {
       heading: "Registrasi",
-      subheading: "Sudah memiliki akun?",
+      subheading: "sudeh memiliki akun?",
       next: "Lanjut",
       register: "Daftar",
       button_text: "Masuk",
       description: "Dengan mendaftar, Anda setuju dengan syarat & ketentuan re:cycle dan kebijakan privasi",
-      src: null,
 
-      // isRegistered: false,
-      name: "",
-      email: "",
-      phone_number: "",
-      password: "",
-    };
+      postData: {
+        name: "",
+        email: "",
+        phone_number: "",
+        password: "",
+      },
+    }
   },
-  // props: {
-  //   value: File
-  // },
   methods: {
     registerUserPost(){
-      if (!this.name || !this.email || !this.phone_number || !this.password || !this.confirm_password) {
-        alert("Form belum lengkap. Mohon isi semua field.");
-        return;
-      }
+      console.log('Data to be sent:', {
+        name: this.postData.name,
+        email: this.postData.email,
+        phone_number: this.postData.phone_number,
+        password: this.postData.password,
+      });
 
-      if (this.password !== this.confirm_password) {
-        alert("Password and Confirm Password must match");
-        return;
-      }
-      axios.post(
-          `https://f542-103-28-113-244.ngrok-free.app/zzz/register`,
-          {
-            name: this.name,
-            email: this.email,
-            phone_number: this.phone_number,
-            password: this.password,
-          }
-      ).then((response) => {
-        console.log(response);
-        this.name = "";
-        this.email = "";
-        this.phone_number = "";
-        this.password = "";
-        this.confirm_password = "";
+     if (!this.postData.name || !this.postData.email || !this.postData.phone_number || !this.postData.password) {
+       alert("Form belum lengkap. Mohon isi semua field.");
+       return;
+     }
 
-        // this.isRegistered = true;
+     axios.post(
+         'https://f542-103-28-113-244.ngrok-free.app/api/register',
+         this.postData
+     ).then((response) => {
+       console.log(response);
+        this.postData.name = "";
+        this.postData.email = "";
+        this.postData.phone_number = "";
+        this.postData.password = "";
+
+        localStorage.setItem("token", response.data.token);
 
         this.$router.push("/");
+     }).catch((error) => {
+       console.error(error);
 
-
-      }).catch((error) => {
-        console.error(error);
-
-        if (error.response && error.response.status) {
-          if (error.response.status === 500) {
-            alert("Email is already registered. Please use a different email.");
-          } else {
-            alert("Registration failed. Please try again later.");
-          }
-        }
-      });
-    },
-    // browse(){
-    //   this.$refs.file.click();
-    // },
-    // change(e){
-    //   this.$emit('input', e.target.file[0]);
-    //
-    //   let reader = new FileReader();
-    //   reader.readAsDataURL(e.target.file[0]);
-    //   reader.onload = (e) => {
-    //     this.src = e.target.result;
-    //   }
-    // }
-  },
-  setup() {
-    const options = {
-      type: 'slide',
-      pagination: true,
-      arrows: false,
-      drag: true
-    };
-
-    return {
-      options: options,
-    };
-  },
-};
+       if (error.response && error.response.status) {
+         if (error.response.status === 500) {
+           alert("Email is already registered. Please use a different email.");
+         } else {
+           alert("Registration failed. Please try again later.");
+         }
+       }
+     });
+    }
+  }
+}
 </script>

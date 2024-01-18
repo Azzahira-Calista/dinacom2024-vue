@@ -8,6 +8,7 @@
     <kerajinan-comp/>
     <quote-comp/>
     <!-- <f-a-q-comp/> -->
+    
     <footer-comp/>
   </div>
 </template>

@@ -1,11 +1,37 @@
 <script>
-export default {
-  name: "HistoryUser"
-}
+// import axios from "axios";
+
+// export default {
+
+  // name: "HistoryUser",
+  // data() {
+  //   return {
+  //     title: '',
+  //     items: [],
+  //     error: ''
+  //   };
+  // },
+  // async mounted(){
+  //   let data = axios.get('https://f542-103-28-113-244.ngrok-free.app/api/pick-up');
+  //   console.log(data);
+    //     .then(response => {
+    //       this.detail_location = response.data.detail_location;
+    //       this.weight = response.data.weight;
+    //       this.type = response.data.type;
+    //       this.description = response.data.description;
+    //       this.image = response.data.image
+    //       // Process the API data and update the Vue component's data properties
+    //     })
+    // .catch(error => {
+    //   this.error = error.message;
+    //   // Handle any errors that occurred during the API request
+    // });
+  // }
+// }
 </script>
 
 <template>
-  <div class="flex-col flex bg-bgColor">
+  <div class="flex-col flex bg-bgColor px-9">
     <div class="font-mont text-2xl">history</div>
     <div class="mt-16 bg-white rounded-[1rem] p-[20px]">
       <table class="font-mont table-fixed w-full ">
@@ -27,105 +53,105 @@ export default {
         </thead>
         <tbody>
 
-        <tr>
-          <td>1</td>
-          <td>03/01/2024</td>
-          <td>Tangerang</td>
-          <td>700gr</td>
-          <td>Plastik sampah</td>
-          <td>berwarna merah, kuning, hijau,biru</td>
+<!--        <tr>-->
+<!--          <td>1</td>-->
+<!--          <td>03/01/2024</td>-->
+<!--          <td>{{ item.detail_location }}</td>-->
+<!--          <td>{{ item.weight }} g</td>-->
+<!--          <td>{{ item.type }}</td>-->
+<!--          <td>{{ item.description }}</td>-->
 
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>03/01/2024</td>
-          <td>Tangerang</td>
-          <td>700gr</td>
-          <td>Plastik sampah</td>
-          <td>berwarna merah, kuning, hijau,biru</td>
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>1</td>-->
+<!--          <td>03/01/2024</td>-->
+<!--          <td>Tangerang</td>-->
+<!--          <td>700gr</td>-->
+<!--          <td>Plastik sampah</td>-->
+<!--          <td>berwarna merah, kuning, hijau,biru</td>-->
 
-        </tr><tr>
-          <td>1</td>
-          <td>03/01/2024</td>
-          <td>Tangerang</td>
-          <td>700gr</td>
-          <td>Plastik sampah</td>
-          <td>berwarna merah, kuning, hijau,biru</td>
+<!--        </tr><tr>-->
+<!--          <td>1</td>-->
+<!--          <td>03/01/2024</td>-->
+<!--          <td>Tangerang</td>-->
+<!--          <td>700gr</td>-->
+<!--          <td>Plastik sampah</td>-->
+<!--          <td>berwarna merah, kuning, hijau,biru</td>-->
 
-        </tr><tr>
-          <td>1</td>
-          <td>03/01/2024</td>
-          <td>Tangerang</td>
-          <td>700gr</td>
-          <td>Plastik sampah</td>
-          <td>berwarna merah, kuning, hijau,biru</td>
+<!--        </tr><tr>-->
+<!--          <td>1</td>-->
+<!--          <td>03/01/2024</td>-->
+<!--          <td>Tangerang</td>-->
+<!--          <td>700gr</td>-->
+<!--          <td>Plastik sampah</td>-->
+<!--          <td>berwarna merah, kuning, hijau,biru</td>-->
 
-        </tr><tr>
-          <td>1</td>
-          <td>03/01/2024</td>
-          <td>Tangerang</td>
-          <td>700gr</td>
-          <td>Plastik sampah</td>
-          <td>berwarna merah, kuning, hijau,biru</td>
+<!--        </tr><tr>-->
+<!--          <td>1</td>-->
+<!--          <td>03/01/2024</td>-->
+<!--          <td>Tangerang</td>-->
+<!--          <td>700gr</td>-->
+<!--          <td>Plastik sampah</td>-->
+<!--          <td>berwarna merah, kuning, hijau,biru</td>-->
 
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>03/01/2024</td>
-          <td>Tangerang</td>
-          <td>700gr</td>
-          <td>Plastik sampah</td>
-          <td>berwarna merah, kuning, hijau,biru</td>
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>1</td>-->
+<!--          <td>03/01/2024</td>-->
+<!--          <td>Tangerang</td>-->
+<!--          <td>700gr</td>-->
+<!--          <td>Plastik sampah</td>-->
+<!--          <td>berwarna merah, kuning, hijau,biru</td>-->
 
-        </tr><tr>
-          <td>1</td>
-          <td>03/01/2024</td>
-          <td>Tangerang</td>
-          <td>700gr</td>
-          <td>Plastik sampah</td>
-          <td>berwarna merah, kuning, hijau,biru</td>
+<!--        </tr><tr>-->
+<!--          <td>1</td>-->
+<!--          <td>03/01/2024</td>-->
+<!--          <td>Tangerang</td>-->
+<!--          <td>700gr</td>-->
+<!--          <td>Plastik sampah</td>-->
+<!--          <td>berwarna merah, kuning, hijau,biru</td>-->
 
-        </tr><tr>
-          <td>1</td>
-          <td>03/01/2024</td>
-          <td>Tangerang</td>
-          <td>700gr</td>
-          <td>Plastik sampah</td>
-          <td>berwarna merah, kuning, hijau,biru</td>
+<!--        </tr><tr>-->
+<!--          <td>1</td>-->
+<!--          <td>03/01/2024</td>-->
+<!--          <td>Tangerang</td>-->
+<!--          <td>700gr</td>-->
+<!--          <td>Plastik sampah</td>-->
+<!--          <td>berwarna merah, kuning, hijau,biru</td>-->
 
-        </tr><tr>
-          <td>1</td>
-          <td>03/01/2024</td>
-          <td>Tangerang</td>
-          <td>700gr</td>
-          <td>Plastik sampah</td>
-          <td>berwarna merah, kuning, hijau,biru</td>
+<!--        </tr><tr>-->
+<!--          <td>1</td>-->
+<!--          <td>03/01/2024</td>-->
+<!--          <td>Tangerang</td>-->
+<!--          <td>700gr</td>-->
+<!--          <td>Plastik sampah</td>-->
+<!--          <td>berwarna merah, kuning, hijau,biru</td>-->
 
-        </tr><tr>
-          <td>1</td>
-          <td>03/01/2024</td>
-          <td>Tangerang</td>
-          <td>700gr</td>
-          <td>Plastik sampah</td>
-          <td>berwarna merah, kuning, hijau,biru</td>
+<!--        </tr><tr>-->
+<!--          <td>1</td>-->
+<!--          <td>03/01/2024</td>-->
+<!--          <td>Tangerang</td>-->
+<!--          <td>700gr</td>-->
+<!--          <td>Plastik sampah</td>-->
+<!--          <td>berwarna merah, kuning, hijau,biru</td>-->
 
-        </tr><tr>
-          <td>1</td>
-          <td>03/01/2024</td>
-          <td>Tangerang</td>
-          <td>700gr</td>
-          <td>Plastik sampah</td>
-          <td>berwarna merah, kuning, hijau,biru</td>
+<!--        </tr><tr>-->
+<!--          <td>1</td>-->
+<!--          <td>03/01/2024</td>-->
+<!--          <td>Tangerang</td>-->
+<!--          <td>700gr</td>-->
+<!--          <td>Plastik sampah</td>-->
+<!--          <td>berwarna merah, kuning, hijau,biru</td>-->
 
-        </tr><tr>
-          <td>1</td>
-          <td>03/01/2024</td>
-          <td>Tangerang</td>
-          <td>700gr</td>
-          <td>Plastik sampah</td>
-          <td>berwarna merah, kuning, hijau,biru</td>
+<!--        </tr><tr>-->
+<!--          <td>1</td>-->
+<!--          <td>03/01/2024</td>-->
+<!--          <td>Tangerang</td>-->
+<!--          <td>700gr</td>-->
+<!--          <td>Plastik sampah</td>-->
+<!--          <td>berwarna merah, kuning, hijau,biru</td>-->
 
-        </tr>
+<!--        </tr>-->
 
         </tbody>
       </table>

@@ -54,7 +54,7 @@
 import axios from "axios";
 
 export default {
-  data(){
+  data() {
     return {
       heading: "Registrasi",
       subheading: "sudeh memiliki akun?",
@@ -72,7 +72,7 @@ export default {
     }
   },
   methods: {
-    registerUserPost(){
+    registerUserPost() {
       console.log('Data to be sent:', {
         name: this.postData.name,
         email: this.postData.email,
@@ -80,16 +80,16 @@ export default {
         password: this.postData.password,
       });
 
-     if (!this.postData.name || !this.postData.email || !this.postData.phone_number || !this.postData.password) {
-       alert("Form belum lengkap. Mohon isi semua field.");
-       return;
-     }
+      if (!this.postData.name || !this.postData.email || !this.postData.phone_number || !this.postData.password) {
+        alert("Form belum lengkap. Mohon isi semua field.");
+        return;
+      }
 
-     axios.post(
-         'https://f542-103-28-113-244.ngrok-free.app/api/register',
-         this.postData
-     ).then((response) => {
-       console.log(response);
+      axios.post(
+          'https://f542-103-28-113-244.ngrok-free.app/api/register',
+          this.postData
+      ).then((response) => {
+        console.log(response);
         this.postData.name = "";
         this.postData.email = "";
         this.postData.phone_number = "";
@@ -98,17 +98,17 @@ export default {
         localStorage.setItem("token", response.data.token);
 
         this.$router.push("/");
-     }).catch((error) => {
-       console.error(error);
+      }).catch((error) => {
+        console.error(error);
 
-       if (error.response && error.response.status) {
-         if (error.response.status === 500) {
-           alert("Email is already registered. Please use a different email.");
-         } else {
-           alert("Registration failed. Please try again later.");
-         }
-       }
-     });
+        if (error.response && error.response.status) {
+          if (error.response.status === 500) {
+            alert("Email is already registered. Please use a different email.");
+          } else {
+            alert("Registration failed. Please try again later.");
+          }
+        }
+      });
     }
   }
 }

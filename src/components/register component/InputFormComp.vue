@@ -18,7 +18,7 @@
             class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
         />
         <input
-            type="number"
+            type="text"
             v-model="postData.phone_number"
             placeholder="Nomor Ponsel"
             class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
@@ -80,17 +80,19 @@ export default {
           return;
         }
 
-        const response = await axios.post('https://f542-103-28-113-244.ngrok-free.app/api/register', this.postData);
-
+        const response = await axios.post('http://127.0.0.1:8000/api/register', this.postData);
         console.log(response);
+
+        const token = response.data.data.token;
+        console.log(token);
+        localStorage.setItem("token", token);
+
         this.postData.name = "";
         this.postData.email = "";
         this.postData.phone_number = "";
         this.postData.password = "";
 
-        const token = response.data.data.token;
-        console.log(token);
-        localStorage.setItem("token", token);
+
 
         this.$router.push("/");
       } catch (error) {

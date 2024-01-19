@@ -54,7 +54,8 @@
 import axios from "axios";
 
 export default {
-  data() {
+
+  data(){
     return {
       heading: "Registrasi",
       subheading: "sudeh memiliki akun?",
@@ -72,33 +73,27 @@ export default {
     }
   },
   methods: {
-    registerUserPost() {
-      console.log('Data to be sent:', {
-        name: this.postData.name,
-        email: this.postData.email,
-        phone_number: this.postData.phone_number,
-        password: this.postData.password,
-      });
+    async registerUserPost() {
+      try {
+        if (!this.postData.name || !this.postData.email || !this.postData.phone_number || !this.postData.password) {
+          alert("Form belum lengkap. Mohon isi semua field.");
+          return;
+        }
 
-      if (!this.postData.name || !this.postData.email || !this.postData.phone_number || !this.postData.password) {
-        alert("Form belum lengkap. Mohon isi semua field.");
-        return;
-      }
+        const response = await axios.post('https://f542-103-28-113-244.ngrok-free.app/api/register', this.postData);
 
-      axios.post(
-          'https://f542-103-28-113-244.ngrok-free.app/api/register',
-          this.postData
-      ).then((response) => {
         console.log(response);
         this.postData.name = "";
         this.postData.email = "";
         this.postData.phone_number = "";
         this.postData.password = "";
 
-        localStorage.setItem("token", response.data.token);
+        const token = response.data.data.token;
+        console.log(token);
+        localStorage.setItem("token", token);
 
         this.$router.push("/");
-      }).catch((error) => {
+      } catch (error) {
         console.error(error);
 
         if (error.response && error.response.status) {
@@ -108,8 +103,8 @@ export default {
             alert("Registration failed. Please try again later.");
           }
         }
-      });
-    }
+      }
+    },
   }
 }
 </script>

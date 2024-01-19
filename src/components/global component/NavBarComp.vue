@@ -42,9 +42,9 @@
             <div v-else class="relative">
               <button @click="show = !show" class="flex items-center w-[2.5rem] h-[2.5rem] bg-secondary rounded-full cursor-pointer"></button>
               <div v-show="show" class="absolute right-0 py-2 mt-2 bg-bgColor rounded-md shadow-xl w-32 flex flex-col font-mont text-[#303030]">
-                <router-link to="/profile" class=" px-2 hover:bg-secondaryBgColor py-1">Profile</router-link>
-                <router-link to="" class=" px-2 hover:bg-secondaryBgColor py-1">Tukar point</router-link>
-                <router-link to="" class=" px-2 text-red-500 hover:text-white hover:bg-red-300 py-1">Logout</router-link>
+                <router-link to="/profile" class="align-middle px-2 hover:bg-secondaryBgColor py-1">Profile</router-link>
+                <router-link to="" class="align-middle px-2 hover:bg-secondaryBgColor py-1">Tukar point</router-link>
+                <button @click="confirmLogout" class=" px-2 text-red-500 hover:text-white hover:bg-red-300 py-1">Logout</button>
               </div>
             </div>
 
@@ -57,30 +57,30 @@
 
 <script>
 import { ref, onMounted } from "vue";
-// import axios from "axios";
+import { useRouter } from "vue-router";
 
 export default {
-  data() {
-    return {
-      isi: "Tentang kami",
-      logo: require("@/assets/logo/logo.png"),
-      show: false,
-      // hasToken: false,
-      // loggedIn: false,
-    };
-  },
   inject: ["eventBus"],
-  methods: {
-    scrollToBottom() {
-      this.$refs.LayananComp.scrollToBottom({
-        top: this.$refs.LayananComp.scrollHeight,
-        behavior: "smooth",
-      });
-    },
-  },
-
   setup() {
+    const isi = ref("Tentang kami");
+    const logo = require("@/assets/logo/logo.png");
+    const show = ref(false);
+
+    const router = useRouter();
     const hasToken = ref(false);
+
+    const logout = () => {
+      localStorage.removeItem("token");
+      hasToken.value = false;
+      router.push("/");
+    };
+
+    const confirmLogout = () => {
+      const isConfirmed = window.confirm("Are you sure you want to log out?");
+      if (isConfirmed) {
+        logout();
+      }
+    };
 
     onMounted(async () => {
       try {
@@ -91,8 +91,21 @@ export default {
       }
     });
 
+    const scrollToBottom = () => {
+      this.$refs.LayananComp.scrollToBottom({
+        top: this.$refs.LayananComp.scrollHeight,
+        behavior: "smooth",
+      });
+    };
+
     return {
+      isi,
+      logo,
+      show,
       hasToken,
+      logout,
+      confirmLogout,
+      scrollToBottom,
     };
   },
 };

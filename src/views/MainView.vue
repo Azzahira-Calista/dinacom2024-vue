@@ -7,8 +7,8 @@
     <location-comp/>
     <kerajinan-comp/>
     <quote-comp/>
-    <!-- <f-a-q-comp/> -->
-    <popup-points/>
+    <f-a-q-comp/>
+    <!-- <popup-points-success/> -->
     <footer-comp/>
   </div>
 </template>
@@ -23,9 +23,8 @@ import LocationComp from "@/components/main component/location component/Locatio
 import KerajinanComp from "@/components/main component/kerjinan component/KerajinanComp.vue";
 import QuoteComp from "@/components/main component/quote component/QuoteComp.vue";
 import FooterComp from "@/components/global component/FooterComp.vue";
-import PopupPoints from "@/components/global component/PopupPoints.vue";
-// import FAQComp from '@/components/main component/faq component/FaqComp.vue';
-
+// import PopupPointsSuccess from "@/components/global component/SuccessTukarPoint.vue";
+import FAQComp from "@/components/main component/faq component/FAQComp.vue";
 export default {
   components: {
     FAQComp,
@@ -37,7 +36,7 @@ export default {
     ChartComp,
     NavBarComp,
     HeroComp,
-    PopupPoints
+    // PopupPointsSuccess
   },
 };
 </script>

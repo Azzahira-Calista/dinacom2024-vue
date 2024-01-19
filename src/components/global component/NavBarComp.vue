@@ -43,11 +43,11 @@
               <button @click="show = !show" class="flex items-center w-[2.5rem] h-[2.5rem] bg-secondary rounded-full cursor-pointer"></button>
               <div v-show="show" class="absolute right-0 py-2 mt-2 bg-bgColor rounded-md shadow-xl w-32 flex flex-col font-mont text-[#303030]">
                 <router-link to="/profile" class="align-middle px-2 hover:bg-secondaryBgColor py-1">Profile</router-link>
-                <router-link to="" class="align-middle px-2 hover:bg-secondaryBgColor py-1">Tukar point</router-link>
+                <router-link to="" @click="showPopup = true" class="align-middle px-2 hover:bg-secondaryBgColor py-1">Tukar point</router-link>
+                <PopupPointsVue :showPopup="showPopup" @closePopup="showPopup = false" />
                 <button @click="confirmLogout" class=" px-2 text-red-500 hover:text-white hover:bg-red-300 py-1">Logout</button>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -58,10 +58,13 @@
 <script>
 import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
+import PopupPointsVue from './PopupPoints.vue';
+
 
 export default {
   inject: ["eventBus"],
   setup() {
+    
     const isi = ref("Tentang kami");
     const logo = require("@/assets/logo/logo.png");
     const show = ref(false);
@@ -99,6 +102,7 @@ export default {
     };
 
     return {
+      PopupPointsVue,
       isi,
       logo,
       show,
@@ -108,6 +112,16 @@ export default {
       scrollToBottom,
     };
   },
+
+  data() {
+    return {
+      showPopup: false,
+    };
+  },
+
+  components: {
+    PopupPointsVue
+  }
 };
 </script>
 

@@ -11,10 +11,12 @@
         :src="img[1]"
         alt="Background Image"
     />
-    <div class=" font-mont font-bold text-[32px] text-primary">
-      FAQ
-    </div>
-    <div class=" text-start font-mont  flex justify-center">
+    <div data-aos="fade-up"
+         data-aos-duration="3000">
+      <div class=" font-mont font-bold text-[32px] text-primary">
+        FAQ
+      </div>
+      <div class=" text-start font-mont  flex justify-center">
 
       <div class="mt-5">
         <div class="relative w-[59rem] bg-white rounded-[15px] m-[2rem]">
@@ -22,8 +24,8 @@
           <label for="input1" class="ml-[3rem] text-[20px] tracking mx-[2rem] h-[3.5rem] flex items-center">Bagaimana saya dapat melacak kontribusi saya di Recycle Platform?</label>
           <div class="mx-2 absolute top-[1rem] rotate-0 peer-checked:rotate-180 duration-200">
             <img
-              :src="img[2]"
-              alt="Down"
+                :src="img[2]"
+                alt="Down"
             />
           </div>
           <div class=" max-h-0 overflow-hidden peer-checked:max-h-full">
@@ -38,8 +40,8 @@
           <label for="input2" class="ml-[3rem] text-[20px] tracking mx-[2rem] h-[3.5rem] flex items-center">Apa yang terjadi dengan sampah yang saya kumpulkan?</label>
           <div class="mx-2 absolute top-[1rem] rotate-0 peer-checked:rotate-180 duration-200">
             <img
-              :src="img[2]"
-              alt="Down"
+                :src="img[2]"
+                alt="Down"
             />
           </div>
           <div class="max-h-0 overflow-hidden peer-checked:max-h-full">
@@ -54,8 +56,8 @@
           <label for="input3" class="ml-[3rem] text-[20px] tracking mx-[2rem] h-[3.5rem] flex items-center">Apakah saya harus membayar untuk menggunakan Recycle Platform?</label>
           <div class="mx-2 absolute top-[1rem] rotate-0 peer-checked:rotate-180 duration-200">
             <img
-              :src="img[2]"
-              alt="Down"
+                :src="img[2]"
+                alt="Down"
             />
           </div>
           <div class="max-h-0 overflow-hidden peer-checked:max-h-full">
@@ -70,8 +72,8 @@
           <label for="input4" class="ml-[3rem] text-[20px] tracking mx-[2rem] h-[3.5rem] flex items-center">Apakah Recycle Platform tersedia di seluruh wilayah?</label>
           <div class="mx-2 absolute top-[1rem] rotate-0 peer-checked:rotate-180 duration-200">
             <img
-              :src="img[2]"
-              alt="Down"
+                :src="img[2]"
+                alt="Down"
             />
           </div>
           <div class="max-h-0 overflow-hidden peer-checked:max-h-full">
@@ -86,8 +88,8 @@
           <label for="input5" class="ml-[3rem] text-[20px] tracking mx-[2rem] h-[3.5rem] flex items-center">Bisakah saya mengumpulkan berbagai jenis sampah di Recycle Platform?</label>
           <div class="mx-2 absolute top-[1rem] rotate-0 peer-checked:rotate-180 duration-200">
             <img
-              :src="img[2]"
-              alt="Down"
+                :src="img[2]"
+                alt="Down"
             />
           </div>
           <div class="max-h-0 overflow-hidden peer-checked:max-h-full">
@@ -96,6 +98,8 @@
             </p>
           </div>
         </div>
+    </div>
+
 
       </div>
     </div>

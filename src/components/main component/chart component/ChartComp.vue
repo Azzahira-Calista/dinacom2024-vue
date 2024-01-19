@@ -16,16 +16,18 @@
         alt="Background Image"
     />
 
-
-    <div class="font-bold font-mont text-[2rem] text-primary ">{{ title }}</div>
-    <div class="max-w-[30rem] w-full ">
+    <div class="flex flex-col align-center items-center justify-center" data-aos="fade-down">
+      <div class="mx-auto font-bold font-mont text-[2rem] text-primary ">{{ title }}</div>
+      <div class="max-w-[30rem] w-full ">
         <canvas
             ref="chart"
             class="chart-canvas"
             width="450"
             height="450"
         ></canvas>
+      </div>
     </div>
+
   </div>
 
 
@@ -33,6 +35,7 @@
 
 <script>
 import Chart from "chart.js/auto";
+import AOS from "aos";
 
 export default {
   nama: "ChartComp",
@@ -47,6 +50,7 @@ export default {
   },
   mounted() {
     this.renderChart();
+    AOS.init();
   },
   methods: {
     renderChart() {

@@ -28,9 +28,9 @@ import PopupPoints from "@/components/global component/PopupPoints.vue";
 
 export default {
   components: {
+    FAQComp,
     KerajinanComp,
     FooterComp,
-    // FAQComp,
     QuoteComp,
     LocationComp,
     LayananComp,

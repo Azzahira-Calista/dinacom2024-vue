@@ -1,7 +1,12 @@
 <script>
+import AOS from "aos";
+
 export default {
   name: "AboutCompGoals",
   components: {},
+  mounted() {
+    AOS.init();
+  },
   data() {
     return {
       title: "Goals Kami",
@@ -31,10 +36,10 @@ export default {
     <div class="h-[40rem] items-center justify-center font-mont font-bold mt-12 mb-20">
       <h2 class="text-center mt-3.5 mb-5 text-[2rem]">{{ title }}</h2>
       <div class="flex space-x-5 h-[34rem] justify-center">
-        <div class="flex flex-col justify-center items-center w-[43rem]">
+        <div data-aos="fade-left" class="flex flex-col justify-center items-center w-[43rem]">
           <img :src="image" class="w-full h-full">
         </div>
-        <div class="flex flex-col items-center w-[45rem] py-16 justify-center" >
+        <div data-aos="fade-right" data-aos-duration="3000" class="flex flex-col items-center w-[45rem] py-16 justify-center" >
           <div v-for="(item, index) in items" :key="index">
             <div class="flex justify-start relative items-center w-[45rem] my-3.5">
               <div class="absolute flex ms-2 w-12 h-12 items-center justify-center bg-primary rounded-full">

@@ -1,8 +1,12 @@
 <script>
 import videoCard from "@/components/main component/kerjinan component/VideoCard.vue";
+import AOS from "aos";
 export default {
   name: "KerajinanComp",
 
+  mounted() {
+    AOS.init();
+  },
   data(){
     return {
       img:
@@ -31,11 +35,14 @@ export default {
         :src="img"
         alt="Background Image"
     />
-    <div class="flex flex-col  justify-center items-center relative ">
-      <div class="font-bold font-mont text-[2rem] text-secondary">{{ title }}</div>
-      <div class=" text-base font-mont pb-[3.12rem] pt-2 text-center text-[#303030]">{{ subTitle }}</div>
+    <div data-aos="fade-left">
+      <div class="flex flex-col  justify-center items-center relative ">
+        <div class="font-bold font-mont text-[2rem] text-secondary">{{ title }}</div>
+        <div class=" text-base font-mont pb-[3.12rem] pt-2 text-center text-[#303030]">{{ subTitle }}</div>
+      </div>
+      <video-card/>
     </div>
-    <video-card/>
+
   </div>
 </template>
 

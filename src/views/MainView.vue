@@ -9,6 +9,7 @@
     <quote-comp/>
     <f-a-q-comp/>
     <footer-comp/>
+    <PickUpFormComp/>
   </div>
 </template>
 
@@ -23,6 +24,7 @@ import QuoteComp from "@/components/main component/quote component/QuoteComp.vue
 import FooterComp from "@/components/global component/FooterComp.vue";
 import KerajinanComp from "@/components/main component/kerjinan component/KerajinanComp.vue";
 import FAQComp from "@/components/main component/faq component/FAQComp.vue";
+import PickUpFormComp from "@/components/global component/PickUpComp/PickUpFormComp.vue";
 
 export default {
   components: {
@@ -34,8 +36,8 @@ export default {
     LayananComp,
     ChartComp,
     NavBarComp,
-    HeroComp
-
+    HeroComp,
+    PickUpFormComp
   },
 };
 </script>

@@ -1,38 +1,45 @@
 <script>
-// import axios from "axios";
+import axios from "axios";
 
-// export default {
+export default{
+  components: {},
+  data() {
+    // const router = useRouter()
+    return {
+      heading: "Detail Pick Up",
+      button_text: "Pick Up",
+      back: "Batal",
 
-  // name: "HistoryUser",
-  // data() {
-  //   return {
-  //     title: '',
-  //     items: [],
-  //     error: ''
-  //   };
-  // },
-  // async mounted(){
-  //   let data = axios.get('https://f542-103-28-113-244.ngrok-free.app/api/pick-up');
-  //   console.log(data);
-    //     .then(response => {
-    //       this.detail_location = response.data.detail_location;
-    //       this.weight = response.data.weight;
-    //       this.type = response.data.type;
-    //       this.description = response.data.description;
-    //       this.image = response.data.image
-    //       // Process the API data and update the Vue component's data properties
-    //     })
-    // .catch(error => {
-    //   this.error = error.message;
-    //   // Handle any errors that occurred during the API request
-    // });
+      // dataPickup: {
+      //   detail_location: "",
+      //   weight: "",
+      //   type: "",
+      //   description: ""
+      // }
+    };
+  },
+  // methods: {
+  //
+  //   async pickup(){
+  //     try {
+  //       const response = await axios.get("http://127.0.0.1:8000/api/pick-up/", this.dataPickup);
+  //
+  //       console.log(response);
+  //       this.dataPickup.detail_location = "";
+  //       this.dataPickup.weight = "";
+  //       this.dataPickup.type = "";
+  //       this.dataPickup.description = "";
+  //     }catch (error) {
+  //       console.error(error)
+  //     }
+  //   }
   // }
-// }
+}
 </script>
 
 <template>
   <div class="flex-col flex bg-bgColor px-9">
-    <div class="font-mont text-2xl">history</div>
+    <div class="font-mont text-2xl">{{ heading }}</div>
     <div class="mt-16 bg-white rounded-[1rem] p-[20px]">
       <table class="font-mont table-fixed w-full ">
         <thead>
@@ -53,32 +60,33 @@
         </thead>
         <tbody>
 
-<!--        <tr>-->
+<!--        <tr v-for="data in dataPickup" :key="data">-->
 <!--          <td>1</td>-->
-<!--          <td>03/01/2024</td>-->
-<!--          <td>{{ item.detail_location }}</td>-->
-<!--          <td>{{ item.weight }} g</td>-->
-<!--          <td>{{ item.type }}</td>-->
-<!--          <td>{{ item.description }}</td>-->
+<!--          <td>now</td>-->
+<!--          <td>{{ dataPickup.detail_location }}</td>-->
+<!--          <td>{{ data.weight }} g</td>-->
+<!--          <td>{{ dataPickup.type }}</td>-->
+<!--          <td>{{ data.description }}</td>-->
 
 <!--        </tr>-->
+        <tr>
+          <td>1</td>
+          <td>03/01/2024</td>
+          <td>Tangerang</td>
+          <td>700gr</td>
+          <td>Plastik sampah</td>
+          <td>berwarna merah, kuning, hijau,biru</td>
+
+        </tr><tr>
+          <td>2</td>
+          <td>20/01/2024</td>
+          <td>Jakarta</td>
+          <td>700gr</td>
+          <td>kaleng</td>
+          <td>berwarna merah, kuning, hijau,biru</td>
+
+        </tr>
 <!--        <tr>-->
-<!--          <td>1</td>-->
-<!--          <td>03/01/2024</td>-->
-<!--          <td>Tangerang</td>-->
-<!--          <td>700gr</td>-->
-<!--          <td>Plastik sampah</td>-->
-<!--          <td>berwarna merah, kuning, hijau,biru</td>-->
-
-<!--        </tr><tr>-->
-<!--          <td>1</td>-->
-<!--          <td>03/01/2024</td>-->
-<!--          <td>Tangerang</td>-->
-<!--          <td>700gr</td>-->
-<!--          <td>Plastik sampah</td>-->
-<!--          <td>berwarna merah, kuning, hijau,biru</td>-->
-
-<!--        </tr><tr>-->
 <!--          <td>1</td>-->
 <!--          <td>03/01/2024</td>-->
 <!--          <td>Tangerang</td>-->

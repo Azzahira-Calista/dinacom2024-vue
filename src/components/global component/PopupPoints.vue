@@ -140,12 +140,11 @@ export default {
         showAlert() {
             this.$emit('closePopup');
             Swal.fire({
-                title: 'Success!',
+                title: 'Berhasil!',
                 text: 'Points sudah berhasil ditukar, Terimakasih sudah bergabung bersama kami!',
                 icon: 'success',
                 confirmButtonColor: '#E88A1B',
             });
-            this.showPopupSuccess = true;
         },
     }
 

@@ -27,6 +27,7 @@
 
 <script>
 import axios from "axios";
+import Swal from 'sweetalert2';
 
 export default {
 
@@ -62,18 +63,43 @@ export default {
         console.log(token);
         localStorage.setItem("token", token);
 
-        this.$router.push("/");
+        Swal.fire({
+          title: 'Login berhasil.',
+          icon: 'success',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#E88A1B'
+        }).then(() => {
+          this.$router.push("/");
+        });
 
       } catch(error) {
         console.error(error);
 
         if (error.response && error.response.status) {
           if (error.response.status === 401) {
-            alert("Email atau password salah.");
+            // alert("Email atau password salah.");
+            Swal.fire({
+              title: 'Email atau password salah.',
+              icon: 'error',
+              confirmButtonText: 'OK',
+              confirmButtonColor: '#d33'
+            });
           } else if (error.response.status === 404) {
-            alert("Email tidak terdaftar.");
+            // alert("Email tidak terdaftar.");
+            Swal.fire({
+              title: 'Email tidak terdaftar.',
+              icon: 'warning',
+              confirmButtonText: 'OK',
+              confirmButtonColor: '#d33'
+            });
           } else {
-            alert("Login failed. Please try again later.");
+            // alert("Login failed. Please try again later.");
+            Swal.fire({
+              title: 'Login failed. Please try again later.',
+              icon: 'error',
+              confirmButtonText: 'OK',
+              confirmButtonColor: '#d33'
+            });
           }
         }
       }

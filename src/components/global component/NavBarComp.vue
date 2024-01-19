@@ -28,9 +28,11 @@
         <div class="flex align-middle items-center justify-center font-mont">
           <div
             class="rounded-2xl font-semibold text-base mr-[1.25rem] text-white px-[20px] py-[8px] bg-primary cursor-pointer"
+            @click="showPopupPickup = true"
           >
             Pick Up
           </div>
+          <PickUpForm :showPopupPickup="showPopupPickup" @closePopupPickup="showPopupPickup = false" />
           <div>
             <router-link
                 v-if="!hasToken"
@@ -59,6 +61,8 @@
 import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import PopupPointsVue from './PopupPoints.vue';
+import Swal from 'sweetalert2';
+import PickUpForm from './PickUpComp/PickUpFormComp.vue';
 
 
 export default {
@@ -79,11 +83,34 @@ export default {
     };
 
     const confirmLogout = () => {
-      const isConfirmed = window.confirm("Are you sure you want to log out?");
-      if (isConfirmed) {
-        logout();
-      }
-    };
+    Swal.fire({
+        title: "Apakah anda yakin ingin keluar?",
+        text: "Anda akan keluar dari akun ini!",
+        icon: "warning",
+        showCancelButton: true,
+        cancelButtonText: "Batal",
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#E88A1B",
+        confirmButtonText: "Iya, Keluarkan saya!",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            logout();
+            Swal.fire({
+                title: "Keluar!",
+                text: "Anda telah keluar dari akun ini. Terima kasih telah menggunakan layanan kami!",
+                icon: "success",
+                confirmButtonColor: "#E88A1B",
+            });
+        } else {
+            Swal.fire({
+                title: "Batal",
+                text: "Anda telah membatalkan keluar dari akun ini!",
+                icon: "error",
+                confirmButtonColor: "#E88A1B",
+            });
+        }
+    });
+};
 
     onMounted(async () => {
       try {
@@ -102,6 +129,7 @@ export default {
     };
 
     return {
+      PickUpForm,
       PopupPointsVue,
       isi,
       logo,

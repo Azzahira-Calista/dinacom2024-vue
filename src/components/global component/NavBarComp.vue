@@ -33,17 +33,21 @@
           </div>
           <div>
             <router-link
-              v-if="!isLoggedIn"
-              to="/login"
+                v-if="!hasToken"
+                to="/login"
               class="mr-7 cursor-pointer text-primary"
               >Masuk</router-link
             >
 
-            <router-link
-              v-else
-              to="/profile"
-              class="w-[2.5rem] h-[2.5rem] bg-secondary rounded-full mr-7 cursor-pointer"
-            ></router-link>
+            <div v-else class="relative">
+              <button @click="show = !show" class="flex items-center w-[2.5rem] h-[2.5rem] bg-secondary rounded-full cursor-pointer"></button>
+              <div v-show="show" class="absolute right-0 py-2 mt-2 bg-bgColor rounded-md shadow-xl w-32 flex flex-col font-mont text-[#303030]">
+                <router-link to="/profile" class="align-middle px-2 hover:bg-secondaryBgColor py-1">Profile</router-link>
+                <router-link to="" class="align-middle px-2 hover:bg-secondaryBgColor py-1">Tukar point</router-link>
+                <button @click="confirmLogout" class=" px-2 text-red-500 hover:text-white hover:bg-red-300 py-1">Logout</button>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -53,49 +57,56 @@
 
 <script>
 import { ref, onMounted } from "vue";
-import axios from "axios";
+import { useRouter } from "vue-router";
 
 export default {
   inject: ["eventBus"],
-  methods: {
-    scrollToBottom() {
+  setup() {
+    const isi = ref("Tentang kami");
+    const logo = require("@/assets/logo/logo.png");
+    const show = ref(false);
+
+    const router = useRouter();
+    const hasToken = ref(false);
+
+    const logout = () => {
+      localStorage.removeItem("token");
+      hasToken.value = false;
+      router.push("/");
+    };
+
+    const confirmLogout = () => {
+      const isConfirmed = window.confirm("Are you sure you want to log out?");
+      if (isConfirmed) {
+        logout();
+      }
+    };
+
+    onMounted(async () => {
+      try {
+        const token = localStorage.getItem("token");
+        hasToken.value = token !== null;
+      } catch (error) {
+        console.error("Error checking login status:", error);
+      }
+    });
+
+    const scrollToBottom = () => {
       this.$refs.LayananComp.scrollToBottom({
         top: this.$refs.LayananComp.scrollHeight,
         behavior: "smooth",
       });
-    },
-  },
-  data() {
+    };
+
     return {
-      isi: "Tentang kami",
-      logo: require("@/assets/logo/logo.png"),
-      isLoggedIn: false,
+      isi,
+      logo,
+      show,
+      hasToken,
+      logout,
+      confirmLogout,
+      scrollToBottom,
     };
-  },
-  setup() {
-    const isLoggedIn = ref(false);
-
-    const checkLoggedIn = async () => {
-      try {
-        const response = await axios.get(
-            "https://f542-103-28-113-244.ngrok-free.app/api/login"
-        );
-        isLoggedIn.value = response.data.loggedIn;
-      } catch (error) {
-        console.error("Error checking login status:", error);
-      }
-    };
-
-    onMounted(() => {
-      checkLoggedIn();
-    });
-
-    // return {
-    //   isi: ref("Tentang kami"),
-    //   logo: ref(require("@/assets/logo/logo.png")),
-    //   isLoggedIn,
-    //   isRegistered,
-    // };
   },
 };
 </script>

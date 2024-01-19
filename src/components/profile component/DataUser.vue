@@ -1,43 +1,144 @@
+<!--<script>-->
+<!--import PointUser from "@/components/profile component/PointUser.vue";-->
+<!--import axios from "axios";-->
+
+<!--export default {-->
+<!--  name: "DataUser",-->
+<!--  components: {PointUser},-->
+<!--  data(){-->
+<!--    return{-->
+<!--      name: "",-->
+<!--      email: "",-->
+<!--      icon: require ('@/assets/logo/logout_icon.svg')-->
+<!--    }-->
+<!--  },-->
+
+<!--  async mounted()-->
+<!--{-->
+<!--  try {-->
+<!--  const token = localStorage.getItem("token");-->
+<!--    if (!token) {-->
+<!--    console.error("Token not found. Redirect to login or handle accordingly.");-->
+<!--    return;-->
+<!--  }-->
+
+<!--  const config = {-->
+<!--    // headers: {-->
+<!--      Authorization: `Bearer ${token}`,-->
+<!--    // },-->
+<!--  };-->
+
+<!--  const response = await axios.get("https://f542-103-28-113-244.ngrok-free.app/api/user", config);-->
+<!--    console.log(response.data.name + " " + response.data.email)-->
+
+<!--  this.name = response.data.name;-->
+<!--  this.email = response.data.email;-->
+<!--} catch (error) {-->
+<!--  console.error("Error fetching user data:", error);-->
+<!--  if (error.response && error.response.status === 401) {-->
+<!--    alert("Token expired. Please log in again.");-->
+<!--    this.$router.push("/login");}-->
+<!--}-->
+
+<!--  //-->
+<!--  // async created(){-->
+<!--  //   const response = await axios.get("user", {-->
+<!--  //     headers: {-->
+<!--  //       Authorization: `Bearer` + {localStorage.getItem("token")},-->
+<!--  //     },-->
+<!--  //-->
+<!--  //   });-->
+<!--}};-->
+<!--</script>-->
+
+<!--<script>-->
+<!--import PointUser from "@/components/profile component/PointUser.vue";-->
+<!--import axios from "axios";-->
+<!--import {useRouter} from "vue-router";-->
+
+
+<!--export default {-->
+<!--  name: "DataUser",-->
+<!--  components: { PointUser },-->
+<!--  data() {-->
+<!--    return {-->
+<!--      name: "",-->
+<!--      email: "",-->
+<!--      icon: require('@/assets/logo/logout_icon.svg')-->
+<!--    };-->
+<!--  },-->
+
+<!--  async mounted() {-->
+<!--    const router = useRouter();-->
+
+<!--    try {-->
+
+<!--      const token = localStorage.getItem("token");-->
+<!--      console.log(token)-->
+<!--      console.log("token")-->
+
+<!--      const response = await axios.post("https://f542-103-28-113-244.ngrok-free.app/api/get-user", {-->
+<!--        headers:{-->
+<!--          "Content-Type": "application/json",-->
+<!--          Accept: "application/json",-->
+<!--          Authorization: `Bearer ${token}`,-->
+<!--        },-->
+<!--      })-->
+<!--      console.log(response.data)-->
+
+<!--    } catch (error) {-->
+<!--      console.error("Error fetching user data:", error);-->
+<!--      if (error.response && error.response.status === 401) {-->
+<!--        alert("Token expired. Please log in again.");-->
+<!--        router.push("/login");-->
+<!--      }-->
+<!--    }-->
+<!--  },-->
+
+<!--};-->
+<!--</script>-->
+
 <script>
 import PointUser from "@/components/profile component/PointUser.vue";
 import axios from "axios";
-
-export default {
-  name: "DataUser",
-  components: {PointUser},
-  data(){
-    return{
+ export default {
+   name: "DataUser",
+   components: { PointUser },
+  data() {
+    return {
       name: "",
       email: "",
-      icon: require ('@/assets/logo/logout_icon.svg')
-    }
+      icon: require('@/assets/logo/logout_icon.svg')
+    };
   },
 
-  async mounted()
-{
-  // const token = localStorage.getItem("token");
-  const config = {
-    headers: {
-      Authorization: `Bearer 1|65qkEPnXk9bE2SVWY3qjIBcLmSACpoCvQ1JNttWF513d9a17`,
-    },
-  };
-  const response = await axios.get("http://localhost:8000/api/user", config);
-  console.log(response.data);
+   async mounted(){
+     try {
+       const token = this.getToken();
+       const response = await axios.get('http://127.0.0.1:8000/api/get-user', {
+         headers: {
+           'Authorization': `Bearer ${token}`
+         }
+       });
 
-  this.name = response.data.name;
-  this.email = response.data.email;
-}
+       console.log(response.data);
 
-  //
-  // async created(){
-  //   const response = await axios.get("user", {
-  //     headers: {
-  //       Authorization: `Bearer` + {localStorage.getItem("token")},
-  //     },
-  //
-  //   });
-}
+       this.name = response.data.data.name;
+       this.email = response.data.data.email;
+
+     } catch (error) {
+       console.error(error);
+     }
+   },
+   methods: {
+     getToken() {
+       return localStorage.getItem('token');
+     },
+   }
+
+ }
 </script>
+
 
 <template>
   <div class=" flex w-align-middle font-mont items-center w-[70rem] justify-between">

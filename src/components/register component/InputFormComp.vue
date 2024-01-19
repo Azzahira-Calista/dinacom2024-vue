@@ -52,6 +52,7 @@
 </template>
 <script>
 import axios from "axios";
+import Swal from 'sweetalert2';
 
 export default {
 
@@ -92,17 +93,35 @@ export default {
         this.postData.phone_number = "";
         this.postData.password = "";
 
+        Swal.fire({
+          title: 'Registrasi berhasil.',
+          icon: 'success',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#E88A1B'
+        }).then(() => {
+          this.$router.push("/");
+        });
 
-
-        this.$router.push("/");
       } catch (error) {
         console.error(error);
 
         if (error.response && error.response.status) {
           if (error.response.status === 500) {
-            alert("Email is already registered. Please use a different email.");
+            // alert("Email is already registered. Please use a different email.");
+            Swal.fire({
+              title: 'Email sudah terdaftar. Silahkan gunakan email lain.',
+              icon: 'error',
+              confirmButtonText: 'OK',
+              confirmButtonColor: '#d33'
+            });
           } else {
-            alert("Registration failed. Please try again later.");
+            // alert("Registration failed. Please try again later.");
+            Swal.fire({
+              title: 'Registrasi gagal. Silahkan coba lagi nanti.',
+              icon: 'error',
+              confirmButtonText: 'OK',
+              confirmButtonColor: '#d33'
+            });
           }
         }
       }

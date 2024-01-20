@@ -93,8 +93,7 @@
 
 <script>
 import Swal from 'sweetalert2';
-
-import PointUser from '../profile component/PointUser.vue';
+import PointUser from '@/components/profile component/PointUser.vue';
 
 export default {
     components: {
@@ -111,7 +110,6 @@ export default {
                 require("@/assets/icons/Payments/shopeepay.png"),
                 require("@/assets/icons/Payments/dana.png"),
                 require("@/assets/icons/Payments/ovo.png"),
-
                 require("@/assets/icons/Payments/logo_gopay.png"),
                 require("@/assets/icons/Payments/logo_shopee.png"),
                 require("@/assets/icons/Payments/logo_dana.png"),
@@ -126,14 +124,14 @@ export default {
 
     methods: {
         closePopup(event) {
-        console.log('closePopup called', event);
-        const clickedElement = event.target;
-        if (clickedElement.classList.contains('bg-black-opacity-45')) {
-            this.show = false;
-            this.showSuccess = false;
-            this.$emit('closePopup');
-        }
-    },
+            console.log('closePopup called', event);
+            const clickedElement = event.target;
+            if (clickedElement.classList.contains('bg-black-opacity-45')) {
+                this.show = false;
+                this.showSuccess = false;
+                this.$emit('closePopup');
+            }
+        },
         selectLogo(logoKey) {
             this.selectedLogo = logoKey;
         },

@@ -1,6 +1,9 @@
 <script>
+// import axios from "axios";
+
 export default {
-  name: "PointUser"
+  name: "PointUser",
+
 }
 </script>
 

@@ -56,7 +56,7 @@
             <div
                 class="flex justify-center self-stretch text-base font-mont leading-normal"
             >
-              Antar langsung sampah ke tempat re:cycle terdeat, anda dapat mendaur
+              Antar langsung sampah ke tempat re:cycle terdekat, anda dapat mendaur
               ulang sampah yang ukurannya tidak terlalu besar
             </div>
           </div>
@@ -78,7 +78,7 @@
             <div
                 class="flex justify-center self-stretch text-base font-normal leading-normal"
             >
-              Kami akan mengkonversi berat sampah anda menjadi matta uang digital
+              Kami akan mengkonversi berat sampah anda menjadi mata uang digital
             </div>
           </div>
         </div>

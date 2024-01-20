@@ -36,11 +36,11 @@
           <PickUpForm :showPopupPickup="showPopupPickup" @closePopupPickup="showPopupPickup = false" />
           <div>
             <router-link
-                v-if="!hasToken"
-                to="/login"
-              class="mr-7 cursor-pointer text-primary"
-              >Masuk</router-link
-            >
+              v-if="!hasToken"
+              to="/login"
+              class="mr-7 cursor-pointer text-primary">
+                Masuk
+            </router-link>
 
             <div v-else class="relative">
               <button @click="show = !show" class="flex items-center w-[2.5rem] h-[2.5rem] bg-secondary rounded-full cursor-pointer"></button>

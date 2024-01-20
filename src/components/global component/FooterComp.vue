@@ -53,7 +53,7 @@ export default {
         { text: 'FAQ', link: '/login' },
         { text: 'Kebijakan pribadi', link: '/page2' },
         { text: 'Kontak kami', link: '/page3' },
-        { text: 'Syarat & etentuan', link: '/page4' }
+        { text: 'Syarat & ketentuan', link: '/syarat-kebijakan' }
       ]
     };
   },

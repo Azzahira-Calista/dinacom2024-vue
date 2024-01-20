@@ -10,6 +10,7 @@
     <f-a-q-comp/>
     <!-- <popup-points-success/> -->
     <footer-comp/>
+    <PickUpFormComp/>
   </div>
 </template>
 
@@ -25,6 +26,8 @@ import QuoteComp from "@/components/main component/quote component/QuoteComp.vue
 import FooterComp from "@/components/global component/FooterComp.vue";
 // import PopupPointsSuccess from "@/components/global component/SuccessTukarPoint.vue";
 import FAQComp from "@/components/main component/faq component/FAQComp.vue";
+import PickUpFormComp from "@/components/global component/PickUpComp/PickUpFormComp.vue";
+
 export default {
   components: {
     FAQComp,
@@ -36,6 +39,7 @@ export default {
     ChartComp,
     NavBarComp,
     HeroComp,
+    PickUpFormComp
     // PopupPointsSuccess
   },
 };

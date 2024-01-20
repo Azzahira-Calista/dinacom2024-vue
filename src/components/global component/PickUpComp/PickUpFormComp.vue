@@ -1,9 +1,4 @@
 <template>
-  <!-- <div
-      v-if="showPopupPickup"
-      class="fixed inset-0 bg-black-opacity-45 backdrop-blur-sm flex justify-center items-center z-30"
-  > -->
-
   <div v-if="showPopupPickup" class="fixed inset-0 bg-black-opacity-45 backdrop-blur-sm flex justify-center items-center z-30" >
 
       <div class=" fixed w-screen h-screen items-center justify-center right-[-2rem] bottom-4 flex" >
@@ -42,31 +37,30 @@
 </template>
 
 <script>
-import Swal from 'sweetalert2';
 import axios from "axios";
+import Swal from 'sweetalert2';
 
-export default {
-    name: "PickUpForm",
-    components: {},
-    props: {
+    export default{
+      components: {},
+      props: {
         showPopupPickup: Boolean,
-    },
-
-    data() {
+      },
+      data() {
+        // const router = useRouter()
         return {
-            heading: "Detail Pick Up",
-            buttonText: "Pick Up",
+          heading: "Detail Pick Up",
+          button_text: "Pick Up",
+          back: "Batal",
 
-            dataPickup: {
-                detail_location: "",
-                weight: 0,
-                type: "",
-                description: ""
-            }
+          dataPickup: {
+            detail_location: "",
+            weight: "",
+            type: "",
+            description: ""
+          }
         };
-    },
-
-    methods: {
+      },
+      methods: {
         async pickup(){
           try {
             if(!this.dataPickup.detail_location || !this.dataPickup.weight || !this.dataPickup.type || !this.dataPickup.description){

@@ -26,9 +26,7 @@
           <div class="relative mr-7 cursor-pointer block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center">FAQ</div>
         </div>
         <div class="flex align-middle items-center justify-center font-mont">
-<!--          <button class="rounded-2xl font-semibold text-base mr-[1.25rem] text-white px-[20px] py-[8px] bg-primary cursor-pointer">-->
-<!--           Pick Up-->
-<!--          </button>-->
+
           <div
             class="rounded-2xl font-semibold text-base mr-[1.25rem] text-white px-[20px] py-[8px] bg-primary cursor-pointer"
             @click="showPopupPickup = true"

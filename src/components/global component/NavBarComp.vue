@@ -26,13 +26,15 @@
           <div class="relative mr-7 cursor-pointer block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center">FAQ</div>
         </div>
         <div class="flex align-middle items-center justify-center font-mont">
+          
           <div
             class="rounded-2xl font-semibold text-base mr-[1.25rem] text-white px-[20px] py-[8px] bg-primary cursor-pointer"
             @click="showPopupPickup = true"
           >
             Pick Up
           </div>
-          <PickUpForm :showPopupPickup="showPopupPickup" @closePopupPickup="showPopupPickup = false" />
+          <PickUpForm :showPopupPickup="showPopupPickup" @closePopupPickup="showPopupPickup = false"/>
+          
           <div>
             <router-link
                 v-if="!hasToken"
@@ -62,7 +64,7 @@ import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import PopupPointsVue from './PopupPoints.vue';
 import Swal from 'sweetalert2';
-import PickUpForm from './PickUpComp/PickUpFormComp.vue';
+import PickUpForm from '@/components/global component/PickUpComp/PickUpFormComp.vue';
 
 
 export default {
@@ -72,6 +74,7 @@ export default {
     const isi = ref("Tentang kami");
     const logo = require("@/assets/logo/logo.png");
     const show = ref(false);
+    const showPopupPickup = ref(false);
 
     const router = useRouter();
     const hasToken = ref(false);
@@ -128,6 +131,10 @@ export default {
       });
     };
 
+    const togglePopupPickup = () => {
+      showPopupPickup.value = !showPopupPickup.value;
+    };
+
     return {
       PickUpForm,
       PopupPointsVue,
@@ -138,17 +145,21 @@ export default {
       logout,
       confirmLogout,
       scrollToBottom,
+      togglePopupPickup
     };
   },
 
   data() {
     return {
       showPopup: false,
+      showPopupPickup: false,
+      
     };
   },
 
   components: {
-    PopupPointsVue
+    PopupPointsVue,
+    PickUpForm
   }
 };
 </script>

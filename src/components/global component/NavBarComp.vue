@@ -26,9 +26,9 @@
           <div class="relative mr-7 cursor-pointer block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center">FAQ</div>
         </div>
         <div class="flex align-middle items-center justify-center font-mont">
-          // <button class="rounded-2xl font-semibold text-base mr-[1.25rem] text-white px-[20px] py-[8px] bg-primary cursor-pointer">
-           // Pick Up
-          // </button>
+<!--          <button class="rounded-2xl font-semibold text-base mr-[1.25rem] text-white px-[20px] py-[8px] bg-primary cursor-pointer">-->
+<!--           Pick Up-->
+<!--          </button>-->
           <div
             class="rounded-2xl font-semibold text-base mr-[1.25rem] text-white px-[20px] py-[8px] bg-primary cursor-pointer"
             @click="showPopupPickup = true"
@@ -38,11 +38,11 @@
           <PickUpForm :showPopupPickup="showPopupPickup" @closePopupPickup="showPopupPickup = false" />
           <div>
             <router-link
-                v-if="!hasToken"
-                to="/login"
-              class="mr-7 cursor-pointer text-primary"
-              >Masuk</router-link
-            >
+              v-if="!hasToken"
+              to="/login"
+              class="mr-7 cursor-pointer text-primary">
+                Masuk
+            </router-link>
 
             <div v-else class="relative">
               <button @click="show = !show" class="flex items-center w-[2.5rem] h-[2.5rem] bg-secondary rounded-full cursor-pointer"></button>
@@ -78,8 +78,6 @@ export default {
 
     const router = useRouter();
     const hasToken = ref(false);
-
-    const Trigger = ref(false);
 
     const logout = () => {
       localStorage.removeItem("token");

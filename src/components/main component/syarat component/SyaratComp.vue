@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-[4rem] mx-[16rem] text-[16px] font-bold">
+  <div class=" font-mont pt-[4rem] mx-[16rem] text-[16px] font-bold">
     <div class="my-[2rem] font-mont text-[2rem] text-secondary">
         Syarat dan Ketentuan
     </div>

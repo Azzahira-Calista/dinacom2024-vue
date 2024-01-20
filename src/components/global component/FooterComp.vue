@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-      <hr class="w-full w-full bg-white border-1 mb-[2rem] mt-[5rem]"/>
+      <hr class="cursor-none w-full w-full bg-white border-1 mb-[2rem] mt-[5rem]"/>
       <div>{{ cr }}</div>
     </div>
     </div>
@@ -51,8 +51,8 @@ export default {
       ],
       eksplor: [
         { text: 'FAQ', link: '/login' },
-        { text: 'Kebijakan pribadi', link: '/page2' },
-        { text: 'Kontak kami', link: '/page3' },
+        { text: 'Kebijakan pribadi', link: '/syarat-kebijakan' },
+        { text: 'Kontak kami (+62)81808893706', link: '/' },
         { text: 'Syarat & ketentuan', link: '/syarat-kebijakan' }
       ]
     };

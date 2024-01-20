@@ -5,7 +5,7 @@ export default{
   components: {},
   data() {
     return {
-      heading: "Detail Pick Up",
+      heading: "Riwayat Pick Up",
 
       dataPickup: []
     };

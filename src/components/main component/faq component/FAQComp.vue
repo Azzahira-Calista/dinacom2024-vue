@@ -21,7 +21,7 @@
       <div class="mt-5">
         <div class="relative w-[59rem] bg-white rounded-[15px] m-[2rem]">
           <input type="checkbox" id="input1" class="absolute peer opacity-0">
-          <label for="input1" class="ml-[3rem] text-[20px] tracking mx-[2rem] h-[3.5rem] flex items-center">Bagaimana saya dapat melacak kontribusi saya di Recycle Platform?</label>
+          <label for="input1" class="ml-[3rem] text-[20px] tracking mx-[2rem] h-[3.5rem] flex items-center">Bagaimana cara perhitungan point di platform Recycle?</label>
           <div class="mx-2 absolute top-[1rem] rotate-0 peer-checked:rotate-180 duration-200">
             <img
                 :src="img[2]"
@@ -30,7 +30,7 @@
           </div>
           <div class=" max-h-0 overflow-hidden peer-checked:max-h-full">
             <p class="p-[2rem] text-[16px]">
-              Recycle Platform menyediakan fitur pelacakan kontribusi, di mana Anda dapat melihat jumlah sampah yang telah Anda kumpulkan dan kontribusi positif yang telah Anda berikan terhadap lingkungan.
+              Kami menyediakan fitur point yang dapat ditukarkan dengan uang. Anda dapat menukarkan point anda menjai uang non-tunai melalui beberapa metode yang tersedia.<br/> Setiap >0.5kg sampah = 25 point, 1kg sampah = 50 point, >1.5kg sampah = 100 point, >3kg sampah = 1000 point,
             </p>
           </div>
         </div>

@@ -12,12 +12,12 @@
                     <!-- mb-[1.875rem] border border-black-->
                       <input type="text" v-model="dataPickup.detail_location" name="detail_location" id="detail_location" placeholder="Detail Lokasi" class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[29.5rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
                       <div class="flex h-[3.125rem] w-[29.5rem] items-center justify-between mb-[1.25rem]">
-                          <input type="number" v-model="dataPickup.weight" name="weight" id="weight" placeholder="Berat Perkiraan" class="bg-[#F1F0F0] h-[3.125rem] w-[24.5rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
+                          <input type="number" v-model="dataPickup.weight" name="weight" id="weight" placeholder="Berat Perkiraan (minimal pickup 500 g)" class="bg-[#F1F0F0] h-[3.125rem] w-[24.5rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
                           <div class="flex justify-center items-center text-center bg-[#F1F0F0] h-[3.125rem] w-[4.25rem] px-[1rem] rounded-[0.9375rem] focus:outline-none">
                           <p>gram</p>
                           </div>
                       </div>
-                      <input type="text" v-model="dataPickup.type" name="type" id="type" placeholder="Jenis Sampah" class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[29.5rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
+                      <input type="text" v-model="dataPickup.type" name="type" id="type" placeholder="Jenis Sampah (organik / non-organik)" class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[29.5rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
                       <textarea type="text" v-model="dataPickup.description" name="description" id="description" placeholder="Deskripsi" class="resize-none bg-[#F1F0F0] h-[9.375rem] w-[29.5rem] p-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D] text-start"></textarea>
   
                       <div class="flex h-[3.125rem] w-[29.5rem] my-[1.75rem] items-center justify-between ">
@@ -82,6 +82,12 @@
             }
           },
           closePopupPickup(event) {
+            Swal.fire({
+              title: "Batal",
+              text: "Pick up dibatalkan",
+              icon: "error",
+              confirmButtonColor: "#E88A1B",
+            });
             this.$emit("closePopupPickup", event);
           },
           showAlert() {

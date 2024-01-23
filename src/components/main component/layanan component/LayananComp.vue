@@ -44,7 +44,7 @@
             <div
                 class="flex justify-center self-stretch text-base font-mont leading-normal"
             >
-              Antar langsung sampah ke tempat re:cycle terdeat, anda dapat mendaur
+              Antar langsung sampah ke tempat re:cycle terdekat, anda dapat mendaur
               ulang sampah yang ukurannya tidak terlalu besar
             </div>
           </div>

@@ -11,7 +11,7 @@
               background-image: linear-gradient(to bottom, #669940, #02353c);
             "
           >
-            re:cycle
+            Re:cycle
           </router-link>
         </div>
         <div class="flex font-mont text-base text-black items-center" >

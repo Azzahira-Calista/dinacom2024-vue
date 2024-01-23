@@ -33,8 +33,8 @@ export default {
 
 <template>
   <div>
-    <div class="h-[40rem] items-center justify-center font-mont font-bold mt-12 mb-20">
-      <h2 class="text-center mt-3.5 mb-5 text-[2rem]">{{ title }}</h2>
+    <div class="h-[40rem] items-center justify-center font-mont  mt-12 mb-20">
+      <h2 class="text-center mt-3.5 font-bold mb-5 text-[2rem]">{{ title }}</h2>
       <div class="flex space-x-5 h-[34rem] justify-center">
         <div data-aos="fade-left" class="flex flex-col justify-center items-center w-[43rem]">
           <img :src="image" class="w-full h-full">

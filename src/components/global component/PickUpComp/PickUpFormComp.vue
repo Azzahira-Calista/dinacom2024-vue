@@ -12,7 +12,7 @@
                     <!-- mb-[1.875rem] border border-black-->
                       <input type="text" v-model="dataPickup.detail_location" name="detail_location" id="detail_location" placeholder="Detail Lokasi" class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[29.5rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
                       <div class="flex h-[3.125rem] w-[29.5rem] items-center justify-between mb-[1.25rem]">
-                          <input type="number" v-model="dataPickup.weight" name="weight" id="weight" placeholder="Berat Perkiraan (minimal pickup 5000 g)" class="bg-[#F1F0F0] h-[3.125rem] w-[24.5rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
+                          <input type="number" v-model="dataPickup.weight" name="weight" id="weight" placeholder="Berat Perkiraan (minimal pickup 500 g)" class="bg-[#F1F0F0] h-[3.125rem] w-[24.5rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
                           <div class="flex justify-center items-center text-center bg-[#F1F0F0] h-[3.125rem] w-[4.25rem] px-[1rem] rounded-[0.9375rem] focus:outline-none">
                           <p>gram</p>
                           </div>

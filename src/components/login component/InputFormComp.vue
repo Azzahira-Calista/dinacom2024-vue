@@ -59,9 +59,14 @@ export default {
         this.postData.email = "";
         this.postData.password = "";
 
-        const token = response.data.data.token;
+        const token = response.data.token;
+        const user_id = response.data.user.id;
+
         console.log(token);
+        console.log(user_id);
+
         localStorage.setItem("token", token);
+        localStorage.setItem("user_id", user_id);
 
         Swal.fire({
           title: 'Login berhasil.',

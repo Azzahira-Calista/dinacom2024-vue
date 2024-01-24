@@ -115,7 +115,7 @@ import axios from "axios";
    async mounted(){
      try {
        const token = this.getToken();
-       const response = await axios.get('http://127.0.0.1:8000/api/get-user', {
+       const response = await axios.get('http://127.0.0.1:8000/api/data-user', {
          headers: {
            'Authorization': `Bearer ${token}`
          }
@@ -123,8 +123,8 @@ import axios from "axios";
 
        console.log(response.data);
 
-       this.name = response.data.data.name;
-       this.email = response.data.data.email;
+       this.name = response.data.name;
+       this.email = response.data.email;
 
      } catch (error) {
        console.error(error);

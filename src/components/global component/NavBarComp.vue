@@ -77,10 +77,13 @@ export default {
 
     const router = useRouter();
     const hasToken = ref(false);
+    const hasUserId = ref(false);
 
     const logout = () => {
       localStorage.removeItem("token");
+      localStorage.removeItem("user_id");
       hasToken.value = false;
+      hasUserId.value = false;
       router.push("/");
     };
 

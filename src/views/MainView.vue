@@ -1,13 +1,13 @@
 <template >
   <div class="w-full h-full bg-bgColor">
-    <nav-bar-comp/>
+    <nav-bar-comp @layanan="scrollToElement" @lokasi="scrollToElement" @faq="scrollToElement"/>
     <hero-comp/>
     <chart-comp/>
-    <layanan-comp/>
-    <location-comp/>
+    <layanan-comp ref="layananElement"/>
+    <location-comp ref="lokasiElement"/>
     <kerajinan-comp/>
     <quote-comp/>
-    <f-a-q-comp/>
+    <f-a-q-comp ref="faqElement"/>
     <footer-comp/>
   </div>
 </template>
@@ -25,6 +25,36 @@ import FooterComp from "@/components/global component/FooterComp.vue";
 import FAQComp from "@/components/main component/faq component/FAQComp.vue";
 
 export default {
+  // computed: {
+  //   layananComp() {
+  //     return layananComp
+  //   }
+  // },
+  setup() {
+    const scrollToElement = (element) => {
+      console.log("Scrolling to element:", element);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        console.log("Scrolling completed.");
+      }
+    };
+    return {
+      scrollToElement,
+    };
+  },
+  methods: {
+
+
+    // layanan() {
+    //   this.$refs.layananComp.scrollIntoView({ behavior: "smooth" });
+    // },
+    // lokasi() {
+    //   this.$refs.locationComp.scrollIntoView({ behavior: "smooth" });
+    // },
+    // faq() {
+    //   this.$refs.faqComp.scrollIntoView({ behavior: "smooth" });
+    // },
+  },
   components: {
     FAQComp,
     KerajinanComp,

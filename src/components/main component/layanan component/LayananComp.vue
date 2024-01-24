@@ -1,7 +1,7 @@
 <template>
   <div
       ref="LayananComp"
-      class="bg-[#96C67F] bg-opacity-20 px-[16rem] pt-10 flex-col flex relative overflow-hidden"
+      class="scroll-container bg-[#96C67F] bg-opacity-20 px-[16rem] pt-10 flex-col flex relative overflow-hidden"
   >
     <img
       class="absolute -bottom-28 -right-16 w-1/4 object-cover transform rotate-[173deg] overflow-hidden"
@@ -114,4 +114,6 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+
+</style>

@@ -1,7 +1,7 @@
 
 <template>
-  <nav class="fixed top-0 right-0 z-10">
-    <div class="bg-bgColor w-screen h-[3.75rem] px-[1rem] shadow-md">
+  <nav class="fixed top-0 z-10">
+    <div class="bg-bgColor w-screen h-[3.75rem] pl-[1rem] pr-[2rem] shadow-md">
       <div class="flex justify-between items-center">
         <div class="flex items-center">
           <img :src="logo" alt="logo" style="width: 70px; height: auto" />
@@ -15,18 +15,18 @@
             Re:cycle
           </router-link>
         </div>
-        <div class="flex font-mont text-base text-black items-center" >
-          <router-link to="/about-us" class="relative mr-7 cursor-pointer block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center">{{
-              isi
-            }}</router-link>
+<!--        <div class="flex font-mont text-base text-black items-center" >-->
+<!--          <router-link to="/about-us" class="relative mr-7 cursor-pointer block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center">{{-->
+<!--              isi-->
+<!--            }}</router-link>-->
           <!--          <div class="mr-7 cursor-pointer" @click="showComponent('Layanan')">Layanan</div>-->
 <!--          <button @click="scrollToBottom" class="relative mr-7 cursor-pointer block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center">-->
 <!--            Layanan-->
 <!--          </button>-->
 <!--          <div class="relative mr-7 cursor-pointer block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center">Lokasi</div>-->
 <!--          <div class="relative mr-7 cursor-pointer block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center">FAQ</div>-->
-        </div>
-        <div class="flex align-middle items-center justify-center font-mont">
+<!--        </div>-->
+        <div class="flex align-middle items-center justify-center font-mont ">
           <div
               class="rounded-2xl font-semibold text-base mr-[1.25rem] text-white px-[20px] py-[8px] bg-primary cursor-pointer"
               @click="showPopupPickup = true"

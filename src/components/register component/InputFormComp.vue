@@ -18,7 +18,7 @@
             class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
         />
         <input
-            type="number"
+            type="text"
             v-model="postData.phone_number"
             placeholder="Nomor Ponsel"
             class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"
@@ -52,8 +52,10 @@
 </template>
 <script>
 import axios from "axios";
+import Swal from 'sweetalert2';
 
 export default {
+
   data(){
     return {
       heading: "Registrasi",
@@ -72,44 +74,58 @@ export default {
     }
   },
   methods: {
-    registerUserPost(){
-      console.log('Data to be sent:', {
-        name: this.postData.name,
-        email: this.postData.email,
-        phone_number: this.postData.phone_number,
-        password: this.postData.password,
-      });
+    async registerUserPost() {
+      try {
+        if (!this.postData.name || !this.postData.email || !this.postData.phone_number || !this.postData.password) {
+          alert("Form belum lengkap. Mohon isi semua field.");
+          return;
+        }
 
-     if (!this.postData.name || !this.postData.email || !this.postData.phone_number || !this.postData.password) {
-       alert("Form belum lengkap. Mohon isi semua field.");
-       return;
-     }
+        const response = await axios.post('http://127.0.0.1:8000/api/register', this.postData);
+        console.log(response);
 
-     axios.post(
-         'https://f542-103-28-113-244.ngrok-free.app/api/register',
-         this.postData
-     ).then((response) => {
-       console.log(response);
+        const token = response.data.data.token;
+        console.log(token);
+        localStorage.setItem("token", token);
+
         this.postData.name = "";
         this.postData.email = "";
         this.postData.phone_number = "";
         this.postData.password = "";
 
-        localStorage.setItem("token", response.data.token);
+        Swal.fire({
+          title: 'Registrasi berhasil.',
+          icon: 'success',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#E88A1B'
+        }).then(() => {
+          this.$router.push("/");
+        });
 
-        this.$router.push("/");
-     }).catch((error) => {
-       console.error(error);
+      } catch (error) {
+        console.error(error);
 
-       if (error.response && error.response.status) {
-         if (error.response.status === 500) {
-           alert("Email is already registered. Please use a different email.");
-         } else {
-           alert("Registration failed. Please try again later.");
-         }
-       }
-     });
-    }
+        if (error.response && error.response.status) {
+          if (error.response.status === 500) {
+            // alert("Email is already registered. Please use a different email.");
+            Swal.fire({
+              title: 'Email sudah terdaftar. Silahkan gunakan email lain.',
+              icon: 'error',
+              confirmButtonText: 'OK',
+              confirmButtonColor: '#d33'
+            });
+          } else {
+            // alert("Registration failed. Please try again later.");
+            Swal.fire({
+              title: 'Registrasi gagal. Silahkan coba lagi nanti.',
+              icon: 'error',
+              confirmButtonText: 'OK',
+              confirmButtonColor: '#d33'
+            });
+          }
+        }
+      }
+    },
   }
 }
 </script>

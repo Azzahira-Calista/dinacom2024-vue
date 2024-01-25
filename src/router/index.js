@@ -37,6 +37,11 @@ const routes = [
    path: '/layanan',
    name:  'Layanan',
    component: () => import('../components/main component/layanan component/LayananComp.vue')
+  },
+  {
+    path: '/syarat-kebijakan',
+    name: 'syarat dan kebijakan',
+    component: () => import('../views/KebijakanView.vue')
   }
 ]
 const router = createRouter({

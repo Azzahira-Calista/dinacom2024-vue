@@ -1,33 +1,38 @@
 <template>
 
-  <div class="py-[3.12rem] bg-primary flex flex-col font-mont text-white relative overflow-hidden">
+  <div class="py-[3.12rem] bg-primary flex flex-col font-mont text-white relative overflow-hidden ">
     <div class="relative ">
       <img
-          class="absolute bottom-0 -right-10 w-1/4 h-auto object-cover -mb-96 transform rotate-[-8deg]"
+          class="absolute bottom-0 -right-10 w-1/4 h-auto object-cover -mb-96 transform rotate-[-8deg] hidden md:block"
           :src="img"
           alt="Background Image"
       />
     </div>
-    <div class="px-[15.62rem]">
-      <div class="flex justify-between ">
+    <div class="md:px-[15.62rem]  mx-10">
+      <div class=" md:justify-between  justify-between items-start md:flex md:flex-row flex flex-col">
         <div class="flex flex-col ">
           <h2 class="text-2xl font-bold mb-[1.87rem]">re:cycle</h2>
           <div class="w-[25rem]">{{ desc }}</div>
-        </div>
-        <div class="flex flex-col ml-[9.68rem] ">
-          <h2 class="text-2xl font-bold mb-[1.87rem]">Layanan</h2>
-          <div class="cursor-pointer"  v-for="(item, index) in layanan" :key="index" @click="handleLayananClick(item)">
-            {{ item.text }}
+        </div >
+        <div class="flex flex-row md:flex-row text-left md:justify-start">
+          <div class="flex flex-col md:ml-9.68rem md:mr-20 mr-20 md:mt-0 mt-6">
+            <h2 class="text-2xl font-bold mb-1.87rem">Layanan</h2>
+            <div class="cursor-pointer" v-for="(item, index) in layanan" :key="index" @click="handleLayananClick(item)">
+              {{ item.text }}
+            </div>
+          </div>
+          <div class="flex flex-col md:ml-0 md:mt-0 mt-6">
+            <h2 class="text-2xl font-bold mb-1.87rem">Eksplor</h2>
+            <div class="cursor-pointer" v-for="(item, index) in eksplor" :key="index" @click="handleEksplorClick(item)">
+              {{ item.text }}
+            </div>
           </div>
         </div>
-        <div class="flex flex-col">
-          <h2 class="text-2xl font-bold mb-[1.87rem]">Eksplor</h2>
-          <div class="cursor-pointer"  v-for="(item, index) in eksplor" :key="index" @click="handleEksplorClick(item)">
-            {{ item.text }}
-          </div>
-        </div>
+
+
+
       </div>
-      <hr class="w-full w-full bg-white border-1 mb-[2rem] mt-[5rem]"/>
+      <hr class="cursor-none w-full bg-white border-1 mb-[2rem] mt-[5rem]"/>
       <div>{{ cr }}</div>
     </div>
     </div>
@@ -44,16 +49,16 @@ export default {
       cr: 'copyright © re:cycle 2024 ️',
       desc: "Kami mengajak anda untuk membangun kebiasaan baru untuk mengelola sampah, guna mendukung terciptanya ekosistem yang ideal bagi lingkungan kita.",
       layanan: [
-        { text: 'Drop off', link: '/login' },
-        { text: 'Pick up', link: '/page2' },
-        { text: 'Point', link: '/page3' },
-        { text: 'Tutorial recycle', link: '/page4' }
+        { text: 'Drop off', link: '/' },
+        { text: 'Pick up', link: '/' },
+        { text: 'Point', link: '/' },
+        { text: 'Tutorial recycle', link: '/' }
       ],
       eksplor: [
-        { text: 'FAQ', link: '/login' },
-        { text: 'Kebijakan pribadi', link: '/page2' },
-        { text: 'Kontak kami', link: '/page3' },
-        { text: 'Syarat & etentuan', link: '/page4' }
+        { text: 'FAQ', link: '/' },
+        { text: 'Kebijakan privasi', link: '/syarat-kebijakan' },
+        { text: 'Kontak kami (+62)87804037393', link: '/' },
+        { text: 'Syarat & ketentuan', link: '/syarat-kebijakan' }
       ]
     };
   },

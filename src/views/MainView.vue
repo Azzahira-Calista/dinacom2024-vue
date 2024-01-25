@@ -1,6 +1,8 @@
 <template >
-  <div class="w-full h-full bg-bgColor">
-    <nav-bar-comp @layanan="scrollToElement" @lokasi="scrollToElement" @faq="scrollToElement"/>
+
+  <div class="bg-bgColor">
+    <nav-bar-comp/>
+
     <hero-comp/>
     <chart-comp/>
     <layanan-comp ref="layananElement"/>

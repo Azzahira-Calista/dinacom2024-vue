@@ -1,7 +1,7 @@
 <template>
   <div
       ref="LayananComp"
-      class="scroll-container bg-[#96C67F] bg-opacity-20 px-[16rem] pt-10 flex-col flex relative overflow-hidden"
+      class="scroll-container bg-[#96C67F] bg-opacity-20 md:px-[16rem] items-center  pt-10 flex-col flex relative overflow-hidden"
   >
     <img
       class="absolute -bottom-28 -right-16 w-1/4 object-cover transform rotate-[173deg] overflow-hidden"
@@ -14,7 +14,7 @@
         Layanan
       </div>
 
-      <div class="grid-cols-3 flex justify-between mt-10">
+      <div class="grid-cols-3 md:flex md:flex-row flex flex-col justify-between mt-10">
         <div class="font-mont h-[30rem] flex-row flex-wrap items-center justify-center text-center text-neutral-800">
           <div class="shadow-xl flex w-[18rem] h-[22.5rem] flex-col items-center gap-y-7 rounded-[15px] bg-white px-7 pb-14 pt-8 box-shadow-md">
             <div class="flex justify-center text-xl font-bold">Pick up</div>
@@ -49,9 +49,7 @@
             </div>
           </div>
         </div>
-        <div
-            class="font-mont h-[30rem] flex-row flex-wrap items-center justify-center text-center text-neutral-800"
-        >
+        <div class="font-mont h-[30rem] flex-row flex-wrap items-center justify-center text-center text-neutral-800">
           <div
               class="shadow-xl flex w-[18rem] h-[22.5rem] flex-col items-center gap-y-7 rounded-[15px] bg-white px-7 pb-14 pt-8 box-shadow-md"
           >

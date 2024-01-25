@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-10 min-w-screen pt-[3.12rem] px-[15.62rem]  flex flex-col justify-center items-center relative overflow-hidden">
+  <div class="mt-10 bg-bgColor pt-[3.12rem] px-[15.62rem]  flex flex-col justify-center items-center relative overflow-hidden">
     <img
         class="absolute top-0 -right-20 w-1/3 object-cover -mt-40 transform rotate-[-75deg] overflow-hidden"
         :src="img[0]"
@@ -16,26 +16,26 @@
         alt="Background Image"
     />
 
-    <div class="flex flex-col align-center items-center justify-center" data-aos="fade-down">
-      <div class="mx-auto font-bold font-mont text-[2rem] text-primary ">{{ title }}</div>
-      <div class="flex justify-center items-center">
-        <div class="max-w-[25rem] my-10 w-full mr-20">
-          <canvas
-              ref="chart"
-              class="chart-canvas"
-              width="450"
-              height="450"
-          ></canvas>
-        </div>
-        <div class="w-96 text-[#303030] justify-center items-center font-mont text-base">
-          <swiper
-              :options="swiperConfig"
-              :autoplay="{ delay: 5000 }"
-              :slides-per-view="1"
-              :space-between="50"
-              @swiper="onSwiper"
-              @slideChange="onSlideChange"
-          >
+    <div class="flex flex-col align-center items-center justify-center overflow-hidden md:flex-col" data-aos="fade-down ">
+      <div class="md:flex mx-auto font-bold font-mont text-[2rem] text-primary  md:w-screen w-[25rem] md:items-center md:px-[15.62rem]">{{ title }}</div>
+      <div class="md:flex md:flex-row flex flex-col justify-center items-center content-center">
+      <div class="max-w-[25rem] my-10 w-full md:mr-20 ml-2.5">
+        <canvas
+            ref="chart"
+            class="chart-canvas "
+            width="450"
+            height="450"
+        ></canvas>
+      </div>
+      <div class="w-96 text-[#303030] md:text-left text-center justify-center items-center font-mont text-base">
+        <swiper
+            :options="swiperConfig"
+            :autoplay="{ delay: 5000 }"
+            :slides-per-view="1"
+            :space-between="50"
+            @swiper="onSwiper"
+            @slideChange="onSlideChange"
+        >
             <swiper-slide>Berdasarkan laporannya kepada Presiden RI Joko Widodo, Menteri Lingkungan Hidup dan Kehutanan Siti Nurbaya mengatakan jenis sampah yang dihasilkan didominasi oleh sampah organik yang mencapai sekitar 60 persen dan sampah plastik yang mencapai 15 persen.</swiper-slide>
             <swiper-slide>sistem pengumpulan sampah plastik turut memberikan kontribusi lebih dari Rp. 1 Triliun dalam mendukung sirkular ekonomi selama tahun 2019-2020. Angka tersebut diperoleh melalui Bank Sampah, TPS 3R, TPST, PDU, sektor informat (pemulung/pelapak), dan social enterpreneur, dengan asumsi harga 1 kg plastik sebesar Rp. 2.400/kg. Dari pengumpulan sampah kertas, memberikan kontribusi terhadap sirkular ekonomi lebih kurang Rp. 7,3 T dengan asumsi harga 1 kg kertas Rp. 3.500/kg.</swiper-slide>
             <swiper-slide>"Mengutip data dari Kementerian Lingkungan Hidup dan Kehutanan (KLHK), pada tahun 2022 sebanyak 64 persen timbulan sampah telah berhasil dikelola dari total 68,5 juta ton sampah nasional. Dari total 68,5 juta ton sampah nasional, tercatat komposisi sampah yang paling dominan adalah sisa makanan, plastik, dan kertas," kata dia saat membuka acara Parlemen Kampus 2023 yang diselenggarakan oleh Biro Protokol dan Humas, Sekretariat Jenderal DPR RI, di Padang, Sumatera Barat, Rabu (15/03/2023).</swiper-slide>

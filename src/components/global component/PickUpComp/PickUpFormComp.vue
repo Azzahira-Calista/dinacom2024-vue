@@ -109,10 +109,17 @@
                alert("Form belum lengkap. Mohon isi semua field.");
                return;
               }
-  
-              const response = await axios.post("http://127.0.0.1:8000/api/pick-up", this.dataPickup);
-  
+
+              const token = localStorage.getItem('token');
+              const response = await axios.post("http://127.0.0.1:8000/api/pickup/store", this.dataPickup, {
+                headers: {
+                  'Authorization': `Bearer ${token}`
+                }
+              });
+
               console.log(response);
+              console.log(token);
+
               this.dataPickup.detail_location = "";
               this.dataPickup.weight = 0;
               this.dataPickup.type = "";

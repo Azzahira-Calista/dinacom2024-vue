@@ -13,12 +13,20 @@ export default{
   methods: {
     async pickup(){
       try {
-        const response = await axios.get("http://127.0.0.1:8000/api/pick-up/", this.dataPickup);
 
-        console.log(response.data.data);
+        const token = localStorage.getItem('token');
+        const user_id = localStorage.getItem('user_id');
+        const response = await axios.get(`http://127.0.0.1:8000/api/pickup/data-user/${user_id}`, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        console.log("ini data");
+        console.log(response);
         this.dataPickup = response.data.data;
-        console.log("Data Pikup")
-        console.log(this.dataPickup[0].detail_location)
+        // console.log("Data Pikup")
+        // console.log(this.dataPickup[0].detail_location)
       }catch (error) {
         console.error(error)
       }

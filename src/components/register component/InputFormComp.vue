@@ -1,6 +1,6 @@
 <template>
-  <div class="justify-center">
-    <div class="flex flex-col w-[45.5rem] p-5 items-center justify-center">
+  <div class="flex justify-center">
+    <div class="flex flex-col md:w-[45.5rem] mx-[1rem] p-5 items-center justify-center ">
       <h1 class="font-mont font-bold text-3xl text-secondary text-center my-[2rem]">
         {{ heading }}
       </h1>

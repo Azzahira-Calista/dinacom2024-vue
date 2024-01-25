@@ -2,8 +2,8 @@
   <div
     class="h-screen bg-white"
   >
-    <div class="flex">
-      <ImageComp/>
+    <div class="md:flex">
+      <ImageComp class="hidden md:block"/>
       <InputFormComp/>
     </div>
   </div>

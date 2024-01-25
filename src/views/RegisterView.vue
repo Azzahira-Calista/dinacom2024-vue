@@ -2,9 +2,9 @@
   <div
       class="h-screen bg-white"
   >
-    <div class="flex">
+    <div class="md:flex">
       <InputFormComp/>
-      <ImageComp/>
+      <ImageComp class="hidden md:block"/>
     </div>
   </div>
 </template>

@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-      <hr class="w-full w-full bg-white border-1 mb-[2rem] mt-[5rem]"/>
+      <hr class="cursor-none w-full w-full bg-white border-1 mb-[2rem] mt-[5rem]"/>
       <div>{{ cr }}</div>
     </div>
     </div>
@@ -44,16 +44,16 @@ export default {
       cr: 'copyright © re:cycle 2024 ️',
       desc: "Kami mengajak anda untuk membangun kebiasaan baru untuk mengelola sampah, guna mendukung terciptanya ekosistem yang ideal bagi lingkungan kita.",
       layanan: [
-        { text: 'Drop off', link: '/login' },
-        { text: 'Pick up', link: '/page2' },
-        { text: 'Point', link: '/page3' },
-        { text: 'Tutorial recycle', link: '/page4' }
+        { text: 'Drop off', link: '/' },
+        { text: 'Pick up', link: '/' },
+        { text: 'Point', link: '/' },
+        { text: 'Tutorial recycle', link: '/' }
       ],
       eksplor: [
-        { text: 'FAQ', link: '/login' },
-        { text: 'Kebijakan pribadi', link: '/page2' },
-        { text: 'Kontak kami', link: '/page3' },
-        { text: 'Syarat & etentuan', link: '/page4' }
+        { text: 'FAQ', link: '/' },
+        { text: 'Kebijakan privasi', link: '/syarat-kebijakan' },
+        { text: 'Kontak kami (+62)87804037393', link: '/' },
+        { text: 'Syarat & ketentuan', link: '/syarat-kebijakan' }
       ]
     };
   },

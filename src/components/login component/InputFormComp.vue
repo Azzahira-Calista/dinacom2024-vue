@@ -6,8 +6,8 @@
             </h1>
             <form @submit.prevent="loginUserPost" action="" method="post" class="flex flex-col">
                 <!-- mb-[1.875rem] border border-black-->
-                <input type="email" v-model="email" name="email" id="email" placeholder="Email" class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
-                <input type="password" v-model="password" name="password" id="password" placeholder="Password" class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
+                <input type="email" v-model="postData.email" name="email" id="email" placeholder="Email" class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
+                <input type="password" v-model="postData.password" name="password" id="password" placeholder="Password" class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] w-[21.5625rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
               <button type="submit" class="font-mont font-semibold h-[3.125rem] w-[21.5625rem] my-[3.125rem] text-center py-[0.625rem] bg-primary text-white rounded-2xl">
                 Masuk
               </button>
@@ -27,53 +27,87 @@
 
 <script>
 import axios from "axios";
+import Swal from 'sweetalert2';
 
 export default {
-  components: {},
+
   data() {
     return {
       heading: "Masuk",
       subheading: "Belum memiliki akun?",
       register: "Masuk",
       button_text: "Daftar",
-      email: "",
-      password: "",
-    };
-  },
-  methods: {
-    loginUserPost() {
-      if (!this.email || !this.password) {
-        alert("Form belum lengkap. Mohon isi semua field.");
-        return;
+      postData: {
+        email: "",
+        password: "",
       }
 
-      axios.post(
-          `https://f542-103-28-113-244.ngrok-free.app/api/login`,
-          {
-            email: this.email,
-            password: this.password,
-          }
-      ).then((response) => {
+    };
+  },
+
+  methods: {
+    async loginUserPost() {
+      try {
+        if (!this.postData) {
+          alert("Form belum lengkap. Mohon isi semua field.");
+          return;
+        }
+
+        const response = await axios.post('http://127.0.0.1:8000/api/login', this.postData);
+
         console.log(response);
-        this.email = "";
-        this.password = "";
+        this.postData.email = "";
+        this.postData.password = "";
 
-        localStorage.setItem("token", response.data.token);
+        const token = response.data.token;
+        const user_id = response.data.user.id;
 
-        this.$router.push("/");
-      }).catch((error) => {
+        console.log(token);
+        console.log(user_id);
+
+        localStorage.setItem("token", token);
+        localStorage.setItem("user_id", user_id);
+
+        Swal.fire({
+          title: 'Login berhasil.',
+          icon: 'success',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#E88A1B'
+        }).then(() => {
+          this.$router.push("/");
+        });
+
+      } catch(error) {
         console.error(error);
 
         if (error.response && error.response.status) {
           if (error.response.status === 401) {
-            alert("Email atau password salah.");
+            // alert("Email atau password salah.");
+            Swal.fire({
+              title: 'Email atau password salah.',
+              icon: 'error',
+              confirmButtonText: 'OK',
+              confirmButtonColor: '#d33'
+            });
           } else if (error.response.status === 404) {
-            alert("Email tidak terdaftar.");
+            // alert("Email tidak terdaftar.");
+            Swal.fire({
+              title: 'Email tidak terdaftar.',
+              icon: 'warning',
+              confirmButtonText: 'OK',
+              confirmButtonColor: '#d33'
+            });
           } else {
-            alert("Login failed. Please try again later.");
+            // alert("Login failed. Please try again later.");
+            Swal.fire({
+              title: 'Login failed. Please try again later.',
+              icon: 'error',
+              confirmButtonText: 'OK',
+              confirmButtonColor: '#d33'
+            });
           }
         }
-      });
+      }
     },
   },
 };

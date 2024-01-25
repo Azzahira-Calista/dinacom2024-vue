@@ -60,7 +60,10 @@ export default {
 </script>
 
 <template>
+
   <div  class="relative  h-[44.75rem] overflow-hidden ">
+
+
     <div class="absolute inset-0 bg-black bg-opacity-50 h-full"></div>
     <img :src="img[0]" class="w-full h-full object-cover"/>
 

@@ -1,6 +1,6 @@
 <template>
-  <div class="scroll-container py-[3.12rem] px-[15.62rem] flex flex-col">
-    <div class="font-bold font-mont text-[2rem] text-primary ">{{ title }}</div>
+  <div class="scroll-container md:py-[3.12rem] md:px-[15.62rem]  flex flex-col">
+    <div class="font-bold font-mont text-[2rem] text-primary ml-[3rem] md:ml-0 md:mt-0 mt-[3rem]">{{ title }}</div>
     <l-map/>
   </div>
 </template>

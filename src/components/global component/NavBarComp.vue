@@ -28,7 +28,7 @@
         <!--        </div>-->
         <div class="flex align-middle items-center justify-center font-mont ">
           <div
-              class="rounded-2xl font-semibold text-base mr-[1.25rem] text-white px-[20px] py-[8px] bg-primary cursor-pointer"
+              class="rounded-2xl font-semibold md:text-base mr-[1.25rem] text-white md:px-[20px] md:py-[8px] p-[8px]  bg-primary cursor-pointer"
               @click="showPopupPickup = true"
           >
             Pick Up
@@ -44,7 +44,9 @@
             </router-link>
 
             <div v-else class="relative">
-              <button @click="show = !show" class="flex items-center w-[2.5rem] h-[2.5rem] bg-secondary rounded-full cursor-pointer"></button>
+              <button @click="show = !show" class="flex items-center w-[2.5rem] h-[2.5rem] bg-secondary rounded-full cursor-pointer overflow-hidden">
+                <img :src="require('@/assets/logo/icon_person.svg')" alt="user" class="flex items-center w-full h-full -mb-2 overflow-hidden" />
+              </button>
               <div v-show="show" class="absolute right-0 py-2 mt-2 bg-bgColor rounded-md shadow-xl w-32 flex flex-col font-mont text-[#303030]">
                 <router-link to="/profile" class="align-middle px-2 hover:bg-secondaryBgColor py-1">Profile</router-link>
                 <router-link to="" @click="showPopup = true" class="align-middle px-2 hover:bg-secondaryBgColor py-1">Tukar point</router-link>

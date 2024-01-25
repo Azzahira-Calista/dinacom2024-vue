@@ -68,10 +68,10 @@ export default {
     <img :src="img[0]" class="w-full h-full object-cover"/>
 
     <div data-aos="fade-up" class="flex justify-between absolute inset-0 w-[26.87rem] m">
-      <div class="flex-1 flex items-center justify-center lg:px-[15.62rem] md:px-[2rem]">
+      <div class="flex-1 flex items-center justify-center lg:px-[15.62rem] md:px-[2rem] px-10">
         <div class="text-start text-white ">
           <h1 class="font-mont font-bold text-[48px] ">Re:cycle</h1>
-          <p class="font-mont font-normal text-[20px] text-wrap w-[26.87rem]">
+          <p class="font-mont font-normal text-[20px] text-wrap md:w-[26.87rem]">
             Mengolah sampah kembali atau mendaur ulang sampah menjadi sesuatu yang dapat digunakan kembali
           </p>
           <router-link to="/about-us">

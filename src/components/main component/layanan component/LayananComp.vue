@@ -31,7 +31,7 @@
             </div>
           </div>
         </div>
-        <div class="font-mont h-[30rem] flex-row flex-wrap items-center justify-center text-center text-neutral-800">
+        <div class="md:mx-10 font-mont h-[30rem] flex-row flex-wrap items-center justify-center text-center text-neutral-800">
           <div class="shadow-xl flex w-[18rem] h-[22.5rem] flex-col items-center gap-y-7 rounded-[15px] bg-white px-7 pb-14 pt-8 box-shadow-md">
             <div class="flex justify-center text-xl font-bold">Drop off</div>
             <div class="h-24 w-20">

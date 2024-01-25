@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-10 bg-bgColor pt-[3.12rem] px-[15.62rem]  flex flex-col justify-center items-center relative overflow-hidden">
+  <div class=" bg-bgColor pt-[3.12rem] md:px-[15.62rem]  flex flex-col justify-center items-center relative overflow-hidden">
     <img
         class="absolute top-0 -right-20 w-1/3 object-cover -mt-40 transform rotate-[-75deg] overflow-hidden"
         :src="img[0]"
@@ -17,9 +17,9 @@
     />
 
     <div class="flex flex-col align-center items-center justify-center overflow-hidden md:flex-col" data-aos="fade-down ">
-      <div class="md:flex mx-auto font-bold font-mont text-[2rem] text-primary  md:w-screen w-[25rem] md:items-center md:px-[15.62rem]">{{ title }}</div>
+      <div class="md:flex flex font-bold font-mont mx-10 md:text-[2rem] text-[1.5rem] text-primary  md:w-screen  md:items-center md:px-[15.62rem]">{{ title }}</div>
       <div class="md:flex md:flex-row flex flex-col justify-center items-center content-center">
-      <div class="max-w-[25rem] my-10 w-full md:mr-20 ml-2.5">
+      <div class="max-w-[25rem] my-10 w-full md:mr-20 ">
         <canvas
             ref="chart"
             class="chart-canvas "

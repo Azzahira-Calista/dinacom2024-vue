@@ -1,11 +1,8 @@
 <template >
-<<<<<<< HEAD
+
   <div class="bg-bgColor">
     <nav-bar-comp/>
-=======
-  <div class="w-full h-full bg-bgColor">
-    <nav-bar-comp @layanan="scrollToElement" @lokasi="scrollToElement" @faq="scrollToElement"/>
->>>>>>> cfef1f46eb5349787995a726df534baa5ad5d415
+
     <hero-comp/>
     <chart-comp/>
     <layanan-comp ref="layananElement"/>

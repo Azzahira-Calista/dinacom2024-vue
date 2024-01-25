@@ -1,5 +1,5 @@
 <template>
-  <div class="scroll-container bg-bgColor py-[3.12rem] px-[15.62rem] relative flex flex-col items-center overflow-hidden">
+  <div class="bg-bgColor py-[3.12rem] md:px-[15.62rem] relative flex flex-col items-center overflow-hidden">
 
     <img
         class="absolute bottom-0 -left-20 w-1/4 object-cover -mt-40 transform rotate-[2deg] overflow-hidden"

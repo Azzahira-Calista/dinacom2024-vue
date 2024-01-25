@@ -40,8 +40,8 @@ export default {
 </script>
 
 <template>
-  <div class="w-[59rem] bg-white rounded-[15px] m-[2rem]" v-for="(item, index) in faqs" :key="index">
-    <div @click="item.open = !item.open" class="h-[3.5rem] mx-[1.5rem] flex items-center justify-between cursor-pointer">
+  <div @click="item.open = !item.open" class="md:w-[59rem] w-[27rem] bg-white rounded-[15px] m-[2rem]" v-for="(item, index) in faqs" :key="index">
+    <div class="h-[3.5rem] mx-[1.5rem] flex items-center justify-between cursor-pointer">
       <h2 class="text-[20px] pr-[1.5rem] flex items-center">{{ item.question }}</h2>
       <img :src="img">
     </div>

@@ -1,5 +1,5 @@
 <template >
-  <div class="w-full h-full bg-bgColor">
+  <div class="bg-bgColor">
     <nav-bar-comp/>
     <hero-comp/>
     <chart-comp/>

@@ -60,20 +60,20 @@ export default {
 </script>
 
 <template>
-  <div  class="relative w-full h-[44.75rem] overflow-hidden">
+  <div  class="relative  h-[44.75rem] overflow-hidden ">
     <div class="absolute inset-0 bg-black bg-opacity-50 h-full"></div>
     <img :src="img[0]" class="w-full h-full object-cover"/>
 
-    <div data-aos="fade-up" class="flex justify-between absolute inset-0 w-[26.87rem]">
-      <div class="flex-1 flex items-center justify-center px-[15.62rem]">
-        <div class="text-start text-white">
-          <h1 class="font-mont font-bold text-[48px]">Re:cycle</h1>
+    <div data-aos="fade-up" class="flex justify-between absolute inset-0 w-[26.87rem] m">
+      <div class="flex-1 flex items-center justify-center lg:px-[15.62rem] md:px-[2rem]">
+        <div class="text-start text-white ">
+          <h1 class="font-mont font-bold text-[48px] ">Re:cycle</h1>
           <p class="font-mont font-normal text-[20px] text-wrap w-[26.87rem]">
             Mengolah sampah kembali atau mendaur ulang sampah menjadi sesuatu yang dapat digunakan kembali
           </p>
           <router-link to="/about-us">
-            <button class="w-32 h-12 mt-5 bg-primary rounded-[15px] text-xl font-mont text-white font-semibold">
-              About Us
+            <button class="w-40 h-12 mt-5 bg-primary rounded-[15px] text-xl  font-mont text-white font-semibold ">
+              Tentang kami
             </button>
           </router-link>
 
@@ -81,9 +81,9 @@ export default {
       </div>
     </div>
 
-    <div  class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white w-1/2 rounded-l-full h-[25rem]">
+    <div  class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white w-1/2 rounded-l-full h-[25rem] hidden md:block">
       <div class="absolute top-1/2 -right-[10rem] transform -translate-y-1/2 w-[50rem]">
-        <img :src="img[1]" class="w-[40rem] h-full object-cover">
+        <img :src="img[1]" class="w-[40rem] h-full object-cover hidden md:block">
       </div>
     </div>
 

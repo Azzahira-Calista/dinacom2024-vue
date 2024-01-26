@@ -16,7 +16,7 @@
 
                 <div class="flex w-[18rem] align-middle items-center px-[20px] py-[20px] bg-white rounded-[1rem] shadow-lg ">
                     <p class="mr-[20px] text-primary">Rp</p>
-                    <div class="text-xl">50</div>
+                    <div class="text-xl">{{ point }}</div>
                 </div> 
 
                 <div class="flex items-center">
@@ -94,6 +94,7 @@
 <script>
 import Swal from 'sweetalert2';
 import PointUser from '@/components/profile component/PointUser.vue';
+import axios from "axios";
 
 export default {
     components: {
@@ -102,6 +103,7 @@ export default {
 
     data() {
         return {
+          point:null,
             selectedLogo: false,
             show: true,
             showPopupSuccess: false,
@@ -144,7 +146,30 @@ export default {
                 confirmButtonColor: '#E88A1B',
             });
         },
-    }
+      async points(){
+        try {
+          const token = localStorage.getItem('token');
+
+          const response = await axios.get(`http://dinacom.unisains.com/api/data-user`, {
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+          });
+
+          console.log("ini data");
+          console.log(response);
+          this.point = response.data.points;
+
+          console.log(this.point)
+          // console.log(this.dataPickup[0].detail_location)
+        }catch (error) {
+          console.error(error)
+        }
+      }
+    },
+  mounted() {
+      this.points();
+  }
 
 }
 </script>

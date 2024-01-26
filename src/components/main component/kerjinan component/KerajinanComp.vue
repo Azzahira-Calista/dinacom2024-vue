@@ -23,7 +23,7 @@ export default {
 </script>
 
 <template>
-  <div class="py-[3.12rem] px-[15.62rem] bg-secondaryBgColor relative overflow-hidden">
+  <div class="py-[3.12rem] md:px-[15.62rem] px-10 bg-secondaryBgColor relative overflow-hidden">
 
     <img
         class="absolute -top-20 -left-52 w-[35rem] object-cover transform rotate-[84deg] overflow-hidden"
@@ -36,7 +36,7 @@ export default {
         alt="Background Image"
     />
     <div data-aos="fade-left">
-      <div class="flex flex-col  justify-center items-center relative ">
+      <div class="flex flex-col justify-center items-center relative ">
         <div class="font-bold font-mont text-[2rem] text-secondary">{{ title }}</div>
         <div class=" text-base font-mont pb-[3.12rem] pt-2 text-center text-[#303030]">{{ subTitle }}</div>
       </div>

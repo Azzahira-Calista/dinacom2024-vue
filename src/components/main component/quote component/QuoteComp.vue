@@ -13,9 +13,9 @@
         class="object-cover w-full h-full"
       />
       <div class="absolute flex flex-col inset-0 items-center justify-center text-center m-24">
-        <p class="font-mont text-2xl text-white max-w-[50rem]">
+        <p class="font-mont md:text-2xl text-sm text-white max-w-[50rem]">
           “Sampah tidak hanya menciptakan polusi visual, tetapi juga mengancam keberlanjutan hidup kita di planet ini. Setiap orang memiliki tanggung jawab untuk berkontribusi pada solusi”        </p>
-        <p class="font-montserrat text-2xl text-white max-w-[50rem]">
+        <p class="font-montserrat md:text-2xl text-sm text-white max-w-[50rem]">
             -Sylvia Earle-
         </p>
       </div>

@@ -1,14 +1,14 @@
 <template>
-    <div class="mt-[3.75rem] flex bg-bgColor"  data-aos="fade-up">
+    <div class="md:mt-[3.75rem] md:flex bg-bgColor"  data-aos="fade-up">
 
-        <div class=" w-[40rem]">
+      <div class="w-30 md:w-[40rem]">
         <img :src="image" alt="Trash Pic" class="h-full w-full object-cover"/>
       </div>
-        <div class="font-mont flex flex-column justify-center items-center ml-[5rem]">
+        <div class="font-mont flex flex-column justify-center items-center mx-4 md:ml-[5rem]">
           <div>
-            <h2 class="mb-[1.875rem] text-[2rem] font-mont font-bold">{{ title }}</h2>
-            <p class="max-w-[29rem] mb-[1.25rem] text-[1.25rem] text-justify">{{ description }}</p>
-            <p class="max-w-[29rem] text-[1.25rem] text-justify">{{ description2 }}</p>
+            <h2 class="mb-[1.875rem] md:text-[2rem] text-1 font-mont font-bold">{{ title }}</h2>
+            <p class="max-w-[29rem] mb-[1.25rem] md:text-[1.25rem] text-0.5 text-justify">{{ description }}</p>
+            <p class="max-w-[29rem] md:text-[1.25rem] text-0.5 text-justify">{{ description2 }}</p>
           </div>
         </div>
     </div>

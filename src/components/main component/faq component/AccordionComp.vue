@@ -40,12 +40,12 @@ export default {
 </script>
 
 <template>
-  <div @click="item.open = !item.open" class="md:w-[59rem] w-[27rem] bg-white rounded-[15px] m-[2rem]" v-for="(item, index) in faqs" :key="index">
-    <div class="h-[3.5rem] mx-[1.5rem] flex items-center justify-between cursor-pointer">
-      <h2 class="text-[20px] pr-[1.5rem] flex items-center">{{ item.question }}</h2>
+  <div @click="item.open = !item.open" class="md:w-[59rem] bg-white rounded-[15px] md:m-[2rem] my-[1.5rem]" v-for="(item, index) in faqs" :key="index">
+    <div class=" flex items-center justify-between cursor-pointer mx-[1.5rem]">
+      <h2 class="md:text-[20px] text-[16px] pr-[1.5rem] py-1 flex items-center">{{ item.question }}</h2>
       <img :src="img">
     </div>
-    <p class="p-[1.5rem] text-[16px]" :class="item.open ? 'd-block' : 'hidden'">{{ item.answer }}</p>
+    <p class="p-[1.5rem] md:text-[16px] text-[12px]" :class="item.open ? 'd-block' : 'hidden'">{{ item.answer }}</p>
   </div>
 </template>
 

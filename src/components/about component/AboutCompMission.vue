@@ -1,7 +1,7 @@
 <template>
     <div class="font-mont flex relative justify-center items-center mt-[5rem]">
-        <div class="absolute max-w-[45rem] text-center text-[1.25rem]" data-aos="fade-up">
-            <p class="text-white">{{ text }}</p>
+        <div class="absolute max-w-[45rem] text-center text-0.5 md:text-[1.25rem]" data-aos="fade-up">
+            <p class="text-white mx-8">{{ text }}</p>
         </div>
         <div>
             <img :src="image" class="h-[44.3125rem] w-screen object-cover"/>

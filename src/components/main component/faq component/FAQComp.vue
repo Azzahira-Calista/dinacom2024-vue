@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-bgColor py-[3.12rem] md:px-[15.62rem] relative flex flex-col items-center overflow-hidden">
+  <div class="bg-bgColor md:px-[15.62rem] relative flex flex-col items-center overflow-hidden">
 
     <img
         class="absolute bottom-0 -left-20 w-1/4 object-cover -mt-40 transform rotate-[2deg] overflow-hidden"
@@ -12,7 +12,9 @@
         alt="Background Image"
     />
     <div data-aos="fade-up"
-         data-aos-duration="3000">
+         data-aos-duration="3000"
+         class="m-10"
+    >
       <div class=" font-mont font-bold text-[32px] text-primary">
         FAQ
       </div>
@@ -43,6 +45,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

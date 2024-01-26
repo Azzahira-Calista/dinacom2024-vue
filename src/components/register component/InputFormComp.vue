@@ -56,7 +56,7 @@ import Swal from 'sweetalert2';
 
 export default {
 
-  data(){
+  data() {
     return {
       heading: "Registrasi",
       subheading: "sudeh memiliki akun?",
@@ -81,12 +81,15 @@ export default {
           return;
         }
 
-        const response = await axios.post('http://127.0.0.1:8000/api/register', this.postData);
+        const response = await axios.post('http://dinacom.unisains.com/api/register', this.postData);
         console.log(response);
 
-        const token = response.data.data.token;
+        const token = response.data.token;
+        const user_id = response.data.user.id;
         console.log(token);
+        console.log(user_id);
         localStorage.setItem("token", token);
+        localStorage.setItem("user_id", user_id);
 
         this.postData.name = "";
         this.postData.email = "";

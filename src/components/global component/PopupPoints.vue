@@ -4,12 +4,11 @@
         class="fixed inset-0 bg-black-opacity-45 backdrop-blur-sm flex justify-center items-center z-30"
     > -->
 
-    <div v-if="showPopup" class="fixed inset-0 bg-black-opacity-45 backdrop-blur-sm flex justify-center items-center z-30" 
-    @click="closePopup($event)">
+    <div v-if="showPopup" class="fixed inset-0 bg-black-opacity-45 backdrop-blur-sm flex justify-center items-center z-30">
 
-        <div class=" fixed w-screen h-screen items-center justify-center right-[-2rem] bottom-4 flex" >
+        <div class=" fixed w-screen h-screen items-center justify-center flex" >
 
-            <div class="h-[40rem] w-96 p-12 bg-bgColor shadow-2xl rounded-[20px] flex flex-col justify-between">
+            <div class="h-[40rem] md:w-96 p-10 mx-2 bg-bgColor shadow-2xl rounded-[20px] flex flex-col justify-between">
                 <p class="font-mont text-[#669940] text-[24px] font-bold">Tukar Pointmu !</p>
 
                 <point-user/>
@@ -54,38 +53,44 @@
                 <div class="relative bg-white rounded-[1rem] p-8 h-76 overflow-hidden">
                     <p class="text-[12] font-semibold pb-8">Masukkan nomor handphone kamu yang terdaftar di aplikasi</p>
                     <div class="flex ">
-                        <input type="number" class="w-3/5 border-b focus:border-b-2" placeholder="Nomor Kamu">
+                        <input type="number" name="nomorhp" class="w-3/5 border-b focus:border-b-2" placeholder="Nomor Kamu">
                         
                         <img
                             v-if="selectedLogo === 'logo_gopay' ? true : false"
                             :src="img[4]"
                             alt="logo gopay"
-                            class="h-[10rem] absolute left-40 -bottom-16"
+                            class="h-[7rem] absolute left-52 -bottom-8"
                         />
                         <img
                             v-if="selectedLogo === 'logo_shopee' ? true : false"
                             :src="img[5]"
                             alt="logo shopee"
-                            class="h-[10rem] absolute left-48 -bottom-16"
+                            class="h-[8rem] absolute left-52 -bottom-10"
                         />
                         <img
                             v-if="selectedLogo === 'logo_dana' ? true : false"
                             :src="img[6]"
                             alt="logo dana"
-                            class="h-[10rem] absolute left-32 -bottom-12"
+                            class="h-[7rem] absolute left-44 -bottom-8"
                         />
                         <img
                             v-if="selectedLogo === 'logo_ovo' ? true : false"
                             :src="img[7]"
                             alt="logo ovo"
-                            class="h-[10rem] absolute left-40 -bottom-16"
+                            class="h-[7rem] absolute left-52 -bottom-8"
                         />
                     </div>
                 </div>
 
-                <button @click="showAlert " class="bg-primary hover:bg-blend-overlay text-white text-center font-bold py-2 px-4 rounded-xl">
-                    <router-link to=""  >Tukar</router-link>
-                </button>
+                <div class="flex h-[3.125rem] my-[1.75rem] items-center justify-between ">
+                    <router-link @click="closePopup" to="/" class="font-mont font-semibold h-[2.75rem] w-[7.5rem] text-center py-[0.625rem] bg-gray-400 font-[w600] text-white text-xl rounded-[0.9375rem]">
+                        Close
+                    </router-link>
+                    <button @click="showAlert " type="submit" class="font-mont font-semibold h-[2.75rem] w-[9rem] text-center py-[0.625rem] bg-primary font-[w600] text-white text-xl rounded-[0.9375rem]">
+                        Tukar
+                    </button>
+                </div>
+
             </div>
         </div>
     </div>
@@ -115,6 +120,10 @@ export default {
                 require("@/assets/icons/Payments/logo_dana.png"),
                 require("@/assets/icons/Payments/logo_ovo.png"),
             ],
+
+            dataPoint: {
+                nomorhp: "",
+            },
         }
     },
 
@@ -124,18 +133,22 @@ export default {
 
     methods: {
         closePopup(event) {
-            console.log('closePopup called', event);
-            const clickedElement = event.target;
-            if (clickedElement.classList.contains('bg-black-opacity-45')) {
-                this.show = false;
-                this.showSuccess = false;
-                this.$emit('closePopup');
-            }
+            Swal.fire({
+              title: "Batal",
+              text: "Tukar point dibatalkan",
+              icon: "error",
+              confirmButtonColor: "#E88A1B",
+            });
+            this.$emit("closePopup", event);
         },
         selectLogo(logoKey) {
             this.selectedLogo = logoKey;
         },
         showAlert() {
+            if (!this.dataPoint.nomorhp) {
+                alert("Isi nomor hp terlebih dahulu!");
+                return;
+            }
             this.$emit('closePopup');
             Swal.fire({
                 title: 'Berhasil!',

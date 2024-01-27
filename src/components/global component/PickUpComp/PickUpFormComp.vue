@@ -81,7 +81,6 @@
 
             isActive: false,
             selectedOption: "Desa",
-            // img: "your-image-source",
             options: [
               { text: "Besito" },
               { text: "Getassrabi" },
@@ -145,25 +144,25 @@
                   confirmButtonText: "Ya, saya yakin!",
                   cancelButtonText: "Batal",
   
-          }).then((result) => {
-              if (result.isConfirmed) {
-                  this.$emit("closePopupPickup", event);
-  
-              Swal.fire({
-                  title: "Berhasil!",
-                  text: "Pick up berhasil dilakukan",
-                  icon: "success",
-                  confirmButtonColor: "#E88A1B",
-              })  
-              } else {
-              Swal.fire({
-                  title: "Batal",
-                  text: "Pick up dibatalkan",
-                  icon: "error",
-                  confirmButtonColor: "#E88A1B",
-              });
-              }
-          });
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    this.$emit("closePopupPickup", event);
+    
+                Swal.fire({
+                    title: "Berhasil!",
+                    text: "Pick up berhasil dilakukan",
+                    icon: "success",
+                    confirmButtonColor: "#E88A1B",
+                })  
+                } else {
+                Swal.fire({
+                    title: "Batal",
+                    text: "Pick up dibatalkan",
+                    icon: "error",
+                    confirmButtonColor: "#E88A1B",
+                });
+                }
+            });
           },
 
           toggleMenu() {

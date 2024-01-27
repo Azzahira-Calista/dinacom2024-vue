@@ -12,7 +12,7 @@
         alt="Background Image"
         class="object-cover w-full h-full"
       />
-      <div class="absolute flex flex-col inset-0 items-center justify-center text-center m-24">
+      <div class="absolute flex flex-col inset-0 items-center justify-center text-center m-7 md:m-24">
         <p class="font-mont md:text-2xl text-sm text-white max-w-[50rem]">
           “Sampah tidak hanya menciptakan polusi visual, tetapi juga mengancam keberlanjutan hidup kita di planet ini. Setiap orang memiliki tanggung jawab untuk berkontribusi pada solusi”        </p>
         <p class="font-montserrat md:text-2xl text-sm text-white max-w-[50rem]">

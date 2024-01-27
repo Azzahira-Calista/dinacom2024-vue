@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div class="bg-bgColor md:px-[15.62rem] relative flex flex-col items-center overflow-hidden">
 
     <img

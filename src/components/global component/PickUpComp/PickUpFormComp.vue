@@ -35,7 +35,7 @@
           <div class="flex h-[3.125rem]  items-center justify-between mb-[1.25rem]">
             <input type="number" v-model="dataPickup.weight" name="weight" id="weight" placeholder="Berat Perkiraan (minimal pickup 500 g)" class="bg-[#F1F0F0] h-[3.125rem] md:w-[24.5rem] w-full px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
             <div class="flex justify-center items-center text-center bg-[#F1F0F0] h-[3.125rem] w-[4.25rem] px-[1rem] rounded-[0.9375rem] ml-2 focus:outline-none">
-              <p>gram</p>
+              <p>KG</p>
             </div>
           </div>
           <input type="text" v-model="dataPickup.type" name="type" id="type" placeholder="Jenis Sampah (organik / non-organik)" class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
@@ -64,7 +64,6 @@
           showPopupPickup: Boolean,
         },
         data() {
-          // const router = useRouter()
           return {
             heading: "Detail Pick Up",
             button_text: "Pick Up",
@@ -81,7 +80,6 @@
 
             isActive: false,
             selectedOption: "Desa",
-            // img: "your-image-source",
             options: [
               { text: "Besito" },
               { text: "Getassrabi" },
@@ -145,25 +143,25 @@
                   confirmButtonText: "Ya, saya yakin!",
                   cancelButtonText: "Batal",
   
-          }).then((result) => {
-              if (result.isConfirmed) {
-                  this.$emit("closePopupPickup", event);
-  
-              Swal.fire({
-                  title: "Berhasil!",
-                  text: "Pick up berhasil dilakukan",
-                  icon: "success",
-                  confirmButtonColor: "#E88A1B",
-              })  
-              } else {
-              Swal.fire({
-                  title: "Batal",
-                  text: "Pick up dibatalkan",
-                  icon: "error",
-                  confirmButtonColor: "#E88A1B",
-              });
-              }
-          });
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    this.$emit("closePopupPickup", event);
+    
+                Swal.fire({
+                    title: "Berhasil!",
+                    text: "Pick up berhasil dilakukan",
+                    icon: "success",
+                    confirmButtonColor: "#E88A1B",
+                })  
+                } else {
+                Swal.fire({
+                    title: "Batal",
+                    text: "Pick up dibatalkan",
+                    icon: "error",
+                    confirmButtonColor: "#E88A1B",
+                });
+                }
+            });
           },
 
           toggleMenu() {

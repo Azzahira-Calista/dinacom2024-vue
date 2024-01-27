@@ -10,7 +10,7 @@ export default {
       faqs: [
         {
           question: "Bagaimana cara perhitungan point di platform Recycle?",
-          answer: "Kami menyediakan fitur point yang dapat ditukarkan dengan uang. Anda dapat menukarkan point anda menjai uang non-tunai melalui beberapa metode yang tersedia.<br/> Setiap >0.5kg sampah = 25 point, 1kg sampah = 50 point, >1.5kg sampah = 100 point, >3kg sampah = 1000 point",
+          answer: "Kami menyediakan fitur point yang dapat ditukarkan dengan uang. Anda dapat menukarkan point anda menjai uang non-tunai melalui beberapa metode yang tersedia. Setiap >0.5kg sampah = 25 point, 1kg sampah = 50 point, >1.5kg sampah = 100 point, >3kg sampah = 1000 point",
           open: false
         },
         {

@@ -1,10 +1,10 @@
 <template>
-  <div class="w-full h-full relative">
-    <div class="relative">
-      <img :src="bgImg" class="w-full" alt="Background Image">
+  <div class="w-full h-full relative bg-bgColor">
+    <div class="relative  h-56">
+      <img :src="bgImg" class="w-full h-full" alt="Background Image">
       <div class="absolute inset-0 bg-black opacity-30"></div>
     </div>
-    <div class="px-[9rem] mx-6 absolute flex flex-col">
+    <div class="md:px-[9rem] mx-[1.5rem] absolute flex flex-col">
       <div class="-mt-20 mr-[5.25rem]">
         <data-user/>
       </div>

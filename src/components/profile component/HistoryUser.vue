@@ -46,9 +46,9 @@ export default{
 </script>
 
 <template>
-  <div class="flex-col flex bg-bgColor px-9">
+  <div class="flex-col flex  md:px-9">
     <div class="font-mont text-2xl">{{ heading }}</div>
-    <div class="mt-16 bg-white rounded-[1rem] p-[20px]">
+    <div class="md:mt-16 mt-6 bg-white rounded-[1rem] md:p-[20px]">
       <table class="font-mont table-fixed w-full">
         <thead>
         <tr>
@@ -61,14 +61,14 @@ export default{
 
         </tr>
         <tr>
-          <td colspan=6 class="p-1">
+          <td colspan=5 class="p-1">
             <hr class="border-b my-2">
           </td>
         </tr>
         </thead>
         <tbody>
 
-        <tr v-for="item in dataPickup" :key="item.id" class="text-center my-5">
+        <tr v-for="item in dataPickup" :key="item.id" class="text-center my-5 md:text-base text-sm">
 <!--          <td>{{ noList }}</td>-->
           <td>{{ new Date(item.created_at).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'}) }}</td>
           <td>{{ item.detail_location }}</td>

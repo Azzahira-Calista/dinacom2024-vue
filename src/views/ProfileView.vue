@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-[100rem] bg-bgColor">
+  <div class="w-screen h-screen bg-bgColor">
     <nav-bar-comp/>
     <profile-comp/>
   </div>

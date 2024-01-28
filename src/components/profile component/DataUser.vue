@@ -141,8 +141,8 @@ import axios from "axios";
 
 
 <template>
-  <div class=" flex w-align-middle font-mont items-center w-[70rem] justify-between">
-    <div class="ps-11 flex flex-col align-middle font-mont items-start ">
+  <div class=" md:flex md:flex-row flex flex-col md:w-align-middle items-start font-mont md:items-center md:w-[70rem] justify-between">
+    <div class="md:px-11  flex flex-col align-middle font-mont items-start ">
       <!--    <div class="bg-secondary mb-[1.25rem] rounded-full w-[12.5rem] h-[12.5rem] cursor-pointer">-->
 
       <!--    </div>-->

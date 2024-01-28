@@ -14,16 +14,16 @@ export default {
       items: [
         {
           no: 1,
-          text: "Memberikan layanan Pick Up untuk menjemput sampah dari rumah, mendorong partisipasi aktif masyarakat dalam pengelolaan sampah."
+          text: "Meningkatkan jumlah masyarakat yang melakukan pemilahan sampah."
         }, {
           no: 2,
-          text: "Menyediakan layanan Drop Off untuk tempat pembuangan sampah terdekat yang dapat diakses oleh pengguna."
+          text: "Meningkatkan jumlah sampah yang didaur ulang."
         }, {
           no: 3,
-          text: "Memberikan layanan Points sebagai insentif bagi pengguna yang mendaur ulang, dengan sistem poin yang dapat ditukarkan menjadi uang."
+          text: "Dapat mengurangi timbunan sampah yang tidak di daur ulang."
         }, {
           no: 4,
-          text: "Mendorong kreativitas dalam mengubah sampah menjadi barang bernilai tinggi"
+          text: "Menciptakan gaya hidup yang lebih berkelanjutan dan bertanggung jawab atas kebersihan lingkungan"
         }
       ],
     }

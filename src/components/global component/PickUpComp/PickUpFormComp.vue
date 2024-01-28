@@ -36,6 +36,7 @@
             <input type="number" v-model="dataPickup.weight" name="weight" id="weight" placeholder="Berat Perkiraan (minimal pickup 5 kg)" class="bg-[#F1F0F0] h-[3.125rem] md:w-[24.5rem] w-full px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
             <div class="flex justify-center items-center text-center bg-[#F1F0F0] h-[3.125rem] w-[4.25rem] px-[1rem] rounded-[0.9375rem] ml-2 focus:outline-none">
               <p>Kg</p>
+
             </div>
           </div>
 <!--          <input-->
@@ -94,7 +95,6 @@
           showPopupPickup: Boolean,
         },
         data() {
-          // const router = useRouter()
           return {
             heading: "Detail Pick Up",
             button_text: "Pick Up",
@@ -112,12 +112,14 @@
             isActive: false,
             isActiveOption: false,
             selectedOption: "Desa",
+
             selectedOpsi: "Organik / non-organik",
             // img: "your-image-source",
             trashOptions: [
               { text: "Organik" },
               { text: "Non-organik" },
             ],
+
             options: [
               { text: "Besito" },
               { text: "Getassrabi" },
@@ -199,26 +201,28 @@
                   confirmButtonText: "Ya, saya yakin!",
                   cancelButtonText: "Batal",
   
-          }).then((result) => {
-              if (result.isConfirmed) {
-                  this.$router.push("/");
-  
-              Swal.fire({
-                  title: "Berhasil!",
-                  text: "Pick up berhasil dilakukan, mohon tunggu",
-                  icon: "success",
-                  confirmButtonColor: "#E88A1B",
-              })  
-              } else {
-                  this.$emit("closePopupPickup", event);
-              Swal.fire({
-                  title: "Batal",
-                  text: "Pick up dibatalkan",
-                  icon: "error",
-                  confirmButtonColor: "#E88A1B",
-              });
-              }
-          });
+
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    this.$emit("closePopupPickup", event);
+    
+                Swal.fire({
+                    title: "Berhasil!",
+                    text: "Pick up berhasil dilakukan, mohon tunggu",
+                    icon: "success",
+                    confirmButtonColor: "#E88A1B",
+                })  
+                } else {
+                   this.$emit("closePopupPickup", event);
+                Swal.fire({
+                    title: "Batal",
+                    text: "Pick up dibatalkan",
+                    icon: "error",
+                    confirmButtonColor: "#E88A1B",
+                });
+                }
+            });
+
           },
 
           toggleMenu() {

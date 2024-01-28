@@ -27,11 +27,11 @@ import FooterComp from "@/components/global component/FooterComp.vue";
 import FAQComp from "@/components/main component/faq component/FAQComp.vue";
 
 export default {
-  // computed: {
-  //   layananComp() {
-  //     return layananComp
-  //   }
-  // },
+  computed: {
+    layananComp() {
+      return LayananComp
+    }
+  },
   setup() {
     const scrollToElement = (element) => {
       console.log("Scrolling to element:", element);
@@ -45,17 +45,15 @@ export default {
     };
   },
   methods: {
-
-
-    // layanan() {
-    //   this.$refs.layananComp.scrollIntoView({ behavior: "smooth" });
-    // },
-    // lokasi() {
-    //   this.$refs.locationComp.scrollIntoView({ behavior: "smooth" });
-    // },
-    // faq() {
-    //   this.$refs.faqComp.scrollIntoView({ behavior: "smooth" });
-    // },
+    layanan() {
+      this.$refs.layananComp.scrollIntoView({ behavior: "smooth" });
+    },
+    lokasi() {
+      this.$refs.locationComp.scrollIntoView({ behavior: "smooth" });
+    },
+    faq() {
+      this.$refs.faqComp.scrollIntoView({ behavior: "smooth" });
+    },
   },
   components: {
     FAQComp,

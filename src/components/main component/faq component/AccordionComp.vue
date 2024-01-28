@@ -11,6 +11,7 @@ export default {
         {
           question: "Bagaimana cara perhitungan point di platform Recycle?",
           answer: "Kami menyediakan fitur point yang dapat ditukarkan dengan uang. Perhitungan point kami yaitu berdasarkan value barang itu di pasaran",
+
           open: false
         },
         {

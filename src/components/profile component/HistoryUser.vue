@@ -58,6 +58,7 @@ export default{
           <th>Berat</th>
           <th>Jenis</th>
           <th>Deskripsi</th>
+          <th>Status</th>
 
         </tr>
         <tr>
@@ -72,9 +73,10 @@ export default{
 <!--          <td>{{ noList }}</td>-->
           <td>{{ new Date(item.created_at).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'}) }}</td>
           <td>{{ item.detail_location }}</td>
-          <td>{{ item.weight }} gram</td>
+          <td>{{ item.weight }} kg</td>
           <td>{{ item.type }}</td>
           <td>{{ item.description }}</td>
+          <td>{{ item.status }}</td>
         </tr>
 
         </tbody>

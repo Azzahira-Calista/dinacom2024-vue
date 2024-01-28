@@ -33,7 +33,7 @@
             <input type="text" v-model="dataPickup.detail_location" name="detail_location" id="detail_location" placeholder="Detail Lokasi" class="bg-[#F1F0F0] h-[3.125rem] md:ml-3 px-[1rem] rounded-[0.9375rem] w-full focus:outline-none focus:border-[#31936D]">
           </div>
           <div class="flex h-[3.125rem]  items-center justify-between mb-[1.25rem]">
-            <input type="number" v-model="dataPickup.weight" name="weight" id="weight" placeholder="Berat Perkiraan (minimal pickup 500 g)" class="bg-[#F1F0F0] h-[3.125rem] md:w-[24.5rem] w-full px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
+            <input type="number" v-model="dataPickup.weight" name="weight" id="weight" placeholder="Berat Perkiraan (minimal pickup 5 kg)" class="bg-[#F1F0F0] h-[3.125rem] md:w-[24.5rem] w-full px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
             <div class="flex justify-center items-center text-center bg-[#F1F0F0] h-[3.125rem] w-[4.25rem] px-[1rem] rounded-[0.9375rem] ml-2 focus:outline-none">
               <p>KG</p>
             </div>

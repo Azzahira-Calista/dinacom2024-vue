@@ -40,36 +40,56 @@ export default {
     })
 
     const data = {
-      jakarta: {
-        coords: [-6.2088, 106.8456],
-        title: 'Re:cycle di Jakarta',
-        address: 'Jakarta, Indonesia'
+      // Getassrabi: {
+      //   coords: [-6.763868, 110.806805],
+      //   title: 'Re:cycle di Getassrabi\n',
+      //   address: 'Getassrabi'
+      // },
+      // Gondosari: {
+      //   coords: [-6.726474, 110.843289],
+      //   title: 'Re:cycle di Gondosari',
+      //   address: 'Gondosari, Indonesia'
+      // },
+      Gribig: {
+        coords: [-6.786495, 110.825964],
+        title: 'Re:cycle di Gribig',
+        address: 'Gribig, Indonesia'
       },
-      bogor: {
-        coords: [-6.5950, 106.8166],
-        title: 'Re:cycle di Bogor',
-        address: 'Bogor, Indonesia'
+      Jurang: {
+        coords: [-6.736807, 110.847722],
+        title: 'Re:cycle di Jurang',
+        address: 'Jurang, Indonesia'
       },
-      depok: {
-        coords: [-6.4025, 106.7942],
-        title: 'Re:cycle di Depok',
-        address: 'Depok, Indonesia'
-      },
-      tangerang: {
-        coords: [-6.1780, 106.6296],
-        title: 'Re:cycle di Tangerang',
-        address: 'Tangerang, Indonesia'
-      },
-      bekasi: {
-        coords: [-6.2383, 106.9756],
-        title: 'Re:cycle di Bekasi',
-        address: 'Bekasi, Indonesia'
-      },
-      kudus: {
+      // Karangmalang: {
+      //   coords: [-6.764475, 110.834512],
+      //   title: 'Re:cycle di Karangmalang',
+      //   address: 'Karangmalang, Indonesia'
+      // },
+      Besito: {
         coords: [-6.7525, 110.8427],
-        title: 'Re:cycle di Kudus',
-        address: 'Kudus, Indonesia'
+        title: 'Re:cycle di Besito',
+        address: 'Besito, Indonesia'
       },
+      Kedungsari: {
+        coords: [-6.717878, 110.832649],
+        title: 'Re:cycle di Kedungsari',
+        address: 'Kedungsari, Indonesia'
+      },
+      Klumpit: {
+        coords: [-6.770702, 110.819753],
+        title: 'Re:cycle di Klumpit',
+        address: 'Klumpit, Indonesia'
+      },
+      // Menawan: {
+      //   coords: [-6.696913, 110.842912],
+      //   title: 'Re:cycle di Menawan',
+      //   address: 'Menawan, Indonesia'
+      // },
+      // Padurenan: {
+      //   coords: [-6.755053, 110.816695],
+      //   title: 'Re:cycle di Padurenan',
+      //   address: 'Padurenan, Indonesia'
+      // },
     };
 
 

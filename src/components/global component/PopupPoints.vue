@@ -86,11 +86,13 @@
                     <router-link @click="closePopup" to="/" class="font-mont font-semibold h-[2.75rem] w-[7.5rem] text-center py-[0.625rem] bg-gray-400 font-[w600] text-white text-xl rounded-[0.9375rem]">
                         Close
                     </router-link>
-                    <button @click="showAlert " type="submit" class="font-mont font-semibold h-[2.75rem] w-[9rem] text-center py-[0.625rem] bg-primary font-[w600] text-white text-xl rounded-[0.9375rem]">
+                    <button
+                        @click="showAlert"
+                        class="font-mont font-semibold h-[2.75rem] w-[9rem] text-center py-[0.625rem] bg-primary font-[w600] text-white text-xl rounded-[0.9375rem]"
+                    >
                         Tukar
                     </button>
                 </div>
-
             </div>
         </div>
     </div>
@@ -134,6 +136,7 @@ export default {
     },
 
     methods: {
+
         closePopup(event) {
             Swal.fire({
               title: "Batal",
@@ -147,22 +150,37 @@ export default {
             this.selectedLogo = logoKey;
         },
         showAlert() {
-            if (!this.dataPoint.nomorhp) {
-                alert("Isi nomor hp terlebih dahulu!");
-                return;
-            }
-            this.$emit('closePopup');
-            Swal.fire({
-                title: 'Berhasil!',
-                text: 'Points sudah berhasil ditukar, Terimakasih sudah bergabung bersama kami!',
-                icon: 'success',
-                confirmButtonColor: '#E88A1B',
-            });
+            if (this.point < 20000) {
+                    Swal.fire({
+                        title: "Belum Cukup",
+                        text: "Jumlah point kamu belum memenuhi syarat batas penukaran point, kumpulkan lebih banyak lagi!",
+                        icon: "error",
+                        confirmButtonColor: "#E88A1B",
+                    });
+                    return; // Don't proceed with redemption if the condition is not met
+                }
+
+                // Continue with the redemption process
+                this.$emit('closePopup');
+
+                // Perform other actions related to successful redemption
+                if (this.dataPoint.nomorhp == "") {
+                    alert("Isi nomor hp terlebih dahulu!");
+                    // Check if the point balance is sufficient for redemption            
+                    return;
+                } else {
+                    Swal.fire({
+                            title: 'Berhasil!',
+                            text: 'Points sudah berhasil ditukar, Terimakasih sudah bergabung bersama kami!',
+                            icon: 'success',
+                            confirmButtonColor: '#E88A1B',
+                        });
+                }
         },
+
       async points(){
         try {
           const token = localStorage.getItem('token');
-
           const response = await axios.get(`http://dinacom.unisains.com/api/data-user`, {
             headers: {
               'Authorization': `Bearer ${token}`
@@ -170,11 +188,14 @@ export default {
           });
 
           console.log("ini data");
+          console.log(token);
           console.log(response);
+
+          console.log(this.dataPoint.nomorhp);
+
           this.point = response.data.points;
 
           console.log(this.point)
-          // console.log(this.dataPickup[0].detail_location)
         }catch (error) {
           console.error(error)
         }

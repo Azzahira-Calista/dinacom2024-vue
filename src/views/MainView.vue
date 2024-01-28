@@ -4,9 +4,9 @@
     <nav-bar-comp/>
 
     <hero-comp/>
-    <chart-comp/>
-    <layanan-comp ref="layananElement"/>
-    <location-comp ref="lokasiElement"/>
+     <chart-comp/>
+     <layanan-comp ref="layananElement"/>
+     <location-comp ref="lokasiElement"/>
     <kerajinan-comp/>
     <quote-comp/>
     <f-a-q-comp ref="faqElement"/>

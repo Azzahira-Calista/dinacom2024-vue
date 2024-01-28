@@ -10,7 +10,8 @@ export default {
       faqs: [
         {
           question: "Bagaimana cara perhitungan point di platform Recycle?",
-          answer: "Kami menyediakan fitur point yang dapat ditukarkan dengan uang. Anda dapat menukarkan point anda menjai uang non-tunai melalui beberapa metode yang tersedia. Setiap >0.5kg sampah = 25 point, 1kg sampah = 50 point, >1.5kg sampah = 100 point, >3kg sampah = 1000 point",
+          answer: "Kami menyediakan fitur point yang dapat ditukarkan dengan uang. Perhitungan point kami yaitu berdasarkan value barang itu di pasaran",
+
           open: false
         },
         {
@@ -32,6 +33,11 @@ export default {
           question: "Bisakah saya mengumpulkan berbagai jenis sampah di Recycle Platform?",
           answer: "Ya, Recycle Platform mendukung pengumpulan berbagai jenis barang bekas yang dapat didaur ulang. Dari kertas, plastik, logam, hingga barang elektronik, Anda dapat berkontribusi dengan beragam jenis sampah.",
           open: false
+        },
+        {
+          question: "Kenapa point saya belum masuk?",
+          answer: "Point akan masuk setelah sampah yang anda kumpulkan diambil oleh kurir kami. Jika point anda belum masuk setelah 1x24 jam, silahkan hubungi customer service kami.",
+          open: false
         }
       ]
     }
@@ -40,9 +46,9 @@ export default {
 </script>
 
 <template>
-  <div @click="item.open = !item.open" class="md:w-[59rem] bg-white rounded-[15px] md:m-[2rem] my-[1.5rem]" v-for="(item, index) in faqs" :key="index">
+  <div @click="item.open = !item.open" class="md:w-[59rem] bg-white rounded-[15px] md:m-[2rem] my-[1rem]" v-for="(item, index) in faqs" :key="index">
     <div class=" flex items-center justify-between cursor-pointer mx-[1.5rem]">
-      <h2 class="md:text-[20px] text-[16px] pr-[1.5rem] py-1 flex items-center">{{ item.question }}</h2>
+      <h2 class="md:text-[20px] text-[16px] pr-[1.5rem] py-1.5 flex items-center">{{ item.question }}</h2>
       <img :src="img">
     </div>
     <p class="p-[1.5rem] md:text-[16px] text-[12px]" :class="item.open ? 'd-block' : 'hidden'">{{ item.answer }}</p>

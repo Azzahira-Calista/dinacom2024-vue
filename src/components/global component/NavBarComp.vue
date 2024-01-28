@@ -27,31 +27,35 @@
         <!--          <div class="relative mr-7 cursor-pointer block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center">FAQ</div>-->
         <!--        </div>-->
         <div class="flex align-middle items-center justify-center font-mont ">
-          <div
-              class="rounded-2xl font-semibold md:text-base mr-[1.25rem] text-white md:px-[20px] md:py-[8px] p-[8px]  bg-primary cursor-pointer"
-              @click="showPopupPickup = true"
-          >
-            Pick Up
-          </div>
-          <PickUpForm :showPopupPickup="showPopupPickup" @closePopupPickup="showPopupPickup = false"/>
 
           <div>
             <router-link
                 v-if="!hasToken"
                 to="/login"
                 class="mr-7 cursor-pointer text-primary">
-              Masuk
+              Masuk / Daftar
             </router-link>
 
-            <div v-else class="relative">
+            <div v-else class="relative flex">
+              <div>
+                <div
+                    class="rounded-2xl font-semibold md:text-base mr-[1.25rem] text-white md:px-[20px] md:py-[8px] p-[8px]  bg-primary cursor-pointer"
+                    @click="showPopupPickup = true"
+                >
+                  Pick Up
+                </div>
+                <PickUpForm :showPopupPickup="showPopupPickup" @closePopupPickup="showPopupPickup = false"/>
+              </div>
+
+
               <button @click="show = !show" class="flex items-center w-[2.5rem] h-[2.5rem] bg-secondary rounded-full cursor-pointer overflow-hidden">
                 <img :src="require('@/assets/logo/icon_person.svg')" alt="user" class="flex items-center w-full h-full -mb-2 overflow-hidden" />
               </button>
-              <div v-show="show" class="absolute right-0 py-2 mt-2 bg-bgColor rounded-md shadow-xl w-32 flex flex-col font-mont text-[#303030]">
+              <div v-show="show" class="absolute right-0 py-2 mt-14 bg-bgColor rounded-md shadow-xl w-32 flex flex-col font-mont text-[#303030]">
                 <router-link to="/profile" class="align-middle px-2 hover:bg-secondaryBgColor py-1">Profile</router-link>
                 <router-link to="" @click="showPopup = true" class="align-middle px-2 hover:bg-secondaryBgColor py-1">Tukar point</router-link>
                 <PopupPointsVue :showPopup="showPopup" @closePopup="showPopup = false" />
-                <button @click="confirmLogout" class=" px-2 text-red-500 hover:text-white hover:bg-red-300 py-1">Logout</button>
+                <button @click="confirmLogout" class="text-left px-2 text-red-500 hover:text-white hover:bg-red-300 py-1">Logout</button>
               </div>
             </div>
           </div>

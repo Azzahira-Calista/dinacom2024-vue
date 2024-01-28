@@ -16,14 +16,14 @@
               <img :src="img" class="ml-2 h-5 w-5"/>
               <div
                 v-if="isActive"
-                class="absolute top-full min-w-full w-max bg-white shadow-md mt-1 rounded"
+                class="absolute top-full min-w-full w-max bg-white shadow-md mt-1 rounded z-30"
               >
-                <ul class="text-left border rounded">
+                <ul class="text-left border rounded ">
                   <li
                     v-for="(option, index) in options"
                     :key="index"
                     @click="selectOption(option.text)"
-                    class="px-4 py-1 hover:bg-gray-100 border-b"
+                    class="px-4 py-1 hover:bg-gray-100 border-b "
                   >
                     {{ option.text }}
                   </li>
@@ -35,16 +35,47 @@
           <div class="flex h-[3.125rem]  items-center justify-between mb-[1.25rem]">
             <input type="number" v-model="dataPickup.weight" name="weight" id="weight" placeholder="Berat Perkiraan (minimal pickup 5 kg)" class="bg-[#F1F0F0] h-[3.125rem] md:w-[24.5rem] w-full px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
             <div class="flex justify-center items-center text-center bg-[#F1F0F0] h-[3.125rem] w-[4.25rem] px-[1rem] rounded-[0.9375rem] ml-2 focus:outline-none">
-              <p>KG</p>
+              <p>Kg</p>
+
             </div>
           </div>
-          <input type="text" v-model="dataPickup.type" name="type" id="type" placeholder="Jenis Sampah (organik / non-organik)" class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]">
+<!--          <input-->
+<!--              type="text"-->
+<!--              v-model="dataPickup.type"-->
+<!--              name="type"-->
+<!--              id="type"-->
+<!--              placeholder="Jenis Sampah (organik / non-organik)"-->
+<!--              class="bg-[#F1F0F0] mb-[1.25rem] h-[3.125rem] px-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D]"-->
+<!--          >-->
+          <button
+              type="button"
+              class="relative flex items-center mb-[1.25rem] md:mb-[1rem] px-4 h-[3.125rem]  w-full bg-[#F1F0F0] justify-between rounded-[0.9375rem] focus:outline-none shadow text-gray-600 focus:ring ring-gray-200 group"
+              @click="toggleOpsi"
+          >
+            <p>Pilih: {{ selectedOpsi }}</p>
+            <img :src="img" class="ml-2 h-5 w-5"/>
+            <div
+                v-if="isActiveOption"
+                class="absolute top-full min-w-full w-max bg-white shadow-md mt-1 rounded"
+            >
+              <ul class="text-left border rounded">
+                <li
+                    v-for="(jenis, index) in trashOptions"
+                    :key="index"
+                    @click="opsiSampah(jenis.text)"
+                    class="px-4 py-1 hover:bg-gray-100 border-b"
+                >
+                  {{ jenis.text }}
+                </li>
+              </ul>
+            </div>
+          </button>
             <textarea type="text" v-model="dataPickup.description" name="description" id="description" placeholder="Deskripsi" class="resize-none bg-[#F1F0F0] h-[9.375rem] p-[1rem] rounded-[0.9375rem] focus:outline-none focus:border-[#31936D] text-start"></textarea>
             <div class="flex h-[3.125rem] my-[1.75rem] items-center justify-between ">
-              <router-link @click="closePopupPickup" to="/" class="font-mont font-semibold h-[2.75rem] w-[7.5rem] text-center py-[0.625rem] bg-gray-400 font-[w600] text-white text-xl rounded-[0.9375rem]">
+              <router-link @click="closePopupPickup" to="/" class="font-mont font-semibold h-[2.75rem] w-[7.5rem] text-center py-[0.625rem] bg-gray-400  text-white text-xl rounded-[0.9375rem]">
                 Close
               </router-link>
-              <button @click="showAlert " type="submit" class="font-mont font-semibold h-[2.75rem] w-[10.5rem] text-center py-[0.625rem] bg-primary font-[w600] text-white text-xl rounded-[0.9375rem]">
+              <button @click="showAlert " type="submit" class="font-mont font-semibold h-[2.75rem] w-[10.5rem] text-center py-[0.625rem] bg-primary text-white text-xl rounded-[0.9375rem]">
                 Submit
               </button>
             </div>
@@ -70,16 +101,25 @@
             back: "Batal",
   
             dataPickup: {
-              detail_location: "",
+              detail_location: this.selectedOption,
               weight: "",
-              type: "",
+              type: this.selectedOpsi,
               description: ""
             },
 
             img: require('@/assets/icons/MainPage/MainPageFAQ/mingcute_down-fill.svg'),
 
             isActive: false,
+            isActiveOption: false,
             selectedOption: "Desa",
+
+            selectedOpsi: "Organik / non-organik",
+            // img: "your-image-source",
+            trashOptions: [
+              { text: "Organik" },
+              { text: "Non-organik" },
+            ],
+
             options: [
               { text: "Besito" },
               { text: "Getassrabi" },
@@ -97,6 +137,22 @@
         },
         methods: {
           async pickup(){
+
+            // Get the selected values from dropdowns
+            const selectedOption = this.selectedOption;
+            const selectedOpsi = this.selectedOpsi;
+
+            // Update dataPickup object with selected values
+            this.dataPickup.detail_location = selectedOption;
+            this.dataPickup.type = selectedOpsi;
+
+
+              console.log("Selected Option:", this.selectedOption);
+              console.log("Selected Opsi:", this.selectedOpsi);
+              console.log("Data Pickup:", this.dataPickup);
+
+
+
             try {
               if(!this.dataPickup.detail_location || !this.dataPickup.weight || !this.dataPickup.type || !this.dataPickup.description){
                alert("Form belum lengkap. Mohon isi semua field.");
@@ -113,11 +169,13 @@
               console.log(response);
               console.log(token);
 
-              this.dataPickup.detail_location = "";
-              this.dataPickup.weight = 0;
-              this.dataPickup.type = "";
-              this.dataPickup.description = "";
-  
+              this.dataPickup = {
+                detail_location: " " + this.selectedOption,
+                weight: 0,
+                type: "" + this.selectedOpsi,
+                description: ""
+              };
+
               this.$router.push("/")
             }catch (error) {
               console.error(error)
@@ -143,17 +201,19 @@
                   confirmButtonText: "Ya, saya yakin!",
                   cancelButtonText: "Batal",
   
+
             }).then((result) => {
                 if (result.isConfirmed) {
                     this.$emit("closePopupPickup", event);
     
                 Swal.fire({
                     title: "Berhasil!",
-                    text: "Pick up berhasil dilakukan",
+                    text: "Pick up berhasil dilakukan, mohon tunggu",
                     icon: "success",
                     confirmButtonColor: "#E88A1B",
                 })  
                 } else {
+                   this.$emit("closePopupPickup", event);
                 Swal.fire({
                     title: "Batal",
                     text: "Pick up dibatalkan",
@@ -162,6 +222,7 @@
                 });
                 }
             });
+
           },
 
           toggleMenu() {
@@ -171,11 +232,14 @@
             this.selectedOption = selectedOption;
             this.isActive = false;
           },
+          toggleOpsi() {
+            this.isActiveOption = !this.isActiveOption;
+          },
+          opsiSampah(selectedOpsi) {
+            this.selectedOpsi = selectedOpsi;
+            this.isActiveOption = false;
+          },
         },
   
   }
   </script>
-  
-  <style>
-  
-  </style>

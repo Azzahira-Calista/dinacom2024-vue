@@ -46,7 +46,7 @@ export default {
   data() {
     return {
       img: require ('@/assets/image/leaf_bg3.svg'),
-      cr: 'copyright © re:cycle 2024 ️',
+      cr: ' © copyright 2024 re:cycle  ️',
       desc: "Kami mengajak anda untuk membangun kebiasaan baru untuk mengelola sampah, guna mendukung terciptanya ekosistem yang ideal bagi lingkungan kita.",
       layanan: [
         { text: 'Drop off', link: '/' },

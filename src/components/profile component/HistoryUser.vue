@@ -22,7 +22,7 @@ export default{
 
         const token = localStorage.getItem('token');
         const user_id = localStorage.getItem('user_id');
-        const response = await axios.get(`http://dinacom.unisains.com/api/pickup/data-user/${user_id}`, {
+        const response = await axios.get(`https://dinacom.unisains.com/api/pickup/data-user/${user_id}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }

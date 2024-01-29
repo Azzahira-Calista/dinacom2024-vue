@@ -157,12 +157,16 @@ export default {
           icon: "error",
           confirmButtonColor: "#E88A1B",
         });
-        return;
+        return; // Don't proceed with redemption if the condition is not met
       }
+
+      // Continue with the redemption process
       this.$emit('closePopup');
 
+      // Perform other actions related to successful redemption
       if (this.dataPoint.nomorhp == "") {
         alert("Isi nomor hp terlebih dahulu!");
+        // Check if the point balance is sufficient for redemption
         return;
       } else {
         Swal.fire({
@@ -177,7 +181,7 @@ export default {
     async points(){
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get(`http://dinacom.unisains.com/api/data-user`, {
+        const response = await axios.get(`https://dinacom.unisains.com/api/data-user`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }

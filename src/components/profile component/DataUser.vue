@@ -115,7 +115,7 @@ import axios from "axios";
    async mounted(){
      try {
        const token = this.getToken();
-       const response = await axios.get('http://dinacom.unisains.com/api/data-user', {
+       const response = await axios.get('https://dinacom.unisains.com/api/data-user', {
          headers: {
            'Authorization': `Bearer ${token}`
          }

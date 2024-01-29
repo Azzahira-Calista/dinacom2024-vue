@@ -53,7 +53,7 @@ export default {
           return;
         }
 
-        const response = await axios.post('http://dinacom.unisains.com/api/login', this.postData);
+        const response = await axios.post('https://dinacom.unisains.com/api/login', this.postData);
 
         console.log(response);
         this.postData.email = "";

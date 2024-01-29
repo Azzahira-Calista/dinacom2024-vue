@@ -81,7 +81,7 @@ export default {
           return;
         }
 
-        const response = await axios.post('http://dinacom.unisains.com/api/register', this.postData);
+        const response = await axios.post('https://dinacom.unisains.com/api/register', this.postData);
         console.log(response);
 
         const token = response.data.token;

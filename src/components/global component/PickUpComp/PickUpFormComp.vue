@@ -160,7 +160,7 @@
               }
 
               const token = localStorage.getItem('token');
-              const response = await axios.post("http://dinacom.unisains.com/api/pickup/store", this.dataPickup, {
+              const response = await axios.post("https://dinacom.unisains.com/api/pickup/store", this.dataPickup, {
                 headers: {
                   'Authorization': `Bearer ${token}`
                 }

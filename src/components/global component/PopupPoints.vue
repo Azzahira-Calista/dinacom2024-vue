@@ -156,17 +156,16 @@ export default {
           text: "Jumlah point kamu belum memenuhi syarat batas penukaran point, kumpulkan lebih banyak lagi!",
           icon: "error",
           confirmButtonColor: "#E88A1B",
+        }).then(() => {
+          this.$emit('closePopup');
         });
-        return; // Don't proceed with redemption if the condition is not met
+        return;
       }
 
-      // Continue with the redemption process
       this.$emit('closePopup');
 
-      // Perform other actions related to successful redemption
       if (this.dataPoint.nomorhp == "") {
         alert("Isi nomor hp terlebih dahulu!");
-        // Check if the point balance is sufficient for redemption
         return;
       } else {
         Swal.fire({
